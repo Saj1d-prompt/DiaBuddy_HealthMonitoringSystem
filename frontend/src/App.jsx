@@ -4,8 +4,8 @@ import CreateAccount from './Component/Login and Registration/CreateAccount'
 function App() {
   return (
     <>
-      <Home />
-      {/* <CreateAccount /> */}
+      {/* <Home /> */}
+      <CreateAccount />
     </>
   )
 }
