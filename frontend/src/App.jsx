@@ -1,11 +1,10 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 
+import { Link } from 'react-router-dom'
+import Home from './Component/Home Page/Home'
 function App() {
   return (
     <>
-      <h1>Test</h1>
+      <Home />
     </>
   )
 }
