@@ -1,17 +1,17 @@
 import React from 'react'
-import '../../Style/CreateAccount.css'
+import style from '../../Style/CreateAccount.module.css'
 
 const CreateAccount = () => {
   return (
     <>
-        <div className="container">
-            <div className="header">
+        <div className={style.container}>
+            <div className={style.header}>
                 <h1>DiaBuddy</h1>
                 <p>Your Ultimate Diabetes Management Companion</p>
                 <h2>Create Your Account</h2>
             </div>
             <div>
-                <div className='error-msg'>
+                <div className={style["error-msg"]}>
                     <p></p>
                 </div>
                 <form action="">
@@ -27,10 +27,10 @@ const CreateAccount = () => {
                     <label htmlFor="password">Password</label>
                     <input type="password" id="password" name="password" required />
 
-                    <button type="submit" className="button button-primary">Register</button>
+                    <button type="submit" className={`${style.button} ${style["button-primary"]}`}>Register</button>
 
-                    <p className='loginLink'>Already have an account? <a href="/login">Login</a></p>
-                    <p className='loginLink'>Want to go back? <a href="/">Home</a></p>
+                    <p className={style.loginLink}>Already have an account? <a href="/login">Login</a></p>
+                    <p className={style.loginLink}>Want to go back? <a href="/">Home</a></p>
 
                 </form>
             </div>

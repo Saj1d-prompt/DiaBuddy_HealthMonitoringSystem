@@ -1,15 +1,15 @@
 import React from 'react'
-import '../../Style/CreateAccount.css'
+import styles from '../../Style/CreateAccount.module.css'
 
 const LoginForm = () => {
     return (
         <div>
-            <div className='container'>
-                <div className="header">
+            <div className={styles.container}>
+                <div className={styles.header}>
                     <h1>Login</h1>
                 </div>
                 <div>
-                    <div className='error-msg'>
+                    <div className={styles["error-msg"]}>
                         <p></p>
                     </div>
                     <form action="">
@@ -19,9 +19,9 @@ const LoginForm = () => {
                         <label htmlFor="password">Password</label>
                         <input type="password" id="password" name="password" required />
 
-                        <button type="submit" className="button button-primary">Login</button>
+                        <button type="submit" className={`${styles.button} ${styles["button-primary"]}`}>Login</button>
 
-                        <p className='loginLink'>Don't have an account? <a href="/register">Register</a></p>
+                        <p className={styles.loginLink}>Don't have an account? <a href="/register">Register</a></p>
                     </form>
                 </div>
 
