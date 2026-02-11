@@ -154,7 +154,7 @@ a {
 }
 
 .feature-card {
-  background: var(--white);
+  background: #ffffff;
   padding: 30px;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0,0,0,0.05);
@@ -173,3 +173,21 @@ a {
   margin-bottom: 20px;
 }
 
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; 
+  }
+  
+  .hero-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  .auth-buttons {
+    display: none;
+  }
+}
