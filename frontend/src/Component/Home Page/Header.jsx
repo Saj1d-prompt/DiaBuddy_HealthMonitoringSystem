@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import '../../Style/Home.css'
 import logo from '../Images/DiaBuddy.png'
 
+
 const Header = () => {
     return (
         <div>
@@ -22,7 +23,6 @@ const Header = () => {
                     </div>
                 </div>
             </nav>
-
         </div>
     )
 }
