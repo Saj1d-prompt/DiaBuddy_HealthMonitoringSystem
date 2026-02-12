@@ -34,4 +34,31 @@ class AccountController extends Controller
             'status' => 200
         ], 200);
     }
+
+    public function login(Request $request){
+        $validate = Validator::make($request->all(), [
+            'email' => 'required|string|email',
+            'password' => 'required|string',
+        ]);
+        if($validate->fails()){
+            return response()->json([
+                'status'=> 400,
+                'errors'=>$validate->errors()
+            ], 400);
+        }
+        $user = User::where('email', $request->email)->first();
+        if(!$user || !Hash::check($request->password, $user->password)){
+            return response()->json([
+                'message' => 'Invalid email or password',
+                'status' => 400
+            ], 400);
+        }
+        $token = $user->createToken('auth_token')->plainTextToken;
+        return response()->json([
+            'message' => 'User logged in successfully',
+            'access_token' => $token,
+            'token_type' => 'Bearer',
+            'status' => 200
+        ], 200);
+    }
 }

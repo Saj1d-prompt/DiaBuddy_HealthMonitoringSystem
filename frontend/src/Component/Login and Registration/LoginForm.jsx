@@ -2,6 +2,13 @@ import React from 'react'
 import styles from '../../Style/CreateAccount.module.css'
 
 const LoginForm = () => {
+    const navigate = useNavigate();
+    const { handleSubmit, register } = useForm();
+    const [error, setErrors] = React.useState(null);
+
+    const onSubmit = async (data) => {
+        
+    }
     return (
         <div>
             <div className={styles.container}>
@@ -12,12 +19,12 @@ const LoginForm = () => {
                     <div className={styles["error-msg"]}>
                         <p></p>
                     </div>
-                    <form action="">
+                    <form action="" onSubmit={handleSubmit(onSubmit)}>
                         <label htmlFor="email">Email Address</label>
-                        <input type="email" id="email" name="email" required />
+                        <input type="email" {...register("email")} id="email" name="email" required />
 
                         <label htmlFor="password">Password</label>
-                        <input type="password" id="password" name="password" required />
+                        <input type="password" {...register("password")} id="password" name="password" required />
 
                         <button type="submit" className={`${styles.button} ${styles["button-primary"]}`}>Login</button>
 
