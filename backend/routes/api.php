@@ -5,6 +5,9 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\AccountController;
 
+
+Route::post('/login', [AccountController::class, 'login']);
+
 Route::post('/register', [AccountController::class, 'createAccount']);
 
 
