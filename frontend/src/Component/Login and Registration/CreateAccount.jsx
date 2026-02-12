@@ -1,11 +1,11 @@
 import React from 'react'
 import style from '../../Style/CreateAccount.module.css'
-import { useForm } from 'react-hook-form';
+import { set, useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 
 
 const CreateAccount = () => {
-    const { handleSubmit, register} = useForm();
+    const { handleSubmit, register } = useForm();
     const [error, setErrors] = React.useState(null);
     const navigate = useNavigate();
 
@@ -24,10 +24,12 @@ const CreateAccount = () => {
                     navigate('/login');
                 } else {
                     setErrors("Registration failed. Please try again with Valid Credentials.");
-                    navigate('/register');
+                    setTimeout(() => {
+                        setErrors(null);
+                    }, 2000);
                 }
             })
-        }
+    }
     return (
         <>
             <div className={style.container}>

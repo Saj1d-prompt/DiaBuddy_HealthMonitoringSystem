@@ -1,5 +1,7 @@
 import React from 'react'
 import styles from '../../Style/CreateAccount.module.css'
+import { useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
 
 const LoginForm = () => {
     const navigate = useNavigate();
@@ -7,7 +9,27 @@ const LoginForm = () => {
     const [error, setErrors] = React.useState(null);
 
     const onSubmit = async (data) => {
-        
+        await fetch(`${import.meta.env.VITE_API_KEY}/login`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                accept: 'application/json',
+            },
+            body: JSON.stringify(data),
+        })
+            .then((response) => response.json())
+            .then((result) => {
+                if (result.status === 200) {
+                    navigate('/dashboard');
+                } else {
+                    setErrors("Login failed. Please try again with Valid Credentials.");
+                    setTimeout(() => {
+                        setErrors(null);
+                    }, 2000);
+
+
+                }
+            })
     }
     return (
         <div>
@@ -17,7 +39,7 @@ const LoginForm = () => {
                 </div>
                 <div>
                     <div className={styles["error-msg"]}>
-                        <p></p>
+                        <p>{error}</p>
                     </div>
                     <form action="" onSubmit={handleSubmit(onSubmit)}>
                         <label htmlFor="email">Email Address</label>
