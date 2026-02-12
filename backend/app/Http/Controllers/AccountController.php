@@ -14,7 +14,7 @@ class AccountController extends Controller
             'name' => 'required|string',
             'email' => 'required|string|email|unique:users',
             'date_of_birth' => 'required|date',
-            'password' => 'required|string|min:8|confirmed',
+            'password' => 'required|string|min:5',
         ]);
         if($validate->fails()){
             return response()->json([
