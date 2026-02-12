@@ -56,8 +56,11 @@ class AccountController extends Controller
         $token = $user->createToken('auth_token')->plainTextToken;
         return response()->json([
             'message' => 'User logged in successfully',
-            'access_token' => $token,
+            'token' => $token,
             'token_type' => 'Bearer',
+            'name' => $user->name,
+            'email' => $user->email,
+            'id' => $user->id,
             'status' => 200
         ], 200);
     }

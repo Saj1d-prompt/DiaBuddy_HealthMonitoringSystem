@@ -2,11 +2,13 @@ import React from 'react'
 import styles from '../../Style/CreateAccount.module.css'
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
+import AuthContext from '../../Context/AuthContext';
 
 const LoginForm = () => {
     const navigate = useNavigate();
     const { handleSubmit, register } = useForm();
     const [error, setErrors] = React.useState(null);
+    const { login } = React.useContext(AuthContext);
 
     const onSubmit = async (data) => {
         await fetch(`${import.meta.env.VITE_API_KEY}/login`, {
@@ -20,15 +22,21 @@ const LoginForm = () => {
             .then((response) => response.json())
             .then((result) => {
                 if (result.status === 200) {
+                    const userInfo = {
+                        name: result.name,
+                        id: result.id,
+                        token: result.token
+                    }
+                    localStorage.setItem('userInfo', JSON.stringify(userInfo));
+                    login(userInfo);
                     navigate('/dashboard');
                 } else {
                     setErrors("Login failed. Please try again with Valid Credentials.");
                     setTimeout(() => {
                         setErrors(null);
                     }, 2000);
-
-
                 }
+
             })
     }
     return (
@@ -53,7 +61,6 @@ const LoginForm = () => {
                         <p className={styles.loginLink}>Don't have an account? <a href="/register">Register</a></p>
                     </form>
                 </div>
-
             </div>
         </div>
     )
