@@ -25,11 +25,18 @@ const LoginForm = () => {
                     const userInfo = {
                         name: result.name,
                         id: result.id,
-                        token: result.token
+                        token: result.token,
+                        role: result.role,
                     }
                     localStorage.setItem('userInfo', JSON.stringify(userInfo));
                     login(userInfo);
-                    navigate('/dashboard');
+                    if (result.role === 'patient') {
+                        navigate('/patientdashboard');
+                    } else if (result.role === 'doctor') {
+                        navigate('/doctordashboard');
+                    }else if (result.role === 'admin') {
+                        navigate('/admindashboard');
+                    }
                 } else {
                     setErrors("Login failed. Please try again with Valid Credentials.");
                     setTimeout(() => {

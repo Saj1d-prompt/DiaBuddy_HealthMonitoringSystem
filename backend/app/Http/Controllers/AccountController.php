@@ -15,6 +15,7 @@ class AccountController extends Controller
             'email' => 'required|string|email|unique:users',
             'date_of_birth' => 'required|date',
             'password' => 'required|string|min:5',
+
         ]);
         if($validate->fails()){
             return response()->json([
@@ -60,6 +61,7 @@ class AccountController extends Controller
             'token_type' => 'Bearer',
             'name' => $user->name,
             'email' => $user->email,
+            'role' => $user->role,
             'id' => $user->id,
             'status' => 200
         ], 200);

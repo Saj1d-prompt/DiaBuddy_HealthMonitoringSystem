@@ -8,14 +8,14 @@ import PatientDashboard from './Component/Patient/PatientDashboard'
 function App() {
   return (
     <>
-    {/* <AuthProvider>
+    <AuthProvider>
     <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<CreateAccount />} />
     </Routes>
-    </AuthProvider> */}
-    <PatientDashboard />
+    </AuthProvider>
+    {/* <PatientDashboard /> */}
     </>
   )
 }
