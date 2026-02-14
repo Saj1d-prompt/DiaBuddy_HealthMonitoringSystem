@@ -63,7 +63,12 @@ const OneTimeInfoForm = () => {
                             <option value="prediabetes">Pre-diabetes</option>
                         </select>
                     </div>
+                    <div className={`${styles.formGroup} ${styles.fullWidth}`}>
+                        <label>Your Auto-calculated BMI</label>
+                        <input type="text" className={styles.bmiDisplay} readOnly />
+                    </div>
                 </div>
+                <button type="submit" className={styles.submitBtn}>Save Information</button>
 
             </form>
         </div>
