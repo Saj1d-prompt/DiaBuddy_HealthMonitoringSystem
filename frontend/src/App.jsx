@@ -5,17 +5,21 @@ import Login from './Component/Login and Registration/Login'
 import { Route, Routes } from 'react-router-dom'
 import { AuthProvider } from './Context/AuthContext'
 import PatientDashboard from './Component/Patient/PatientDashboard'
+import OneTimeInfoForm from './Component/Patient/OneTimeInfoForm'
+
+
 function App() {
   return (
     <>
-    <AuthProvider>
+    {/* <AuthProvider>
     <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<CreateAccount />} />
     </Routes>
-    </AuthProvider>
+    </AuthProvider> */}
     {/* <PatientDashboard /> */}
+    <OneTimeInfoForm />
     </>
   )
 }
