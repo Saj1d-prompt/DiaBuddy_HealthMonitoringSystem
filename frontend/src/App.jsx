@@ -11,15 +11,17 @@ import OneTimeInfoForm from './Component/Patient/OneTimeInfoForm'
 function App() {
   return (
     <>
-    {/* <AuthProvider>
+    <AuthProvider>
     <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<CreateAccount />} />
+        <Route path="/patientdashboard" element={<PatientDashboard />} />
+        <Route path="/onetimeinfoform" element={<OneTimeInfoForm />} />
     </Routes>
-    </AuthProvider> */}
-    {/* <PatientDashboard /> */}
-    <OneTimeInfoForm />
+    </AuthProvider>
+    {/* <PatientDashboard />
+    <OneTimeInfoForm /> */}
     </>
   )
 }

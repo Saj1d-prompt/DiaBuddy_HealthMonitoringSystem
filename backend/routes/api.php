@@ -11,9 +11,12 @@ Route::post('/login', [AccountController::class, 'login']);
 
 Route::post('/register', [AccountController::class, 'createAccount']);
 
-Route::post('/personalInfo', [PersonalInfoController::class, 'storeInfo']);
+Route::middleware('auth:sanctum')->group(function () {
+    Route::post('/personalInfo', [PersonalInfoController::class, 'storeInfo']);
+});
 
 
 Route::get('/user', function (Request $request) {
+
     return $request->user();
 })->middleware('auth:sanctum');

@@ -31,7 +31,7 @@ const LoginForm = () => {
                     localStorage.setItem('userInfo', JSON.stringify(userInfo));
                     login(userInfo);
                     if (result.role === 'patient') {
-                        navigate('/patientdashboard');
+                        navigate('/onetimeinfoform');
                     } else if (result.role === 'doctor') {
                         navigate('/doctordashboard');
                     }else if (result.role === 'admin') {

@@ -14,18 +14,40 @@ const OneTimeInfoForm = () => {
     const weight = watch("weight");
 
     useEffect(() => {
-        if (height<0 || weight<0) {
+        if (height < 0 || weight < 0) {
             setBmi("Invalid height or weight");
-        }else if (height>0 && weight>0) {
+        } else if (height > 0 && weight > 0) {
             const heightInMeters = height / 100;
             const calculatedBmi = (weight / (heightInMeters * heightInMeters)).toFixed(2);
             setBmi(calculatedBmi);
         }
-    }), [height, weight];
+    }, [height, weight]);
 
 
     const onSubmit = async (data) => {
-        //code
+        const userInfo = JSON.parse(localStorage.getItem('userInfo'));
+        await fetch(`${import.meta.env.VITE_API_KEY}/personalInfo`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                accept: 'application/json',
+                Authorization: `Bearer ${userInfo.token}`,
+            },
+            body: JSON.stringify(data),
+        })
+            .then((response) => response.json())
+            .then((result) => {
+                if (result.status === 200) {
+                    const updatedUserInfo = {
+                        ...userInfo, is_profile_complete: true
+                    }
+                    localStorage.setItem('userInfo', JSON.stringify(updatedUserInfo));
+                    navigate('/patientdashboard');
+                } else {
+                    alert("Registration failed. Please try again with Valid Credentials.");
+                }
+            })
+
     }
     return (
         <div className={styles.container}>
@@ -70,7 +92,7 @@ const OneTimeInfoForm = () => {
                     </div>
                     <div className={styles.formGroup}>
                         <label htmlFor="bloodGroup">Blood Group</label>
-                        <select id="bloodGroup" name="bloodGroup" {...register("bloodGroup")}>
+                        <select id="bloodGroup" name="bloodGroup" {...register("blood_group")}>
                             <option value="">Select your blood group</option>
                             {bloodGroup.map((group) => (
                                 <option key={group} value={group}>{group}</option>
@@ -79,7 +101,7 @@ const OneTimeInfoForm = () => {
                     </div>
                     <div className={styles.formGroup}>
                         <label htmlFor="diabetesType">Type of Diabetes</label>
-                        <select id="diabetesType" name="diabetesType" {...register("diabetesType")}>
+                        <select id="diabetesType" name="diabetesType" {...register("diabetes_type")}>
                             <option value="">Select diabetes type</option>
                             <option value="type1">Type 1 Diabetes</option>
                             <option value="type2">Type 2 Diabetes</option>
