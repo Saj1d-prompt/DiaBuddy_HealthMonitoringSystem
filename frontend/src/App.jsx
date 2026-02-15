@@ -6,22 +6,23 @@ import { Route, Routes } from 'react-router-dom'
 import { AuthProvider } from './Context/AuthContext'
 import PatientDashboard from './Component/Patient/PatientDashboard'
 import OneTimeInfoForm from './Component/Patient/OneTimeInfoForm'
+import ProtectedRoute from './Component/Common/ProtectedRoute'
 
 
 function App() {
   return (
     <>
-    <AuthProvider>
-    <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<CreateAccount />} />
-        <Route path="/patientdashboard" element={<PatientDashboard />} />
-        <Route path="/onetimeinfoform" element={<OneTimeInfoForm />} />
-    </Routes>
-    </AuthProvider>
-    {/* <PatientDashboard />
-    <OneTimeInfoForm /> */}
+      <AuthProvider>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<CreateAccount />} />
+          <Route element={<ProtectedRoute />}>
+            <Route path="/patientdashboard" element={<PatientDashboard />} />
+            <Route path="/onetimeinfoform" element={<OneTimeInfoForm />} />
+          </Route>
+        </Routes>
+      </AuthProvider>
     </>
   )
 }
