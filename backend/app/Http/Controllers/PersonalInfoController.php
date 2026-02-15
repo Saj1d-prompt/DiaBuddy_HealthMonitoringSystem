@@ -40,6 +40,5 @@ class PersonalInfoController extends Controller
             'message' => 'Health and Personal Information registered successfully',
             'status' => 200
         ], 200);
-
     }
 }
