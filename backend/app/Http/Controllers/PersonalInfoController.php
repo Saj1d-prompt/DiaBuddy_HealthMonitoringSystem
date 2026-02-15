@@ -8,7 +8,8 @@ use App\Models\Person;
 
 class PersonalInfoController extends Controller
 {
-    public function storeInfo(Request $request){
+    public function storeInfo(Request $request)
+    {
         // Validate the incoming request data
         $validatedData = Validator::make($request->all(), [
             'number' => 'required|string|max:12',
@@ -19,10 +20,10 @@ class PersonalInfoController extends Controller
             'blood_group' => 'required|string|max:5',
             'diabetes_type' => 'required|string|max:50'
         ]);
-        if($validatedData->fails()){
+        if ($validatedData->fails()) {
             return response()->json([
-                'status'=> 400,
-                'errors'=>$validatedData->errors()
+                'status' => 400,
+                'errors' => $validatedData->errors()
             ], 400);
         }
         $person = new Person();
@@ -35,6 +36,10 @@ class PersonalInfoController extends Controller
         $person->diabetes_type = $request->diabetes_type;
         $person->user_id = $request->user()->id;
         $person->save();
+
+        $request->user()->update([
+            'is_profile_complete' => true
+        ]);
 
         return response()->json([
             'message' => 'Health and Personal Information registered successfully',

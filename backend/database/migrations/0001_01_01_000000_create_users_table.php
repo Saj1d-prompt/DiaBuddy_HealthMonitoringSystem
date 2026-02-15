@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('role')->default('patient');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table -> boolean('is_profile_complete')->default(false);
             $table->rememberToken();
             $table->timestamps();
         });

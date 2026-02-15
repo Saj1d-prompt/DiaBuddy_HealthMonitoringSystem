@@ -24,6 +24,7 @@ class User extends Authenticatable
         'date_of_birth',
         'role',
         'password',
+        'is_profile_complete',
     ];
 
     /**

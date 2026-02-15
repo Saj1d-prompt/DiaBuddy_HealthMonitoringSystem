@@ -27,11 +27,16 @@ const LoginForm = () => {
                         id: result.id,
                         token: result.token,
                         role: result.role,
+                        is_profile_complete: result.is_profile_complete,
                     }
                     localStorage.setItem('userInfo', JSON.stringify(userInfo));
                     login(userInfo);
                     if (result.role === 'patient') {
-                        navigate('/onetimeinfoform');
+                        if(result.is_profile_complete) {
+                            navigate('/patientdashboard');
+                        } else {
+                            navigate('/onetimeinfoform');
+                        }
                     } else if (result.role === 'doctor') {
                         navigate('/doctordashboard');
                     }else if (result.role === 'admin') {
@@ -72,5 +77,4 @@ const LoginForm = () => {
         </div>
     )
 }
-
 export default LoginForm
