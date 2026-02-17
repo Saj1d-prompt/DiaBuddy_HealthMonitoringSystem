@@ -5,6 +5,7 @@ const PatientDashboard = () => {
   return (
     <div>
         Test Dashboard
+              <Profile />
     </div>
   )
 }

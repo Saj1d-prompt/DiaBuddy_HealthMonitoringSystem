@@ -13,7 +13,7 @@ import Profile from './Component/Patient/Profile'
 function App() {
   return (
     <>
-      {/* <AuthProvider>
+      <AuthProvider>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
@@ -23,8 +23,8 @@ function App() {
             <Route path="/onetimeinfoform" element={<OneTimeInfoForm />} />
           </Route>
         </Routes>
-      </AuthProvider> */}
-      <Profile />
+      </AuthProvider>
+
     </>
   )
 }
