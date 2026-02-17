@@ -46,4 +46,12 @@ class PersonalInfoController extends Controller
             'status' => 200
         ], 200);
     }
+    public function getInfo(Request $request){
+        $profile = Person::where('user_id',$request->user()->id)->first();
+        return response()->json([
+            'message' => 'Health and Personal Information retrieved successfully',
+            'status' => 200,
+            'data' => $profile
+        ], 200);
+    }
 }
