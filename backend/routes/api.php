@@ -13,6 +13,7 @@ Route::post('/register', [AccountController::class, 'createAccount']);
 
 Route::middleware('auth:sanctum')->group(function () {
     Route::post('/personalInfo', [PersonalInfoController::class, 'storeInfo']);
+    Route::get('/getPersonalInfo', [PersonalInfoController::class, 'getInfo']);
 });
 
 
