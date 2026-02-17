@@ -9,7 +9,9 @@ const Profile = () => {
     address: '',
     height: '',
     weight: '',
-    bloodGroup: '',
+    blood_group: '',
+    diabetes_type: '',
+    bmi: '',
   })
 
   useEffect(() => {
@@ -37,6 +39,12 @@ const Profile = () => {
   const handleToggle = () => {
     setEdit(!edit);
   }
+  useEffect(() => {
+        if (profile.height > 0 && profile.weight > 0) {
+            const bmiValue = (profile.weight / ((profile.height / 100) ** 2)).toFixed(2);
+            setProfile(prev => ({ ...prev, bmi: bmiValue }));
+        }
+    }, [profile.height, profile.weight])
   return (
     <div>
       <div className={styles.container}>
@@ -92,16 +100,16 @@ const Profile = () => {
               <input type="text" name='weight' value={profile.weight} readOnly />
             </div>
             <div className={styles.formGroup}>
-              <label htmlFor="bloodGroup">Blood Group</label>
-              <div className={styles.viewValue}>{profile.bloodGroup}</div>
+              <label htmlFor="blood_group">Blood Group</label>
+              <div name = "blood_group" className={styles.viewValue}>{profile.blood_group}</div>
             </div>
             <div className={styles.formGroup}>
-              <label htmlFor="diabetesType">Diabetes Type</label>
-              <div className={styles.viewValue}>{profile.diabetesType || 'None'}</div>
+              <label htmlFor="diabetes_Type">Diabetes Type</label>
+              <div name = "diabetes_Type" className={styles.viewValue}>{profile.diabetes_type}</div>
             </div>
             <div className={`${styles.formGroup} ${styles.fullWidth}`}>
               <label>Your BMI</label>
-              <input type="text" className={styles.bmiDisplay} readOnly />
+              <input type="text" className={styles.bmiDisplay} value={profile.bmi} readOnly />
             </div>
           </div>
           <button type='submit' className={styles.saveButton}>Save Changes</button>
