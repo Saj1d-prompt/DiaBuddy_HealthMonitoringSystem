@@ -86,13 +86,17 @@ const Profile = () => {
           </button>
         </div>
 
-        <form action="">
+        <form onSubmit={handleSubmit}>
           <h3 className={styles.sectionTitle}>Personal Information</h3>
           <div className={styles.grid}>
 
             <div className={styles.formGroup}>
               <label htmlFor="">Phone Number</label>
-              <input type="text" name='number' value={profile.number} readOnly />
+              {edit ? (
+                <input type="text" name='number' value={profile.number} onChange={handleChange} />
+              ) : (
+                <input type="text" name='number' value={profile.number} readOnly />
+              )}
             </div>
 
             {/* <div className={styles.formGroup}>
@@ -106,27 +110,43 @@ const Profile = () => {
             </div> */}
             <div className={styles.formGroup}>
               <label htmlFor="gender">Gender</label>
-              <div className={styles.viewValue}>{profile.gender}</div>
+              {edit ? ( <select name="gender" id="gender">
+                <option value="">Select Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+              </select> ) : ( <div name = "gender" className={styles.viewValue}>{profile.gender}</div> )}
             </div>
 
             <div className={styles.formGroup}>
               <label htmlFor="">Address</label>
-              <textarea type="text" name='address' rows="3" value={profile.address} readOnly />
+              {edit ? (
+                <textarea name='address' rows="3" value={profile.address} onChange={handleChange}></textarea>
+              ) : (
+                <textarea type="text" name='address' rows="3" value={profile.address} readOnly />
+              )}
             </div>
-
           </div>
 
           <h3 className={styles.sectionTitle}>Health Information</h3>
           <div className={styles.grid}>
             <div className={styles.formGroup}>
               <label htmlFor="">Height (cm)</label>
-              <input type="text" name='height' value={profile.height} readOnly />
+              {edit ? (
+                <input type="text" name='height' value={profile.height} onChange={handleChange} />
+              ) : (
+                <input type="text" name='height' value={profile.height} readOnly />
+              )}
             </div>
 
             <div className={styles.formGroup}>
               <label htmlFor="">Weight (kg)</label>
-              <input type="text" name='weight' value={profile.weight} readOnly />
-            </div>
+              {edit ? (
+                <input type="text" name='weight' value={profile.weight} onChange={handleChange} />
+              ) : (
+                <input type="text" name='weight' value={profile.weight} readOnly />
+              )}
+             </div>
             <div className={styles.formGroup}>
               <label htmlFor="blood_group">Blood Group</label>
               <div name = "blood_group" className={styles.viewValue}>{profile.blood_group}</div>
@@ -140,7 +160,10 @@ const Profile = () => {
               <input type="text" className={styles.bmiDisplay} value={profile.bmi} readOnly />
             </div>
           </div>
-          <button type='submit' className={styles.saveButton}>Save Changes</button>
+            {edit && (
+              <button type='submit' className={styles.saveButton}>Save Changes</button>
+            )
+            }
         </form >
 
       </div >
