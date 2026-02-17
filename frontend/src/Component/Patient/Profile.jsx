@@ -18,7 +18,7 @@ const Profile = () => {
   const fetchProfile = async () => {
     const userInfo = JSON.parse(localStorage.getItem('userInfo'))
     const token = userInfo.token;
-    try{
+    try {
       const res = await fetch(`${import.meta.env.VITE_API_KEY}/getPersonalInfo`, {
         method: 'GET',
         headers: {
@@ -27,10 +27,10 @@ const Profile = () => {
         }
       })
       const result = await res.json();
-      if(result.status === 200){
+      if (result.status === 200) {
         setProfile(result.data);
       }
-    }catch(error){
+    } catch (error) {
       console.error("Error fetching profile data:", error);
     }
   }
@@ -45,7 +45,9 @@ const Profile = () => {
             <h1>Profile</h1>
             <p>Manage Your personal and Health Details</p>
           </div>
-          <button onClick={handleToggle} className={styles.editButton}>Edit Profile</button>
+          <button onClick={handleToggle} className={styles.editButton}
+            style={{ backgroundColor: edit ? '#64748b' : '#2563eb' }}>{edit ? 'Cancel' : 'Edit Profile'}
+          </button>
         </div>
 
         <form action="">
@@ -66,10 +68,10 @@ const Profile = () => {
                 <option value="other">Other</option>
               </select>
             </div> */}
-              <div className={styles.formGroup}>
-                <label htmlFor="gender">Gender</label>
-                <div className={styles.viewValue}>{profile.gender}</div>
-              </div>
+            <div className={styles.formGroup}>
+              <label htmlFor="gender">Gender</label>
+              <div className={styles.viewValue}>{profile.gender}</div>
+            </div>
 
             <div className={styles.formGroup}>
               <label htmlFor="">Address</label>
