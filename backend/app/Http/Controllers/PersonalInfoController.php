@@ -54,4 +54,38 @@ class PersonalInfoController extends Controller
             'data' => $profile
         ], 200);
     }
+
+    public function updateInfo(Request $request){
+        $validatedData = Validator::make($request->all(), [
+            'number' => 'required|string|max:12',
+            'gender' => 'required|string|max:10',
+            'address' => 'required|string|max:500',
+            'height' => 'required|numeric|min:0',
+            'weight' => 'required|numeric|min:0',
+            'blood_group' => 'required|string|max:5',
+            'diabetes_type' => 'required|string|max:50'
+        ]);
+        if ($validatedData->fails()) {
+            return response()->json([
+                'status' => 400,
+                'errors' => $validatedData->errors()
+            ], 400);
+        }
+        $person = Person::where('user_id', $request->user()->id)->first();
+
+        if (!$person) {
+            return response()->json([
+                'message' => 'Personal information not found',
+                'status' => 404
+            ], 404);
+        }
+        else{
+            $person->update($request->all());
+            return response()->json([
+                'message' => 'Health and Personal Information updated successfully',
+                'status' => 200
+            ], 200);
+        }
+
+    }
 }

@@ -45,6 +45,34 @@ const Profile = () => {
             setProfile(prev => ({ ...prev, bmi: bmiValue }));
         }
     }, [profile.height, profile.weight])
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setProfile(prev => ({ ...prev, [name]: value }));
+    }
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        const userInfo = JSON.parse(localStorage.getItem('userInfo'));
+        const token = userInfo.token;
+        try {
+            const res = await fetch(`${import.meta.env.VITE_API_KEY}/updatePersonalInfo`, {
+                method: 'POST',
+                headers: {
+                    'Authorization': `Bearer ${token}`,
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(profile)
+            })
+            const result = await res.json();
+            if (result.status === 200) {
+                setEdit(false);
+                fetchProfile();
+            }
+        } catch (error) {
+            console.error("Error fetching profile data:", error);
+        }
+    }
   return (
     <div>
       <div className={styles.container}>
