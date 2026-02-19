@@ -31,6 +31,12 @@ const BloodSugarReading = () => {
               ))}
             </select>
           </div>
+          <div className={styles.formGroup}>
+            <label>Notes (Optional)</label>
+            <textarea name="notes" id="notes" rows="3" placeholder='What did you eat? Did you exercise?'></textarea>
+          </div>
+
+          <button type="submit" className={styles.submitBtn}>Save Readings</button>
 
         </div>
       </form >
