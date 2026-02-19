@@ -3,12 +3,6 @@ import styles from '../../Style/BloodSugarReadings.module.css'
 import { useState } from 'react';
 
 const BloodSugarReading = () => {
-  const [formData, setFormData] = useState({
-    glucose_level: '',
-    category: 'Fasting',
-    reading_time: new Date().toISOString().slice(0, 16), // Pre-fills current time
-    notes: ''
-  });
   const categories = ['Fasting', 'Before Meal', 'After Meal', 'Bedtime', 'Random', 'Exercise']; 
   return (
     <div className={styles.container}>
