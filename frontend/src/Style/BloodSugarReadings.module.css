@@ -18,6 +18,16 @@
     padding-bottom: 15px;
 }
 
+.notification {
+    background-color: #e0f2fe;
+    color: #0369a1;
+    padding: 12px 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 600;
+}
+
 .inputs {
     display: flex;
     flex-direction: column;
