@@ -4,7 +4,6 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useEffect } from 'react';
 
-
 const BloodSugarReading = () => {
 
   const { handleSubmit, register, reset } = useForm();

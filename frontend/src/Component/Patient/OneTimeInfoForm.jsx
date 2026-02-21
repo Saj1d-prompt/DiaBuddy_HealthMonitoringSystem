@@ -23,7 +23,6 @@ const OneTimeInfoForm = () => {
         }
     }, [height, weight]);
 
-
     const onSubmit = async (data) => {
         const userInfo = JSON.parse(localStorage.getItem('userInfo'));
         await fetch(`${import.meta.env.VITE_API_KEY}/personalInfo`, {

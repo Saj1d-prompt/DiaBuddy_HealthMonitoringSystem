@@ -14,7 +14,7 @@ import BloodSugarReading from './Component/Patient/BloodSugarReading'
 function App() {
   return (
     <>
-      {/* <AuthProvider>
+      <AuthProvider>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
@@ -22,11 +22,11 @@ function App() {
           <Route element={<ProtectedRoute />}>
             <Route path="/patientdashboard" element={<PatientDashboard />} />
             <Route path="/onetimeinfoform" element={<OneTimeInfoForm />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/bloodsugarreading" element={<BloodSugarReading />} />
           </Route>
         </Routes>
-      </AuthProvider> */}
-      <BloodSugarReading />
-
+      </AuthProvider>
     </>
   )
 }
