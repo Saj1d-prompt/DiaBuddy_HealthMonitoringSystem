@@ -9,12 +9,13 @@ import OneTimeInfoForm from './Component/Patient/OneTimeInfoForm'
 import ProtectedRoute from './Component/Common/ProtectedRoute'
 import Profile from './Component/Patient/Profile'
 import BloodSugarReading from './Component/Patient/BloodSugarReading'
+import UploadReports from './Component/Patient/UploadReports'
 
 
 function App() {
   return (
     <>
-      <AuthProvider>
+      {/* <AuthProvider>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
@@ -26,7 +27,8 @@ function App() {
             <Route path="/bloodsugarreading" element={<BloodSugarReading />} />
           </Route>
         </Routes>
-      </AuthProvider>
+      </AuthProvider> */}
+      <UploadReports />
     </>
   )
 }
