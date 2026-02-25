@@ -3,8 +3,8 @@ import styles from '../../Style/UploadReport.module.css'
 
 const UploadReports = () => {
   return (
-    <div>
-      <h2>Medical Reports</h2>
+    <div className={styles.uploadContainer}>
+      <h2 className={styles.title}>Medical Reports</h2>
       <p>Upload your Medical Reports Here</p>
 
       <form action="">

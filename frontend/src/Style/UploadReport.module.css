@@ -1,0 +1,15 @@
+.uploadContainer {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 30px;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.title {
+    color: #1e293b;
+    font-size: 22px;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
