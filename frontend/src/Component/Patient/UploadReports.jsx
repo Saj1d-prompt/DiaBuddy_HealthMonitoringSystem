@@ -5,7 +5,6 @@ const UploadReports = () => {
   return (
     <div className={styles.uploadContainer}>
       <h2 className={styles.title}>Medical Reports</h2>
-      <p>Upload your Medical Reports Here</p>
 
       <form action="">
         <div className={styles.uploadArea}>
@@ -15,6 +14,19 @@ const UploadReports = () => {
             Choose File
           </label>
           <input type="file" accept=".pdf, .png, .jpg, .jpeg" className={styles.fileInput} />
+        </div>
+        <div className={styles.grid}>
+          <div className={styles.formGroup}>
+
+          </div>
+          <label>Report Type</label>
+          <select className={styles.inputField}>
+            <option value="HbA1c">HbA1c (3 Month Average)</option>
+            <option value="Lipid Profile">Lipid Profile (Cholesterol)</option>
+            <option value="KFT">Kidney Function Test (KFT)</option>
+            <option value="FBS">Fasting Blood Sugar (Lab)</option>
+            <option value="Prescription">Prescription/Other</option>
+          </select>
         </div>
       </form>
     </div>
