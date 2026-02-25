@@ -13,3 +13,44 @@
     margin-bottom: 20px;
     font-weight: 700;
 }
+
+.uploadArea{
+    border: 2px dashed #cbd5e1;
+    border-radius: 12px;
+    padding: 40px;
+    text-align: center;
+    background: #f8fafc;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 25px;
+}
+
+.uploadArea:hover {
+    border-color: #2563eb;
+    background: #eff6ff;
+}
+
+.fileInput {
+    display: none;
+}
+
+.customFileButton {
+  display: inline-block;
+  padding: 10px 16px;
+  background-color: #3b82f6;       
+  margin-top: 5px;
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.customFileButton:hover {
+  background-color: #2563eb;      
+}
+
+.customFileButton:active {
+  background-color: #1e40af;     
+}

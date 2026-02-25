@@ -8,12 +8,13 @@ const UploadReports = () => {
       <p>Upload your Medical Reports Here</p>
 
       <form action="">
-        <div>
+        <div className={styles.uploadArea}>
           <p><strong>Click to upload</strong> or drag and drop</p>
-          <p>PDF, PNG, or JPG (Max 5MB)</p>
-          <input type="file" accept=".pdf, .png, .jpg, .jpeg" />
-          <button type="submit">Upload</button>
-          
+          <p style={{ fontSize: '12px', color: '#64748b' }}>PDF, PNG, or JPG (Max 5MB)</p>
+          <label htmlFor="fileUpload" className={styles.customFileButton}>
+            Choose File
+          </label>
+          <input type="file" accept=".pdf, .png, .jpg, .jpeg" className={styles.fileInput} />
         </div>
       </form>
     </div>
