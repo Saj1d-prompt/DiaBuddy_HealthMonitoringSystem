@@ -6,5 +6,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class MedicalReport extends Model
 {
-    //
+    protected $fillable = [
+        'reportType',
+        'reportDate',
+        'labName',
+        'filePath',
+        'comments',
+        'user_id',
+    ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
