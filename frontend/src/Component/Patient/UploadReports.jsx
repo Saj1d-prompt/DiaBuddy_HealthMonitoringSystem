@@ -39,6 +39,9 @@ const UploadReports = () => {
             rows="3"
             placeholder="Any specific comments from the lab?"
           ></textarea>
+          <button type="submit" className={styles.submitBtn}>
+            Upload Report
+          </button>
         </div>
       </form >
     </div >
