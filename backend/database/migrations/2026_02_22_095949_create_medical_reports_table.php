@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('medical_reports', function (Blueprint $table) {
             $table->id();
+            $table -> string('reportType');
+            $table -> date('reportDate');
+            $table -> string('labName');
+            $table -> string('filePath');
+            $table -> string('comments')->nullable();
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }
