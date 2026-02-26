@@ -29,6 +29,10 @@ const UploadReports = () => {
             <label>Date of Test</label>
             <input type="date" className={styles.inputField} />
           </div>
+          <div className={styles.formGroup}>
+            <label>Lab Name</label>
+            <input type="text" className={styles.inputField} placeholder="Where was the test done?" />
+          </div>
           <div className={styles.formGroup} style={{ marginBottom: '20px' }}>
             <label>Doctor or Lab Notes (Optional)</label>
             <textarea
