@@ -5,7 +5,6 @@ const UploadReports = () => {
   return (
     <div className={styles.uploadContainer}>
       <h2 className={styles.title}>Medical Reports</h2>
-
       <form action="">
         <div className={styles.uploadArea}>
           <p><strong>Click to upload</strong> or drag and drop</p>
@@ -42,7 +41,6 @@ const UploadReports = () => {
         <button type="submit" className={styles.submitBtn}>
           Upload Report
         </button>
-
       </form >
     </div >
   )
