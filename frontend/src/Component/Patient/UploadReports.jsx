@@ -28,8 +28,12 @@ const UploadReports = () => {
             <option value="Prescription">Prescription/Other</option>
           </select>
         </div>
-      </form>
-    </div>
+        <div className={styles.formGroup}>
+          <label>Date of Test</label>
+          <input type="date" className={styles.inputField} />
+        </div>
+      </form >
+    </div >
   )
 }
 
