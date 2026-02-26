@@ -17,32 +17,32 @@ const UploadReports = () => {
         </div>
         <div className={styles.grid}>
           <div className={styles.formGroup}>
-
+            <label>Report Type</label>
+            <select className={styles.inputField}>
+              <option value="HbA1c">HbA1c (3 Month Average)</option>
+              <option value="Lipid Profile">Lipid Profile (Cholesterol)</option>
+              <option value="KFT">Kidney Function Test (KFT)</option>
+              <option value="FBS">Fasting Blood Sugar (Lab)</option>
+              <option value="Prescription">Prescription/Other</option>
+            </select>
           </div>
-          <label>Report Type</label>
-          <select className={styles.inputField}>
-            <option value="HbA1c">HbA1c (3 Month Average)</option>
-            <option value="Lipid Profile">Lipid Profile (Cholesterol)</option>
-            <option value="KFT">Kidney Function Test (KFT)</option>
-            <option value="FBS">Fasting Blood Sugar (Lab)</option>
-            <option value="Prescription">Prescription/Other</option>
-          </select>
+          <div className={styles.formGroup}>
+            <label>Date of Test</label>
+            <input type="date" className={styles.inputField} />
+          </div>
+          <div className={styles.formGroup} style={{ marginBottom: '20px' }}>
+            <label>Doctor or Lab Notes (Optional)</label>
+            <textarea
+              className={styles.inputField}
+              rows="3"
+              placeholder="Any specific comments from the lab?"
+            ></textarea>
+          </div>
         </div>
-        <div className={styles.formGroup}>
-          <label>Date of Test</label>
-          <input type="date" className={styles.inputField} />
-        </div>
-        <div className={styles.formGroup} style={{ marginBottom: '20px' }}>
-          <label>Doctor or Lab Notes (Optional)</label>
-          <textarea
-            className={styles.inputField}
-            rows="3"
-            placeholder="Any specific comments from the lab?"
-          ></textarea>
-          <button type="submit" className={styles.submitBtn}>
-            Upload Report
-          </button>
-        </div>
+        <button type="submit" className={styles.submitBtn}>
+          Upload Report
+        </button>
+
       </form >
     </div >
   )
