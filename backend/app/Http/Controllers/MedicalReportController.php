@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use App\Models\MedicalReport;
+use Exception;
 
 class MedicalReportController extends Controller
 {
@@ -14,12 +15,42 @@ class MedicalReportController extends Controller
             'report_file' => 'required|mimes:pdf,jpg,jpeg,png|max:5120',
             'report_type' => 'required|string',
             'test_date'   => 'required|date',
+            'lab_name'    => 'required|string',
+            'comments'    => 'nullable|string'
         ]);
         if ($validator->fails()) {
             return response()->json([
                 'status' => 400,
                 'errors' => $validator->errors()
             ], 400);
+        }
+        try{
+            if($request->hasFile('report_file')){
+                $file = $request->file('report_file');
+                $oriName = $file->getClientOriginalName();
+
+                $path = $file->store('medical_reports', 'public');
+
+                $report = new MedicalReport();
+                $report->report_file = $path;
+                $report->report_type = $request->report_type;
+                $report->test_date = $request->test_date;
+                $report->lab_name = $request->lab_name;
+                $report->comments = $request->comments ?? '';
+                $report->user_id = $request->user()->id;
+                $report->save();
+                return response()->json([
+                    'message' => 'Report uploaded successfully',
+                    'status' => 200
+                ], 200);
+
+            }
+
+        }catch(Exception $e){
+            return response()->json([
+                'status' => 500,
+                'message' => 'An error occurred while uploading the report. Please try again later.'
+            ], 500);
         }
 
         
