@@ -1,10 +1,13 @@
 import React from 'react'
 import styles from '../../Style/UploadReport.module.css'
 import { useForm } from 'react-hook-form';
+import { useState } from 'react';
+
 
 const UploadReports = () => {
   const { register, handleSubmit, watch, setValue } = useForm();
   const fileSelected = watch("report_file");
+  const [notification, setNotification] = useState('');
   const onSubmit = async (data) => {
       const userInfo = JSON.parse(localStorage.getItem('userInfo'));
       await fetch(`${import.meta.env.VITE_API_KEY}/uploadReport`, {
@@ -32,6 +35,7 @@ const UploadReports = () => {
   return (
     <div className={styles.uploadContainer}>
       <h2 className={styles.title}>Medical Reports</h2>
+      {notification && <p className={styles.notification}>{notification}</p>}
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className={styles.uploadArea}>
           <p><strong>Click to upload</strong> or drag and drop</p>
