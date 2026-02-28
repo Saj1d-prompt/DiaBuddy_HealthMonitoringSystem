@@ -5,10 +5,34 @@ import { useForm } from 'react-hook-form';
 const UploadReports = () => {
   const { register, handleSubmit, watch, setValue } = useForm();
   const fileSelected = watch("report_file");
+  const onSubmit = async (data) => {
+      const userInfo = JSON.parse(localStorage.getItem('userInfo'));
+      await fetch(`${import.meta.env.VITE_API_KEY}/uploadReport`, {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json',
+              accept: 'application/json',
+              Authorization: `Bearer ${userInfo.token}`,
+          },
+          body: JSON.stringify(data),
+      })
+      .then((response) => response.json())
+      .then((result) => {
+        if (result.status === 200) {
+          setNotification("Upload Reports data saved successfully.");
+          reset();
+        } else {
+          setNotification("Failed to save Upload Reports data. Please try again.");
+        }
+      })
+      .catch((error) => {
+        console.log("Error saving Upload Reports data. Please try again.", error);
+      });
+  }
   return (
     <div className={styles.uploadContainer}>
       <h2 className={styles.title}>Medical Reports</h2>
-      <form action="">
+      <form onSubmit={handleSubmit(onSubmit)}>
         <div className={styles.uploadArea}>
           <p><strong>Click to upload</strong> or drag and drop</p>
           <p style={{ fontSize: '12px', color: '#64748b' }}>PDF, PNG, or JPG (Max 5MB)</p>
