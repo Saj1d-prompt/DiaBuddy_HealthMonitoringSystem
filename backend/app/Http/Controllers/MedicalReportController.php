@@ -12,10 +12,10 @@ class MedicalReportController extends Controller
     public function storeReport(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'report_file' => 'required|mimes:pdf,jpg,jpeg,png|max:5120',
-            'report_type' => 'required|string',
-            'test_date'   => 'required|date',
-            'lab_name'    => 'required|string',
+            'filePath' => 'required|mimes:pdf,jpg,jpeg,png|max:5120',
+            'reportType' => 'required|string',
+            'reportDate'   => 'required|date',
+            'labName'    => 'required|string',
             'comments'    => 'nullable|string'
         ]);
         if ($validator->fails()) {
@@ -25,17 +25,17 @@ class MedicalReportController extends Controller
             ], 400);
         }
         try{
-            if($request->hasFile('report_file')){
-                $file = $request->file('report_file');
+            if($request->hasFile('filePath')){
+                $file = $request->file('filePath');
                 $oriName = $file->getClientOriginalName();
 
                 $path = $file->store('medical_reports', 'public');
 
                 $report = new MedicalReport();
                 $report->report_file = $path;
-                $report->report_type = $request->report_type;
-                $report->test_date = $request->test_date;
-                $report->lab_name = $request->lab_name;
+                $report->report_type = $request->reportType;
+                $report->test_date = $request->reportDate;
+                $report->lab_name = $request->labName;
                 $report->comments = $request->comments ?? '';
                 $report->user_id = $request->user()->id;
                 $report->save();

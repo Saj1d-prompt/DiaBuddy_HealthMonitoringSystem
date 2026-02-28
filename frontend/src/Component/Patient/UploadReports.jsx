@@ -5,8 +5,8 @@ import { useState } from 'react';
 
 
 const UploadReports = () => {
-  const { register, handleSubmit, watch, setValue } = useForm();
-  const fileSelected = watch("report_file");
+  const { register, handleSubmit, watch, setValue , reset } = useForm();
+  const fileSelected = watch("filePath");
   const [notification, setNotification] = useState('');
   const onSubmit = async (data) => {
       const userInfo = JSON.parse(localStorage.getItem('userInfo'));
@@ -43,7 +43,7 @@ const UploadReports = () => {
           <label htmlFor="fileUpload" className={styles.customFileButton}>
             Choose File
           </label>
-          <input type="file" accept=".pdf, .png, .jpg, .jpeg" id='fileUpload' {...register("report_file")} className={styles.fileInput} />
+          <input type="file" accept=".pdf, .png, .jpg, .jpeg" id='fileUpload' {...register("filePath")} className={styles.fileInput} />
           {fileSelected && fileSelected[0] && (
             <p className={styles.fileName}>Selected: {fileSelected[0].name}</p>
           )}
@@ -51,7 +51,7 @@ const UploadReports = () => {
         <div className={styles.grid}>
           <div className={styles.formGroup}>
             <label>Report Type</label>
-            <select className={styles.inputField} {...register("report_type")}>
+            <select className={styles.inputField} {...register("reportType")}>
               <option value="HbA1c">HbA1c (3 Month Average)</option>
               <option value="Lipid Profile">Lipid Profile (Cholesterol)</option>
               <option value="KFT">Kidney Function Test (KFT)</option>
@@ -61,11 +61,11 @@ const UploadReports = () => {
           </div>
           <div className={styles.formGroup}>
             <label>Date of Test</label>
-            <input type="date" {...register("test_date")} className={styles.inputField} />
+            <input type="date" {...register("reportDate")} className={styles.inputField} />
           </div>
           <div className={styles.formGroup}>
             <label>Lab Name</label>
-            <input type="text" {...register("lab_name")} className={styles.inputField} placeholder="Where was the test done?" />
+            <input type="text" {...register("labName")} className={styles.inputField} placeholder="Where was the test done?" />
           </div>
           <div className={styles.formGroup} style={{ marginBottom: '20px' }}>
             <label>Doctor or Lab Notes (Optional)</label>
