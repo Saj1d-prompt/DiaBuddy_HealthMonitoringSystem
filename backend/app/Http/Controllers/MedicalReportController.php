@@ -32,10 +32,10 @@ class MedicalReportController extends Controller
                 $path = $file->store('medical_reports', 'public');
 
                 $report = new MedicalReport();
-                $report->report_file = $path;
-                $report->report_type = $request->reportType;
-                $report->test_date = $request->reportDate;
-                $report->lab_name = $request->labName;
+                $report->filePath = $path;
+                $report->reportType = $request->reportType;
+                $report->reportDate = $request->reportDate;
+                $report->labName = $request->labName;
                 $report->comments = $request->comments ?? '';
                 $report->user_id = $request->user()->id;
                 $report->save();
@@ -43,9 +43,7 @@ class MedicalReportController extends Controller
                     'message' => 'Report uploaded successfully',
                     'status' => 200
                 ], 200);
-
             }
-
         }catch(Exception $e){
             return response()->json([
                 'status' => 500,
