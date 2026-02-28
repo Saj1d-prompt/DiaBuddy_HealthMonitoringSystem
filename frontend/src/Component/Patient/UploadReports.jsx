@@ -1,7 +1,10 @@
 import React from 'react'
 import styles from '../../Style/UploadReport.module.css'
+import { useForm } from 'react-hook-form';
 
 const UploadReports = () => {
+  const { register, handleSubmit, watch, setValue } = useForm();
+  const fileSelected = watch("report_file");
   return (
     <div className={styles.uploadContainer}>
       <h2 className={styles.title}>Medical Reports</h2>
@@ -12,12 +15,15 @@ const UploadReports = () => {
           <label htmlFor="fileUpload" className={styles.customFileButton}>
             Choose File
           </label>
-          <input type="file" accept=".pdf, .png, .jpg, .jpeg" className={styles.fileInput} />
+          <input type="file" accept=".pdf, .png, .jpg, .jpeg" id='fileUpload' {...register("report_file")} className={styles.fileInput} />
+          {fileSelected && fileSelected[0] && (
+            <p className={styles.fileName}>Selected: {fileSelected[0].name}</p>
+          )}
         </div>
         <div className={styles.grid}>
           <div className={styles.formGroup}>
             <label>Report Type</label>
-            <select className={styles.inputField}>
+            <select className={styles.inputField} {...register("report_type")}>
               <option value="HbA1c">HbA1c (3 Month Average)</option>
               <option value="Lipid Profile">Lipid Profile (Cholesterol)</option>
               <option value="KFT">Kidney Function Test (KFT)</option>
@@ -27,17 +33,18 @@ const UploadReports = () => {
           </div>
           <div className={styles.formGroup}>
             <label>Date of Test</label>
-            <input type="date" className={styles.inputField} />
+            <input type="date" {...register("test_date")} className={styles.inputField} />
           </div>
           <div className={styles.formGroup}>
             <label>Lab Name</label>
-            <input type="text" className={styles.inputField} placeholder="Where was the test done?" />
+            <input type="text" {...register("lab_name")} className={styles.inputField} placeholder="Where was the test done?" />
           </div>
           <div className={styles.formGroup} style={{ marginBottom: '20px' }}>
             <label>Doctor or Lab Notes (Optional)</label>
             <textarea
               className={styles.inputField}
               rows="3"
+              {...register("comments")}
               placeholder="Any specific comments from the lab?"
             ></textarea>
           </div>
