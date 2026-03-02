@@ -19,6 +19,7 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('/updatePersonalInfo', [PersonalInfoController::class, 'updateInfo']);
     Route::post('/storebsReadings', [BloodSugarReadingsController::class, 'storeReadings']);
     Route::post('/uploadReport', [MedicalReportController::class, 'storeReport']);
+    Route::get('/getReport', [MedicalReportController::class, 'getReport']);
 });
 
 
