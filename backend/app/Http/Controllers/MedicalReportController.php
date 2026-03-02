@@ -52,4 +52,13 @@ class MedicalReportController extends Controller
         }
 
     }
+    public function getReport(Request $request){
+         $reports = MedicalReport::where('user_id', $request->user()->id)
+                ->orderBy('reportDate', 'desc') 
+                ->get();
+        return response()->json([
+            'reports' => $reports,
+            'status' => 200
+        ], 200);
+    }
 }
