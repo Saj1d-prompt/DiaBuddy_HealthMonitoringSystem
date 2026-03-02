@@ -16,6 +16,15 @@ const ViewReport = () => {
                             <th>Report</th>
                         </tr>
                     </thead>
+                    <tbody>
+                        <tr>
+                            <td>1 March 2026</td>
+                            <td>Fasting Blood Sugar</td>
+                            <td>A Medical Center</td>
+                            <td>Normal results</td>
+                            <td><a>View Report</a></td>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
 
