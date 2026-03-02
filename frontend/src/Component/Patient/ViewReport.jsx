@@ -5,8 +5,8 @@ const ViewReport = () => {
     return (
         <div className={styles.container}>
             <h1 className={styles.title}>View Medical Reports History</h1>
-            <div>
-                <table>
+            <div className={styles.tableContainer}>
+                <table className={styles.reportTable}>
                     <thead>
                         <tr>
                             <th>Test Date</th>
