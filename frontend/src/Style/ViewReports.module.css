@@ -45,3 +45,27 @@
 .reportTable tr:hover {
     background-color: #f1f5f9;
 }
+
+.reportType{
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    background: #dcfce7;
+    color: #166534;
+}
+
+.viewReportLink{
+    background: #2563eb;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.viewReportLink:hover {
+    background: #1d4ed8;
+}

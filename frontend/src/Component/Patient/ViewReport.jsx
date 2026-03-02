@@ -19,10 +19,10 @@ const ViewReport = () => {
                     <tbody>
                         <tr>
                             <td>1 March 2026</td>
-                            <td>Fasting Blood Sugar</td>
+                            <td><span className={styles.reportType}>Fasting Blood Sugar</span></td>
                             <td>A Medical Center</td>
                             <td>Normal results</td>
-                            <td><a>View Report</a></td>
+                            <td><a className={styles.viewReportLink}>View Report</a></td>
                         </tr>
                     </tbody>
                 </table>
