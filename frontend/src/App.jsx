@@ -10,12 +10,13 @@ import ProtectedRoute from './Component/Common/ProtectedRoute'
 import Profile from './Component/Patient/Profile'
 import BloodSugarReading from './Component/Patient/BloodSugarReading'
 import UploadReports from './Component/Patient/UploadReports'
+import ViewReport from './Component/Patient/ViewReport'
 
 
 function App() {
   return (
     <>
-      {/* <AuthProvider>
+      <AuthProvider>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
@@ -25,10 +26,11 @@ function App() {
             <Route path="/onetimeinfoform" element={<OneTimeInfoForm />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/bloodsugarreading" element={<BloodSugarReading />} />
+            <Route path="/uploadreports" element={<UploadReports />} />
+            <Route path="/viewreports" element={<ViewReport />} />
           </Route>
         </Routes>
-      </AuthProvider> */}
-      <UploadReports />
+      </AuthProvider>
     </>
   )
 }

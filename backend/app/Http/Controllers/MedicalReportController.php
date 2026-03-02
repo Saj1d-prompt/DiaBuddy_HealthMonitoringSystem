@@ -51,6 +51,5 @@ class MedicalReportController extends Controller
             ], 500);
         }
 
-        
     }
 }
