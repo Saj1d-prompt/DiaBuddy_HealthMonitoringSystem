@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from '../../Style/ViewReports.module.css';
+import { useState } from 'react';
 
 const ViewReport = () => {
+    const [reports, setReports] = useState([]);
+    const [loading, setLoading] = useState(true);
     return (
         <div className={styles.container}>
             <h1 className={styles.title}>View Medical Reports History</h1>
