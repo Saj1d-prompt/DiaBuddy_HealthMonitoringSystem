@@ -69,3 +69,10 @@
 .viewReportLink:hover {
     background: #1d4ed8;
 }
+
+.emptyState{
+    text-align: center;
+    color: #64748b;
+    font-size: 18px;
+    margin-top: 50px;
+}

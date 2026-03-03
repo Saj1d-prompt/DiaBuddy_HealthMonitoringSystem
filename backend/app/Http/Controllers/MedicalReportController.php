@@ -57,7 +57,7 @@ class MedicalReportController extends Controller
                 ->orderBy('reportDate', 'desc') 
                 ->get();
         return response()->json([
-            'reports' => $reports,
+            'data' => $reports,
             'status' => 200
         ], 200);
     }
