@@ -1,10 +1,33 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from '../../Style/ViewReports.module.css';
-import { useState } from 'react';
 
 const ViewReport = () => {
     const [reports, setReports] = useState([]);
     const [loading, setLoading] = useState(true);
+    const fetchReports = async () => {
+        const userInfo = JSON.parse(localStorage.getItem('userInfo'));
+        try {
+            const response = await fetch(`${import.meta.env.VITE_API_KEY}/getReport`, {
+                headers: {
+                    accept: 'application/json',
+                    Authorization: `Bearer ${userInfo.token}`
+                }
+            });
+            const result = await response.json();
+            if (result.status === 200) {
+                setReports(result.data);
+                console.log(result.data);
+            }
+        } catch (error) {
+            console.error('Error fetching reports:', error);
+        }
+        finally {
+            setLoading(false);
+        }
+    }
+    useEffect(() => {
+        fetchReports();
+    }, [])
     return (
         <div className={styles.container}>
             <h1 className={styles.title}>View Medical Reports History</h1>
