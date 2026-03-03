@@ -51,13 +51,15 @@ const ViewReport = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1 March 2026</td>
-                            <td><span className={styles.reportType}>Fasting Blood Sugar</span></td>
-                            <td>A Medical Center</td>
-                            <td>Normal results</td>
-                            <td><a className={styles.viewReportLink}>View Report</a></td>
-                        </tr>
+                        {reports.map((report, index) => (
+                            <tr key={index}>
+                                <td>{report.reportDate}</td>
+                                <td><span className={styles.reportType}>{report.reportType}</span></td>
+                                <td>{report.labName}</td>
+                                <td>{report.comments || '-'}</td>
+                                <td><a className={styles.viewReportLink}>View Report</a></td>
+                            </tr>
+                        ))}
                     </tbody>
                 </table>
             </div>
