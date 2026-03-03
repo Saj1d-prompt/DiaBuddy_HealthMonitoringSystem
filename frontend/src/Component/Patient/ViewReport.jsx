@@ -57,7 +57,7 @@ const ViewReport = () => {
                                 <td><span className={styles.reportType}>{report.reportType}</span></td>
                                 <td>{report.labName}</td>
                                 <td>{report.comments || '-'}</td>
-                                <td><a className={styles.viewReportLink}>View Report</a></td>
+                                <td><a className={styles.viewReportLink} href={`${import.meta.env.VITE_STORAGE_URL}/${report.filePath}`} target="_blank" rel="noopener noreferrer">View Report</a></td>
                             </tr>
                         ))}
                     </tbody>
