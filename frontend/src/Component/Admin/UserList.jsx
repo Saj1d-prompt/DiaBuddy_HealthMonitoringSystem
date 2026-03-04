@@ -6,18 +6,22 @@ import { useState } from 'react';
 
 const UserList = () => {
     const navigate = useNavigate();
-    const [users, setUsers] = useState([]);
+    const [user, setUsers] = useState([]);
     useEffect(() => {
         fetchUser();
     }, [])
     const fetchUser = async () => {
-        const user = JSON.parse(localStorage.getItem('userInfo'));
+        const users = JSON.parse(localStorage.getItem('userInfo'));
+        if (!users?.token) {
+        console.log("No token found");
+        return;
+    }
         try {
             const response = await fetch('http://localhost:8000/api/admin/userList', {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${user.token}`
+                    'Authorization': `Bearer ${users.token}`
                 }
             });
             const result = await response.json();
@@ -53,24 +57,26 @@ const UserList = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
+                        {user.map((user) => (
+                        <tr key={user.id}>
                             <td>
                                 <div className={styles.userInfo}>
-                                    <span className={styles.userName}>ABC</span>
-                                    <span className={styles.userEmail}>abc@example.com</span>
+                                    <span className={styles.userName}>{user.name}</span>
+                                    <span className={styles.userEmail}>{user.email}</span>
                                 </div>
                             </td>
                             <td>
                                 <span>
-                                    Patient
+                                    {user.role}
                                 </span>
                             </td>
-                            <td>2022-01-01</td>
+                            <td>{new Date(user.created_at).toLocaleDateString()}</td>
                             <td style={{ display: 'flex', gap: '10px' }}>
                                 <button className={styles.editButton}>Edit</button>
                                 <button className={styles.deleteButton}>Delete</button>
                             </td>
                         </tr>
+                        ))}
                     </tbody>
                 </table>
             </div>
