@@ -1,7 +1,34 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styles from '../../Style/UserList.module.css'
+import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+
 
 const UserList = () => {
+    const navigate = useNavigate();
+    const [users, setUsers] = useState([]);
+    useEffect(() => {
+        fetchUser();
+    }, [])
+    const fetchUser = async () => {
+        const user = JSON.parse(localStorage.getItem('userInfo'));
+        try {
+            const response = await fetch('http://localhost:8000/api/admin/userList', {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${user.token}`
+                }
+            });
+            const result = await response.json();
+            if(result.status === 200){
+                setUsers(result.data);
+            }
+        } catch (error) {
+            console.error('Error fetching user list:', error);
+        }
+
+    }
     return (
         <div className={styles.container}>
             <div className={styles.header}>
