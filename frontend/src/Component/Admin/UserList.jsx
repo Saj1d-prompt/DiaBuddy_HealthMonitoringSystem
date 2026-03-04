@@ -66,7 +66,7 @@ const UserList = () => {
                                 </div>
                             </td>
                             <td>
-                                <span>
+                                <span className={`${styles.roleBadge} ${styles[user.role.toLowerCase()]}`}>
                                     {user.role}
                                 </span>
                             </td>

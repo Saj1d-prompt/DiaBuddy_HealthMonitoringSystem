@@ -79,3 +79,20 @@
     border-radius: 6px;
     cursor: pointer;
 }
+
+.roleBadge {
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.doctor {
+    background: #eff6ff;
+    color: #1e40af;
+}
+
+.patient {
+    background: #f0fdf4;
+    color: #15803d;
+}
