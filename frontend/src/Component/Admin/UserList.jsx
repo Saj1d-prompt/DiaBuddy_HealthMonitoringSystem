@@ -39,7 +39,7 @@ const UserList = () => {
                                 </span>
                             </td>
                             <td>2022-01-01</td>
-                            <td>
+                            <td style={{ display: 'flex', gap: '10px' }}>
                                 <button className={styles.editButton}>Edit</button>
                                 <button className={styles.deleteButton}>Delete</button>
                             </td>

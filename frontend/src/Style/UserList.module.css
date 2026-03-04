@@ -18,3 +18,64 @@
     margin-left: 10px;
     background: white;
 }
+
+.tableContainer {
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.userTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.userTable th {
+    background: #f8fafc;
+    padding: 16px;
+    text-align: left;
+    font-size: 16px;
+    color: #64748b;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.userTable td {
+    padding: 16px;
+    border-bottom: 1px solid #f1f5f9;
+    vertical-align: middle;
+}
+
+.userInfo {
+    display: flex;
+    flex-direction: column;
+}
+
+.userName {
+    font-weight: 600;
+    color: #1e293b;
+}
+
+.userEmail {
+    font-size: 13px;
+    color: #64748b;
+}
+
+.editButton {
+    padding: 8px 12px;
+    background: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.deleteButton {
+    padding: 8px 12px;
+    background: #ef4444;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
