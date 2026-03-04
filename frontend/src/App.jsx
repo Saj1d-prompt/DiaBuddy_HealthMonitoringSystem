@@ -11,6 +11,7 @@ import Profile from './Component/Patient/Profile'
 import BloodSugarReading from './Component/Patient/BloodSugarReading'
 import UploadReports from './Component/Patient/UploadReports'
 import ViewReport from './Component/Patient/ViewReport'
+import AdminDashboard from './Component/Admin/AdminDashboard'
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<CreateAccount />} />
           <Route element={<ProtectedRoute />}>
+            <Route path="/admindashboard" element={<AdminDashboard />} />
             <Route path="/patientdashboard" element={<PatientDashboard />} />
             <Route path="/onetimeinfoform" element={<OneTimeInfoForm />} />
             <Route path="/profile" element={<Profile />} />
