@@ -71,8 +71,7 @@ const UserList = () => {
                                 </span>
                             </td>
                             <td>{new Date(user.created_at).toLocaleDateString()}</td>
-                            <td style={{ display: 'flex', gap: '10px' }}>
-                                <button className={styles.editButton}>Edit</button>
+                            <td>
                                 <button className={styles.deleteButton}>Delete</button>
                             </td>
                         </tr>
