@@ -12,10 +12,7 @@ const UserList = () => {
     }, [])
     const fetchUser = async () => {
         const users = JSON.parse(localStorage.getItem('userInfo'));
-        if (!users?.token) {
-        console.log("No token found");
-        return;
-    }
+
         try {
             const response = await fetch('http://localhost:8000/api/admin/userList', {
                 method: 'GET',
@@ -32,6 +29,10 @@ const UserList = () => {
             console.error('Error fetching user list:', error);
         }
 
+    }
+
+    const handleDelete = async (id, name) => {
+        
     }
     return (
         <div className={styles.container}>
@@ -72,7 +73,7 @@ const UserList = () => {
                             </td>
                             <td>{new Date(user.created_at).toLocaleDateString()}</td>
                             <td>
-                                <button className={styles.deleteButton}>Delete</button>
+                                <button className={styles.deleteButton} onClick={() => handleDelete(user.id, user.name)}>Delete</button>
                             </td>
                         </tr>
                         ))}
