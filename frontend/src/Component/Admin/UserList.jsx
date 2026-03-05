@@ -40,7 +40,18 @@ const UserList = () => {
     const confirmDelete = async () => {
         const users = JSON.parse(localStorage.getItem('userInfo'));
         try {
-
+            const response = await fetch(`http://localhost:8000/api/admin/deleteUser/${showModal.id}`, {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${users.token}`
+                }
+            });
+            const result = await response.json();
+            if (result.status === 200) {
+                fetchUser();
+                setShowModal({ active: false, id: null, name: '' });
+            }
         } catch (error) {
             console.error('Error deleting user:', error);
         }
