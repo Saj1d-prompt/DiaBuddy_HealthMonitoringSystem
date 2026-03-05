@@ -5,7 +5,6 @@ import { useState } from 'react';
 
 
 const UserList = () => {
-    const navigate = useNavigate();
     const [user, setUsers] = useState([]);
     useEffect(() => {
         fetchUser();
@@ -31,11 +30,20 @@ const UserList = () => {
 
     }
 
-    const handleDelete = async (id, name) => {
-        
-    }
     return (
         <div className={styles.container}>
+
+            <div className={styles.modalOverlay}>
+                    <div className={styles.modalContent}>
+                        <h2>Confirm Delete</h2>
+                        <p>Are you sure you want to delete User 1? This action is permanent.</p>
+                        <div className={styles.modalButtons}>
+                            <button className={styles.cancelBtn}>Cancel</button>
+                            <button className={styles.confirmDeleteBtn}>Yes, Delete</button>
+                        </div>
+                    </div>
+                </div>
+
             <div className={styles.header}>
                 <h1>User List</h1>
                 <div>
@@ -73,7 +81,7 @@ const UserList = () => {
                             </td>
                             <td>{new Date(user.created_at).toLocaleDateString()}</td>
                             <td>
-                                <button className={styles.deleteButton} onClick={() => handleDelete(user.id, user.name)}>Delete</button>
+                                <button className={styles.deleteButton}>Delete</button>
                             </td>
                         </tr>
                         ))}
