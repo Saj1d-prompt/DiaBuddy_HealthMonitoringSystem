@@ -5,10 +5,18 @@ import { useState } from 'react';
 
 
 const UserList = () => {
+    const [showModal, setShowModal] = useState({ active: false, id: null, name: '' });
     const [user, setUsers] = useState([]);
     useEffect(() => {
         fetchUser();
     }, [])
+    const triggerModal = (id, name) => {
+        setShowModal({ active: true, id : id, name : name });
+    }
+
+    const closeModal = () => {
+        setShowModal({ active: false, id : null, name : '' });
+    }
     const fetchUser = async () => {
         const users = JSON.parse(localStorage.getItem('userInfo'));
 
