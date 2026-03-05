@@ -7,9 +7,19 @@ import { useState } from 'react';
 const UserList = () => {
     const [showModal, setShowModal] = useState({ active: false, id: null, name: '' });
     const [user, setUsers] = useState([]);
+    const [filterUser, setFilterUser] = useState([]);
+    const [roleFilter, setRoleFilter] = useState('all');
     useEffect(() => {
         fetchUser();
     }, [])
+    useEffect(() => {
+        if (roleFilter === 'all') {
+            setFilterUser(user);
+        } else {
+            const filteredUsers = user.filter((user) => user.role === roleFilter);
+            setFilterUser(filteredUsers);
+        }
+    }, [user, roleFilter]);
     const triggerModal = (id, name) => {
         setShowModal({ active: true, id: id, name: name });
     }
@@ -76,7 +86,7 @@ const UserList = () => {
                 <h1>User List</h1>
                 <div>
                     <label htmlFor="roleFilter">Filter by Role:</label>
-                    <select id="roleFilter" className={styles.filterSelect} name="roleFilter">
+                    <select id="roleFilter" className={styles.filterSelect} name="roleFilter" value={roleFilter} onChange={(e) => setRoleFilter(e.target.value)}>
                         <option value="all">All</option>
                         <option value="patient">Patient</option>
                         <option value="doctor">Doctor</option>
@@ -94,7 +104,7 @@ const UserList = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {user.map((user) => (
+                        {filterUser.map((user) => (
                             <tr key={user.id}>
                                 <td>
                                     <div className={styles.userInfo}>
