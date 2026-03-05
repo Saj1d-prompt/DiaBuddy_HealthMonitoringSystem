@@ -28,4 +28,5 @@ Route::get('/user', function (Request $request) {
 
 Route::middleware(['auth:sanctum', 'admin'])->prefix('admin')->group(function () {
     Route::get('/userList', [UserController::class, 'getUserInfo']);
+    Route::delete('/deleteUser/{id}', [UserController::class, 'deleteUser']);
 });
