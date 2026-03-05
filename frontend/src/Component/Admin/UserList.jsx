@@ -40,17 +40,20 @@ const UserList = () => {
 
     return (
         <div className={styles.container}>
-
+                {showModal.active && (
+                    
             <div className={styles.modalOverlay}>
                     <div className={styles.modalContent}>
                         <h2>Confirm Delete</h2>
-                        <p>Are you sure you want to delete User 1? This action is permanent.</p>
+                        <p>Are you sure you want to delete <strong>{showModal.name}</strong>? This action is permanent.</p>
                         <div className={styles.modalButtons}>
-                            <button className={styles.cancelBtn}>Cancel</button>
+                            <button className={styles.cancelBtn} onClick={closeModal}>Cancel</button>
                             <button className={styles.confirmDeleteBtn}>Yes, Delete</button>
                         </div>
                     </div>
                 </div>
+                
+                )}
 
             <div className={styles.header}>
                 <h1>User List</h1>
@@ -89,7 +92,7 @@ const UserList = () => {
                             </td>
                             <td>{new Date(user.created_at).toLocaleDateString()}</td>
                             <td>
-                                <button className={styles.deleteButton}>Delete</button>
+                                <button className={styles.deleteButton} onClick={() => triggerModal(user.id, user.name)}>Delete</button>
                             </td>
                         </tr>
                         ))}
