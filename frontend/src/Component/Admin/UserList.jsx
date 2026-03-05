@@ -11,11 +11,11 @@ const UserList = () => {
         fetchUser();
     }, [])
     const triggerModal = (id, name) => {
-        setShowModal({ active: true, id : id, name : name });
+        setShowModal({ active: true, id: id, name: name });
     }
 
     const closeModal = () => {
-        setShowModal({ active: false, id : null, name : '' });
+        setShowModal({ active: false, id: null, name: '' });
     }
     const fetchUser = async () => {
         const users = JSON.parse(localStorage.getItem('userInfo'));
@@ -29,31 +29,37 @@ const UserList = () => {
                 }
             });
             const result = await response.json();
-            if(result.status === 200){
+            if (result.status === 200) {
                 setUsers(result.data);
             }
         } catch (error) {
             console.error('Error fetching user list:', error);
         }
+    }
 
+    const confirmDelete = async () => {
+        const users = JSON.parse(localStorage.getItem('userInfo'));
+        try {
+
+        } catch (error) {
+            console.error('Error deleting user:', error);
+        }
     }
 
     return (
         <div className={styles.container}>
-                {showModal.active && (
-                    
-            <div className={styles.modalOverlay}>
+            {showModal.active && (
+                <div className={styles.modalOverlay}>
                     <div className={styles.modalContent}>
                         <h2>Confirm Delete</h2>
                         <p>Are you sure you want to delete <strong>{showModal.name}</strong>? This action is permanent.</p>
                         <div className={styles.modalButtons}>
                             <button className={styles.cancelBtn} onClick={closeModal}>Cancel</button>
-                            <button className={styles.confirmDeleteBtn}>Yes, Delete</button>
+                            <button className={styles.confirmDeleteBtn} onClick={confirmDelete}>Yes, Delete</button>
                         </div>
                     </div>
                 </div>
-                
-                )}
+            )}
 
             <div className={styles.header}>
                 <h1>User List</h1>
@@ -78,23 +84,23 @@ const UserList = () => {
                     </thead>
                     <tbody>
                         {user.map((user) => (
-                        <tr key={user.id}>
-                            <td>
-                                <div className={styles.userInfo}>
-                                    <span className={styles.userName}>{user.name}</span>
-                                    <span className={styles.userEmail}>{user.email}</span>
-                                </div>
-                            </td>
-                            <td>
-                                <span className={`${styles.roleBadge} ${styles[user.role.toLowerCase()]}`}>
-                                    {user.role}
-                                </span>
-                            </td>
-                            <td>{new Date(user.created_at).toLocaleDateString()}</td>
-                            <td>
-                                <button className={styles.deleteButton} onClick={() => triggerModal(user.id, user.name)}>Delete</button>
-                            </td>
-                        </tr>
+                            <tr key={user.id}>
+                                <td>
+                                    <div className={styles.userInfo}>
+                                        <span className={styles.userName}>{user.name}</span>
+                                        <span className={styles.userEmail}>{user.email}</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span className={`${styles.roleBadge} ${styles[user.role.toLowerCase()]}`}>
+                                        {user.role}
+                                    </span>
+                                </td>
+                                <td>{new Date(user.created_at).toLocaleDateString()}</td>
+                                <td>
+                                    <button className={styles.deleteButton} onClick={() => triggerModal(user.id, user.name)}>Delete</button>
+                                </td>
+                            </tr>
                         ))}
                     </tbody>
                 </table>
