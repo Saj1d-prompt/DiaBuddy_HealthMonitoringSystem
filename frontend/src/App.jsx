@@ -12,6 +12,8 @@ import BloodSugarReading from './Component/Patient/BloodSugarReading'
 import UploadReports from './Component/Patient/UploadReports'
 import ViewReport from './Component/Patient/ViewReport'
 import AdminDashboard from './Component/Admin/AdminDashboard'
+import DoctorDashboard from './Component/Doctor/DoctorDashboard'
+import DoctorInfoForm from './Component/Doctor/DoctorInfoForm'
 
 
 function App() {
@@ -30,6 +32,9 @@ function App() {
             <Route path="/bloodsugarreading" element={<BloodSugarReading />} />
             <Route path="/uploadreports" element={<UploadReports />} />
             <Route path="/viewreports" element={<ViewReport />} />
+            <Route path="/doctordashboard" element={<DoctorDashboard />} />
+            <Route path="/doctorinfoform" element={<DoctorInfoForm />} />
+            
           </Route>
         </Routes>
       </AuthProvider>
