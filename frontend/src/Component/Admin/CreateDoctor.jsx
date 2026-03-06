@@ -1,11 +1,9 @@
 import React from 'react'
 import styles from '../../Style/CreateDoctor.module.css'
+import { useForm } from 'react-hook-form';
 
 const CreateDoctor = () => {
     const { handleSubmit, register } = useForm();
-    const onSubmit = async (data) => {
-        
-    }
     return (
         <div className={styles.container}>
             <h1 className={styles.title}>Add New Doctor</h1>

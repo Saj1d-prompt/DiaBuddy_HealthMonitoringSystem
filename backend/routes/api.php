@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\AccountController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PersonalInfoController;
 use App\Http\Controllers\BloodSugarReadingsController;
 use App\Http\Controllers\MedicalReportController;
@@ -29,4 +30,5 @@ Route::get('/user', function (Request $request) {
 Route::middleware(['auth:sanctum', 'admin'])->prefix('admin')->group(function () {
     Route::get('/userList', [UserController::class, 'getUserInfo']);
     Route::delete('/deleteUser/{id}', [UserController::class, 'deleteUser']);
+    Route::post('/addDoctor', [AdminController::class, 'addDoctor']);
 });
