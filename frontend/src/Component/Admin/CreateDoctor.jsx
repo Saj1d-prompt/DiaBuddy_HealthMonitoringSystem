@@ -2,10 +2,14 @@ import React from 'react'
 import styles from '../../Style/CreateDoctor.module.css'
 
 const CreateDoctor = () => {
+    const { handleSubmit, register } = useForm();
+    const onSubmit = async (data) => {
+        
+    }
     return (
         <div className={styles.container}>
             <h1 className={styles.title}>Add New Doctor</h1>
-            <form action="">
+            <form onSubmit={handleSubmit(onSubmit)}>
                 <div className={styles.inputGroup}>
                     <label htmlFor="name">Name</label>
                     <input type="text" id="name" name="name" placeholder="Enter doctor's name" required />
