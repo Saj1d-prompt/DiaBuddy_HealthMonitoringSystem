@@ -40,19 +40,19 @@ const CreateDoctor = () => {
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div className={styles.inputGroup}>
                     <label htmlFor="name">Name</label>
-                    <input type="text" id="name" name="name" placeholder="Enter doctor's name" required />
+                    <input type="text" id="name" {...register('name')} name="name" placeholder="Enter doctor's name" required />
                 </div>
                 <div className={styles.inputGroup}>
                     <label htmlFor="email">Email</label>
-                    <input type="email" id="email" name="email" placeholder="Enter doctor's email" required />
+                    <input type="email" id="email" {...register('email')} name="email" placeholder="Enter doctor's email" required />
                 </div>
                 <div className={styles.inputGroup}>
                     <label htmlFor="date_of_birth">Date of Birth</label>
-                    <input type="date" id="date_of_birth" name="date_of_birth" required />
+                    <input type="date" id="date_of_birth" {...register('date_of_birth')} name="date_of_birth" required />
                 </div>
                 <div className={styles.inputGroup}>
                     <label htmlFor="password">Password</label>
-                    <input type="password" id="password" name="password" required />
+                    <input type="password" id="password" {...register('password')} name="password" required />
                 </div>
                 <button type="submit" className={styles.submitBtn}>Add Doctor</button>
             </form>
