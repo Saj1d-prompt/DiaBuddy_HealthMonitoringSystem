@@ -38,7 +38,11 @@ const LoginForm = () => {
                             navigate('/onetimeinfoform');
                         }
                     } else if (result.role === 'doctor') {
-                        navigate('/doctordashboard');
+                        if(result.is_profile_complete) {
+                            navigate('/doctordashboard');
+                        }else{
+                            navigate('/doctorinfoform');
+                        }
                     }else if (result.role === 'admin') {
                         navigate('/admindashboard');
                     }
