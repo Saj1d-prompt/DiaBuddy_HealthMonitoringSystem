@@ -26,7 +26,7 @@ const DoctorInfoForm = () => {
                     <label htmlFor="Experience">Years of Experience</label>
                     <input type="number" id="Experience" name="Experience" required />
                     <label htmlFor="profBio">Professional Biography</label>
-                    <textarea id="profBio" name="profBio"/>
+                    <textarea id="profBio" name="profBio" />
                 </div>
                 <div className={styles.section}>
                     <h2>Education & Background</h2>
@@ -47,6 +47,8 @@ const DoctorInfoForm = () => {
                     <textarea id="clinicAddress" name="clinicAddress" />
                     <label htmlFor="consultationHours">Consultation Hours</label>
                     <textarea id="consultationHours" name="consultationHours" />
+                    <label htmlFor="fee">Consultation Fee</label>
+                    <input type="text" name="fee" id="fee" />
                 </div>
                 <button type="submit" className={styles.submitBtn}>Submit Information</button>
             </form>
