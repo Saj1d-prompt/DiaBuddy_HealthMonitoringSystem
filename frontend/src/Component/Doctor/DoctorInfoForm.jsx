@@ -35,6 +35,15 @@ const DoctorInfoForm = () => {
                     <label htmlFor="Awards">Awards or Special Achievements(Optional)</label>
                     <textarea id="Awards" name="Awards"></textarea>
                 </div>
+                <div className={styles.section}>
+                    <h2>Clinic & Contact Details</h2>
+                    <label htmlFor="phoneNum">Phone Number</label>
+                    <input type="text" id="phoneNum" name="phoneNum" />
+                    <label htmlFor="clinicAddress">Full Clinic Address</label>
+                    <textarea id="clinicAddress" name="clinicAddress" />
+                    <label htmlFor="consultationHours">Consultation Hours</label>
+                    <textarea id="consultationHours" name="consultationHours" />
+                </div>
             </form>
         </div>
     )
