@@ -43,6 +43,8 @@ const DoctorInfoForm = () => {
                     <h2>Clinic & Contact Details</h2>
                     <label htmlFor="phoneNum">Phone Number</label>
                     <input type="text" id="phoneNum" name="phoneNum" />
+                    <label htmlFor="clinicName">Clinic Name</label>
+                    <input type="text" id="clinicName" name="clinicName" />
                     <label htmlFor="clinicAddress">Full Clinic Address</label>
                     <textarea id="clinicAddress" name="clinicAddress" />
                     <label htmlFor="consultationHours">Consultation Hours</label>
