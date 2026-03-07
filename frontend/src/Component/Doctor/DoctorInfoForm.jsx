@@ -23,6 +23,8 @@ const DoctorInfoForm = () => {
                     <input type="text" id="License" name="License" required />
                     <label htmlFor="Experience">Years of Experience</label>
                     <input type="number" id="Experience" name="Experience" required />
+                    <label htmlFor="profBio">Professional Biography</label>
+                    <textarea id="profBio" name="profBio"/>
                 </div>
                 <div className={styles.section}>
                     <h2>Education & Background</h2>
