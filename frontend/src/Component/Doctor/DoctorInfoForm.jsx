@@ -24,7 +24,15 @@ const DoctorInfoForm = () => {
                     <label htmlFor="Experience">Years of Experience</label>
                     <input type="number" id="Experience" name="Experience" required />
                 </div>
-
+                <div className={styles.section}>
+                    <h2>Education & Background</h2>
+                    <label htmlFor="HighestDegree">Highest Degree</label>
+                    <input type="text" id="HighestDegree" name="HighestDegree" />
+                    <label htmlFor="MedicalSchool">Medical School</label>
+                    <input type="text" id="MedicalSchool" name="MedicalSchool" />
+                    <label htmlFor="Awards">Awards or Special Achievements(if any)</label>
+                    <textarea id="Awards" name="Awards"></textarea>
+                </div>
             </form>
         </div>
     )
