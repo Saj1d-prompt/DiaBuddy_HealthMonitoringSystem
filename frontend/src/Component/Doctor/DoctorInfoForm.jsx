@@ -20,6 +20,10 @@ const DoctorInfoForm = () => {
                 <option value="dermatology">Nephrology</option>
                 <option value="cardiology">Cardiology</option>
             </select>
+            <label htmlFor="License">License Number</label>
+            <input type="text" id="License" name="License" required />
+            <label htmlFor="Experience">Years of Experience</label>
+            <input type="number" id="Experience" name="Experience" required />
         </form>
     </div>
   )
