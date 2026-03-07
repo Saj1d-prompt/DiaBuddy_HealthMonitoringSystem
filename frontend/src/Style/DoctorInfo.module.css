@@ -1,0 +1,30 @@
+.container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f1f5f9;
+    padding: 40px 20px;
+}
+
+.setupForm {
+    background: #ffffff;
+    width: 100%;
+    max-width: 700px;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+.setupForm h1 {
+    color: #0f172a;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.setupForm p {
+    text-align: center;
+    color: #64748b;
+    margin-bottom: 30px;
+}
