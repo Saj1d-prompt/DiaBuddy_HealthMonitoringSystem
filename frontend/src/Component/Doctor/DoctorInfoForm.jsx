@@ -8,7 +8,7 @@ const DoctorInfoForm = () => {
                 <h1>Doctor Information Form</h1>
                 <p>Fill out the form below to get started</p>
                 <div className={styles.section}>
-                    <h2>Professional Credentials</h2>
+                    <h2>Professional Details</h2>
                     <label htmlFor="department">Department</label>
                     <select id="department">
                         <option value="">Select a department</option>
@@ -46,6 +46,7 @@ const DoctorInfoForm = () => {
                     <label htmlFor="consultationHours">Consultation Hours</label>
                     <textarea id="consultationHours" name="consultationHours" />
                 </div>
+                <button type="submit" className={styles.submitBtn}>Submit Information</button>
             </form>
         </div>
     )
