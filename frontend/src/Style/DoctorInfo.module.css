@@ -28,3 +28,19 @@
     color: #64748b;
     margin-bottom: 30px;
 }
+
+.setupForm .section {
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 25px;
+}
+
+.setupForm .section h2 {
+    padding: 0 10px;
+    font-weight: 700;
+    color: #2563eb; 
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
