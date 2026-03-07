@@ -46,7 +46,8 @@
 }
 
 .setupForm input, 
-.setupForm select {
+.setupForm select,
+.setupForm textarea {
     width: 100%;
     padding: 12px 16px;
     margin-bottom: 15px;
@@ -58,8 +59,14 @@
 }
 
 .setupForm input:focus, 
-.setupForm select:focus{
+.setupForm select:focus,
+.setupForm textarea:focus{
     outline: none;
     border-color: #2563eb;
     box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.setupForm textarea {
+    resize: vertical;
+    min-height: 80px;
 }
