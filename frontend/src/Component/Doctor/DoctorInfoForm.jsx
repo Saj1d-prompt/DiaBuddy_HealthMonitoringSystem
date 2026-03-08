@@ -1,18 +1,33 @@
 import React from 'react'
 import styles from '../../Style/DoctorInfo.module.css';
 import { useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
 const DoctorInfoForm = () => {
     const {register, handleSubmit} = useForm();
+    const navigate = useNavigate();
     const onSubmit = async (data) => {
         const userInfo = JSON.parse(localStorage.getItem('userInfo'));
         await fetch(`${import.meta.env.VITE_API_KEY}/doctor/updateDoctorProfile`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
+                Accept: 'application/json',
                 'Authorization': `Bearer ${userInfo.token}`
             },
             body: JSON.stringify(data)
-        });
+        })
+            .then((response) => response.json())
+            .then((result) => {
+                if (result.status === 200) {
+                    const updatedUserInfo = {
+                        ...userInfo, is_profile_complete: true
+                    }
+                    localStorage.setItem('userInfo', JSON.stringify(updatedUserInfo));
+                    navigate('/doctordashboard');
+                } else {
+                    alert("Registration failed. Please try again with Valid Credentials.");
+                }
+            });
 
     }
     return (
@@ -37,7 +52,7 @@ const DoctorInfoForm = () => {
                     <label htmlFor="License">License Number</label>
                     <input type="text" id="License" name="License" {...register("licenseNumber")} required />
                     <label htmlFor="Experience">Years of Experience</label>
-                    <input type="number" id="Experience" name="Experience" {...register("Experience")} required />
+                    <input type="number" id="Experience" name="Experience" {...register("yearOfExperience")} required />
                     <label htmlFor="profBio">Professional Biography</label>
                     <textarea id="profBio" name="profBio" {...register("profBio")} />
                 </div>
