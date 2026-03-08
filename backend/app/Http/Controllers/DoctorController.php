@@ -33,5 +33,27 @@ class DoctorController extends Controller
             ], 400);
         }
 
+        $doctor = $request->user()->doctor;
+        $doctor->department = $request->department;
+        $doctor->specialization = $request->specialization;
+        $doctor->licenseNumber = $request->licenseNumber;
+        $doctor->yearOfExperience = $request->yearOfExperience;
+        $doctor->profBio = $request->profBio;
+        $doctor->highestDegree = $request->highestDegree;
+        $doctor->medicalSchool = $request->medicalSchool;
+        $doctor->gradYear = $request->gradYear;
+        $doctor->awards = $request->awards;
+        $doctor->phoneNumber = $request->phoneNumber;
+        $doctor->clinicName = $request->clinicName;
+        $doctor->clinicAddress = $request->clinicAddress;
+        $doctor->consultationHours = $request->consultationHours;
+        $doctor->fee = $request->fee;
+        $doctor->save();
+
+        return response()->json([
+            'message' => 'Doctor profile updated successfully',
+            'status' => 200
+        ], 200);
+
     }
 }
