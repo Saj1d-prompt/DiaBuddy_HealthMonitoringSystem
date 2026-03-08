@@ -7,6 +7,7 @@ use App\Http\Controllers\AccountController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PersonalInfoController;
 use App\Http\Controllers\BloodSugarReadingsController;
+use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\MedicalReportController;
 use App\Http\Controllers\UserController;
 
@@ -34,5 +35,5 @@ Route::middleware(['auth:sanctum', 'admin'])->prefix('admin')->group(function ()
 });
 
 Route::middleware(['auth:sanctum', 'doctor'])->prefix('doctor')->group(function () {
-    
+    Route::post('/updateDoctorProfile', [DoctorController::class, 'updateDoctorProfile']);
 });
