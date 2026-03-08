@@ -32,3 +32,7 @@ Route::middleware(['auth:sanctum', 'admin'])->prefix('admin')->group(function ()
     Route::delete('/deleteUser/{id}', [UserController::class, 'deleteUser']);
     Route::post('/addDoctor', [AdminController::class, 'addDoctor']);
 });
+
+Route::middleware(['auth:sanctum', 'doctor'])->prefix('doctor')->group(function () {
+    
+});
