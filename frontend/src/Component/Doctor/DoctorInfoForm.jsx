@@ -3,7 +3,16 @@ import styles from '../../Style/DoctorInfo.module.css';
 import { useForm } from 'react-hook-form';
 const DoctorInfoForm = () => {
     const {register, handleSubmit} = useForm();
-    const onSubmit = (data) => {
+    const onSubmit = async (data) => {
+        const userInfo = JSON.parse(localStorage.getItem('userInfo'));
+        await fetch(`${import.meta.env.VITE_API_KEY}/doctor/updateDoctorProfile`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${userInfo.token}`
+            },
+            body: JSON.stringify(data)
+        });
 
     }
     return (
