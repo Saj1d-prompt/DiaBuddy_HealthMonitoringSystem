@@ -15,6 +15,9 @@ class DoctorMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        return $next($request);
+        if ($request->user() && $request->user()->role === 'doctor') {
+            return $next($request);
+        }
+        return response()->json(['message' => 'Unauthorized Access'], 403);
     }
 }
