@@ -1,7 +1,5 @@
 import React from 'react'
 import styles from '../../Style/DoctorInfo.module.css';
-
-const DoctorInfoForm = () => {
     return (
         <div className={styles.container}>
             <form action="" className={styles.setupForm}>
@@ -10,7 +8,7 @@ const DoctorInfoForm = () => {
                 <div className={styles.section}>
                     <h2>Professional Details</h2>
                     <label htmlFor="department">Department</label>
-                    <select id="department">
+                    <select id="department" name="department" required>
                         <option value="">Select a department</option>
                         <option value="cardiology">Endocrinology</option>
                         <option value="neurology">Diabetology</option>
@@ -56,6 +54,5 @@ const DoctorInfoForm = () => {
             </form>
         </div>
     )
-}
 
 export default DoctorInfoForm

@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Doctor;
 use Illuminate\Support\Facades\Validator;
 
 use Illuminate\Http\Request;
@@ -33,7 +34,7 @@ class DoctorController extends Controller
             ], 400);
         }
 
-        $doctor = $request->user()->doctor;
+        $doctor = new Doctor();
         $doctor->department = $request->department;
         $doctor->specialization = $request->specialization;
         $doctor->licenseNumber = $request->licenseNumber;
@@ -48,7 +49,12 @@ class DoctorController extends Controller
         $doctor->clinicAddress = $request->clinicAddress;
         $doctor->consultationHours = $request->consultationHours;
         $doctor->fee = $request->fee;
+        $doctor->user_id = $request->user()->id;
         $doctor->save();
+
+        $request->user()->update([
+            'is_profile_complete' => true
+        ]);
 
         return response()->json([
             'message' => 'Doctor profile updated successfully',
