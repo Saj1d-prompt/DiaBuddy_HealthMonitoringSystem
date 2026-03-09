@@ -39,4 +39,9 @@ class AdminController extends Controller
             'data' => $user
         ]);
     }
+
+    function addHospital(Request $request)
+    {
+        
+    }
 }
