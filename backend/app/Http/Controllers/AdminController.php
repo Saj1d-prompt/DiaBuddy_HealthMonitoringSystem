@@ -59,6 +59,19 @@ class AdminController extends Controller
                 'data' => $validate->errors()
             ]);
         }
-        
+        $hospital = new Hospital();
+        $hospital->type = $request->type;
+        $hospital->name = $request->name;
+        $hospital->license_number = $request->license_number;
+        $hospital->address = $request->address;
+        $hospital->phone = $request->phone;
+        $hospital->email = $request->email;
+        $hospital->save();
+
+        return response()->json([
+            'status' => 200,
+            'message' => 'Hospital added successfully',
+            'data' => $hospital
+        ]);
     }
 }
