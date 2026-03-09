@@ -51,5 +51,14 @@ class AdminController extends Controller
             'phone' => 'required|string',
             'email' => 'nullable|string|email',
         ]);
+
+        if ($validate->fails()) {
+            return response()->json([
+                'status' => 422,
+                'message' => 'Validation failed',
+                'data' => $validate->errors()
+            ]);
+        }
+        
     }
 }
