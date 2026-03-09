@@ -13,6 +13,13 @@ return new class extends Migration
     {
         Schema::create('hospitals', function (Blueprint $table) {
             $table->id();
+            $table->enum('type', ['hospital', 'diagnosis_center']);
+            $table->string('name');
+            $table->string('license_number')->unique();
+            $table->string('address');
+            $table->string('phone');
+            $table->string('email')->nullable();
+            $table -> boolean('is_active')->default(true);
             $table->timestamps();
         });
     }
