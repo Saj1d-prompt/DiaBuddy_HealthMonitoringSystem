@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use App\Models\Hospital;
 
 class AdminController extends Controller
 {
@@ -42,6 +43,13 @@ class AdminController extends Controller
 
     function addHospital(Request $request)
     {
-        
+        $validate = Validator::make($request->all(), [
+            'type' => 'required|in:hospital,diagnosis_center',
+            'name' => 'required|string',
+            'license_number' => 'required|string|unique:hospitals',
+            'address' => 'required|string',
+            'phone' => 'required|string',
+            'email' => 'nullable|string|email',
+        ]);
     }
 }
