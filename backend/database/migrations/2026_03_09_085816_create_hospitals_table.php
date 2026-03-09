@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('phone');
             $table->string('email')->nullable();
             $table -> boolean('is_active')->default(true);
+            $table->foreignId(column: 'user_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }
