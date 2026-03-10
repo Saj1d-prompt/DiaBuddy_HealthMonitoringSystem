@@ -5,7 +5,7 @@ const AddHospital = () => {
   return (
     <div>
       <div className={styles.container}>
-        <form action="">
+        <form action="" className={styles.form}>
           <h2>Add Healthcare Center</h2>
           <div className={styles.row}>
             <label htmlFor="">Healthcare Center Type</label>
@@ -22,6 +22,15 @@ const AddHospital = () => {
             <label htmlFor="">Government License Number</label>
             <input type="text" placeholder='Enter Government License Number' />
           </div>
+          <div className={styles.row}>
+            <label htmlFor="">Contact Number</label>
+            <input type="text" placeholder='Enter Contact Number' />
+          </div>
+          <div className={styles.row}>
+            <label htmlFor="">Email Address</label>
+            <input type="email" placeholder='Enter Email Address' />
+          </div>
+          
         </form>
       </div >
     </div >
