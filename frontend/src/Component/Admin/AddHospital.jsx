@@ -8,6 +8,13 @@ const AddHospital = () => {
         <form action="">
           <h2>Add Healthcare Center</h2>
           
+          <div className={styles.row}>
+            <label htmlFor="">Healthcare Center Type</label>
+            <select>
+              <option value="hospital">Hospital</option>
+              <option value="diagnostic_center">Diagnostic Center</option>
+            </select>
+          </div>
         </form>
       </div>
     </div>
