@@ -1,0 +1,17 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+    background-color: #f8fafc;
+    padding: 20px;
+}
+.form{
+    background: #ffffff;
+    width: 100%;
+    max-width: 600px;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    border-top: 6px solid #1e293b;
+}
