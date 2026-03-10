@@ -38,6 +38,7 @@ const AddHospital = () => {
             <label htmlFor="">Full Address</label>
             <textarea name="address" id="address"/>
           </div>
+          <button type='submit' className={styles.submitBtn}>Add Healthcare Center</button>
         </form>
       </div >
     </div >
