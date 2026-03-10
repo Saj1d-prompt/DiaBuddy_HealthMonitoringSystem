@@ -30,7 +30,14 @@ const AddHospital = () => {
             <label htmlFor="">Email Address</label>
             <input type="email" placeholder='Enter Email Address' />
           </div>
-          
+          <div className={styles.row}>
+            <label htmlFor="">City</label>
+            <input type="text" placeholder='Enter City' />
+          </div>
+          <div className={styles.row}>
+            <label htmlFor="">Full Address</label>
+            <textarea name="address" id="address"/>
+          </div>
         </form>
       </div >
     </div >
