@@ -5,7 +5,10 @@ const AddHospital = () => {
   return (
     <div>
       <div className={styles.container}>
-
+        <form action="">
+          <h2>Add Healthcare Center</h2>
+          
+        </form>
       </div>
     </div>
   )

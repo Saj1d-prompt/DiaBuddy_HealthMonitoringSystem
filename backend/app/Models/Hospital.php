@@ -11,6 +11,7 @@ class Hospital extends Model
         'name',
         'license_number',
         'address',
+        'city',
         'phone',
         'email',
         'is_active',

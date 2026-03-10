@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('license_number')->unique();
             $table->string('address');
+            $table->string('city');
             $table->string('phone');
             $table->string('email')->nullable();
             $table -> boolean('is_active')->default(true);

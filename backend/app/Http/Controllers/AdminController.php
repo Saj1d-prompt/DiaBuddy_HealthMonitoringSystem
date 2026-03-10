@@ -64,6 +64,7 @@ class AdminController extends Controller
         $hospital->name = $request->name;
         $hospital->license_number = $request->license_number;
         $hospital->address = $request->address;
+        $hospital->city = $request->city;
         $hospital->phone = $request->phone;
         $hospital->email = $request->email;
         $hospital->save();
