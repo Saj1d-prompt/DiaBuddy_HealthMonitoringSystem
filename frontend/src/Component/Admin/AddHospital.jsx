@@ -1,9 +1,11 @@
 import React from 'react'
 import styles from '../../Style/AddHospital.module.css'
 import { useForm } from 'react-hook-form';
+import { useState } from 'react';
 
 const AddHospital = () => {
   const { handleSubmit, register, reset } = useForm();
+  const [error, setError] = useState(null);
 
   const onSubmit = async (data) => {
     const userInfo = JSON.parse(localStorage.getItem('userInfo'));
