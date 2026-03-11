@@ -48,6 +48,7 @@ class AdminController extends Controller
             'name' => 'required|string',
             'license_number' => 'required|string|unique:hospitals',
             'address' => 'required|string',
+            'city' => 'required|string',
             'phone' => 'required|string',
             'email' => 'nullable|string|email',
         ]);
