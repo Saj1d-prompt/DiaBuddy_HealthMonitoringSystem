@@ -6,7 +6,7 @@ const AddHospital = () => {
   const { handleSubmit, register, reset } = useForm();
 
   const onSubmit = async (data) => {
-    //code
+    const userInfo = JSON.parse(localStorage.getItem('userInfo'));
   }
   return (
     <div>
