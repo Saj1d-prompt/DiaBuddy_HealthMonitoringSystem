@@ -7,6 +7,15 @@ const AddHospital = () => {
 
   const onSubmit = async (data) => {
     const userInfo = JSON.parse(localStorage.getItem('userInfo'));
+    await fetch(`${import.meta.env.VITE_API_KEY}/admin/addHospital`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        accept: 'application/json',
+        Authorization: `Bearer ${userInfo.token}`,
+      },
+      body: JSON.stringify(data),
+    })
   }
   return (
     <div>
