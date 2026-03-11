@@ -14,35 +14,35 @@ const AddHospital = () => {
         <form action="" className={styles.form} onSubmit={handleSubmit(onSubmit)}>
           <h2>Add Healthcare Center</h2>
           <div className={styles.row}>
-            <label htmlFor="">Healthcare Center Type</label>
-            <select>
+            <label htmlFor="type">Healthcare Center Type</label>
+            <select {...register('type')} name="type" id="type" required>
               <option value="hospital">Hospital</option>
               <option value="diagnostic_center">Diagnostic Center</option>
             </select>
           </div>
           <div className={styles.row}>
-            <label htmlFor="">Healthcare Center Name</label>
-            <input type="text" placeholder='Enter Healthcare Center Name' />
+            <label htmlFor="name">Healthcare Center Name</label>
+            <input type="text" {...register('name')} placeholder='Enter Healthcare Center Name' />
           </div>
           <div className={styles.row}>
-            <label htmlFor="">Government License Number</label>
-            <input type="text" placeholder='Enter Government License Number' />
+            <label htmlFor="license_number">Government License Number</label>
+            <input type="text" {...register('license_number')} placeholder='Enter Government License Number' />
           </div>
           <div className={styles.row}>
-            <label htmlFor="">Contact Number</label>
-            <input type="text" placeholder='Enter Contact Number' />
+            <label htmlFor="phone">Contact Number</label>
+            <input type="text" {...register('phone')} placeholder='Enter Contact Number' />
           </div>
           <div className={styles.row}>
-            <label htmlFor="">Email Address</label>
-            <input type="email" placeholder='Enter Email Address' />
+            <label htmlFor="email">Email Address</label>
+            <input type="email" {...register('email')} placeholder='Enter Email Address' />
           </div>
           <div className={styles.row}>
-            <label htmlFor="">City</label>
-            <input type="text" placeholder='Enter City' />
+            <label htmlFor="city">City</label>
+            <input type="text" {...register('city')} placeholder='Enter City' />
           </div>
           <div className={styles.row}>
-            <label htmlFor="">Full Address</label>
-            <textarea name="address" id="address"/>
+            <label htmlFor="address">Full Address</label>
+            <textarea {...register('address')} name="address" id="address"/>
           </div>
           <button type='submit' className={styles.submitBtn}>Add Healthcare Center</button>
         </form>
