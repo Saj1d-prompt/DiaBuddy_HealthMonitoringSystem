@@ -16,6 +16,15 @@ const AddHospital = () => {
       },
       body: JSON.stringify(data),
     })
+      .then((response) => response.json())
+      .then((result) => {
+        if (result.status === 200) {
+          console.log("Healthcare Center added successfully.");
+          reset();
+        } else {
+          console.log("Registration failed. Please try again with Valid Credentials.");
+        }
+      })
   }
   return (
     <div>
@@ -51,7 +60,7 @@ const AddHospital = () => {
           </div>
           <div className={styles.row}>
             <label htmlFor="address">Full Address</label>
-            <textarea {...register('address')} name="address" id="address"/>
+            <textarea {...register('address')} name="address" id="address" />
           </div>
           <button type='submit' className={styles.submitBtn}>Add Healthcare Center</button>
         </form>
