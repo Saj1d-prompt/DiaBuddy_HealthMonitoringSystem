@@ -44,7 +44,7 @@ const AddHospital = () => {
             <label htmlFor="type">Healthcare Center Type</label>
             <select {...register('type')} name="type" id="type" required>
               <option value="hospital">Hospital</option>
-              <option value="diagnosis_center">Diagnostic Center</option>
+              <option value="diagnosis_center">Diagnosis Center</option>
             </select>
           </div>
           <div className={styles.row}>
