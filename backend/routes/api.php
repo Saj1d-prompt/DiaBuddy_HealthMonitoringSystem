@@ -32,6 +32,7 @@ Route::middleware(['auth:sanctum', 'admin'])->prefix('admin')->group(function ()
     Route::get('/userList', [UserController::class, 'getUserInfo']);
     Route::delete('/deleteUser/{id}', [UserController::class, 'deleteUser']);
     Route::post('/addDoctor', [AdminController::class, 'addDoctor']);
+    Route::post('/addHospital', [AdminController::class, 'addHospital']);
 });
 
 Route::middleware(['auth:sanctum', 'doctor'])->prefix('doctor')->group(function () {
