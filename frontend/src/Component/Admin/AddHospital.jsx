@@ -21,10 +21,10 @@ const AddHospital = () => {
       .then((response) => response.json())
       .then((result) => {
         if (result.status === 200) {
-          console.log("Healthcare Center added successfully.");
+          setError("Healthcare Center added successfully.");
           reset();
         } else {
-          console.log("Registration failed. Please try again with Valid Credentials.");
+          setError("Registration failed. Please try again with Valid Credentials.");
         }
       })
   }
@@ -33,6 +33,7 @@ const AddHospital = () => {
       <div className={styles.container}>
         <form action="" className={styles.form} onSubmit={handleSubmit(onSubmit)}>
           <h2>Add Healthcare Center</h2>
+          {error && <p className={styles.error}>{error}</p>}
           <div className={styles.row}>
             <label htmlFor="type">Healthcare Center Type</label>
             <select {...register('type')} name="type" id="type" required>
