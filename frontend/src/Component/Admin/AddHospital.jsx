@@ -1,13 +1,17 @@
 import React from 'react'
 import styles from '../../Style/AddHospital.module.css'
+import { useForm } from 'react-hook-form';
 
 const AddHospital = () => {
   const { handleSubmit, register, reset } = useForm();
-  
+
+  const onSubmit = async (data) => {
+    //code
+  }
   return (
     <div>
       <div className={styles.container}>
-        <form action="" className={styles.form}>
+        <form action="" className={styles.form} onSubmit={handleSubmit(onSubmit)}>
           <h2>Add Healthcare Center</h2>
           <div className={styles.row}>
             <label htmlFor="">Healthcare Center Type</label>
