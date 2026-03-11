@@ -23,8 +23,14 @@ const AddHospital = () => {
         if (result.status === 200) {
           setError("Healthcare Center added successfully.");
           reset();
+          setTimeout(() => {
+            setError(null);
+          }, 2000);
         } else {
           setError("Registration failed. Please try again with Valid Credentials.");
+          setTimeout(() => {
+            setError(null);
+          }, 2000);
         }
       })
   }
