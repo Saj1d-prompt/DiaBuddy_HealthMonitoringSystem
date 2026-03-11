@@ -68,6 +68,7 @@ class AdminController extends Controller
         $hospital->city = $request->city;
         $hospital->phone = $request->phone;
         $hospital->email = $request->email;
+        $hospital->user_id = $request->user()->id;
         $hospital->save();
 
         return response()->json([
