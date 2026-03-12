@@ -55,6 +55,21 @@ const DoctorProfile = () => {
                             <textarea name='awards' rows="3" value="Best Endocrinologist 2020" readOnly></textarea>
                         </div>
                     </div>
+                    <h3 className={styles.sectionTitle}>Clinic & Contact Details</h3>
+                    <div className={styles.grid}>
+                        <div className={styles.formGroup}>
+                            <label htmlFor="">Clinic Name</label>
+                            <input type="text" name='clinic_name' value="Downtown Diabetes Clinic" readOnly />
+                        </div>
+                        <div className={styles.formGroup}>
+                            <label htmlFor="">Phone Number</label>
+                            <input type="text" name='phone' value="+1 234 567 8900" readOnly />
+                        </div>
+                        <div className={styles.formGroup}>
+                            <label htmlFor="">Clinic Address</label>
+                            <textarea name='clinic_address' rows="3" value="123 Main St, Anytown, USA" readOnly></textarea>
+                        </div>
+                    </div>
                 </form>
             </div>
         </div>
