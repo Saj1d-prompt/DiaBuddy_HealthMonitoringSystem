@@ -31,6 +31,9 @@ const DoctorProfile = () => {
                             <label htmlFor="">Years of Experience</label>
                             <input type="text" name='experience' value="10 years" readOnly />
                         </div>
+                    </div>
+                    <h3 className={styles.sectionTitle}>Education & Background</h3>
+                    <div className={styles.grid}>
                         <div className={styles.formGroup}>
                             <label htmlFor="">Highest Degree</label>
                             <input type="text" name='highest_degree' value="MBBS" readOnly />
