@@ -78,6 +78,7 @@ const DoctorProfile = () => {
                             <input type="text" name='fee' value="$150" readOnly />
                         </div>
                     </div>
+                    <button type='submit' className={styles.saveButton}>Save Changes</button>
                 </form>
             </div>
         </div>
