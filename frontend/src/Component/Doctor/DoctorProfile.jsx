@@ -69,6 +69,14 @@ const DoctorProfile = () => {
                             <label htmlFor="">Clinic Address</label>
                             <textarea name='clinic_address' rows="3" value="123 Main St, Anytown, USA" readOnly></textarea>
                         </div>
+                        <div className={styles.formGroup}>
+                            <label htmlFor="">Consultation Hours</label>
+                            <textarea name='consultation_hours' rows="3" value="Monday - Friday: 9am - 5pm" readOnly></textarea>
+                        </div>
+                        <div className={styles.formGroup}>
+                            <label htmlFor="">Consultation Fee</label>
+                            <input type="text" name='fee' value="$150" readOnly />
+                        </div>
                     </div>
                 </form>
             </div>
