@@ -1,4 +1,5 @@
 import React from 'react'
+import styles from '../../Style/Profile.module.css'
 
 const DoctorProfile = () => {
   return (
