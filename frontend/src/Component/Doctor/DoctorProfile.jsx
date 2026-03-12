@@ -11,8 +11,20 @@ const DoctorProfile = () => {
                         <p>Update your medical credentials and clinic information</p>
                     </div>
                     <button className={styles.editButton}>Edit Profile</button>
-
                 </div>
+                <form>
+                    <h3 className={styles.sectionTitle}>Academic & Professional</h3>
+                    <div className={styles.grid}>
+                        <div className={styles.formGroup}>
+                            <label htmlFor="">Medical License Number</label>
+                            <input type="text" name='license_number' value="123456789" readOnly />
+                        </div>
+                        <div className={styles.formGroup}>
+                            <label htmlFor="">Specialization</label>
+                            <input type="text" name='specialization' value="Endocrinology" readOnly />
+                        </div>
+                    </div>
+                </form>
 
             </div>
         </div>
