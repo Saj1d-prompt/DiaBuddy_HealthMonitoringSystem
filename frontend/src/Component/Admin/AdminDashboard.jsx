@@ -8,7 +8,7 @@ const AdminDashboard = () => {
     <div>
       Test Admin
       <AddHospital />
-      
+      <CreateDoctor />
     </div>
   )
 }
