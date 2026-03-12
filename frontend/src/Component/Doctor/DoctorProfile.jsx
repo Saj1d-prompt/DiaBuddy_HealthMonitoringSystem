@@ -10,6 +10,7 @@ const DoctorProfile = () => {
                         <h1>Doctor Profile</h1>
                         <p>Update your medical credentials and clinic information</p>
                     </div>
+                    <button className={styles.editButton}>Edit Profile</button>
 
                 </div>
 
