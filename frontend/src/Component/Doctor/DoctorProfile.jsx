@@ -31,6 +31,10 @@ const DoctorProfile = () => {
                             <label htmlFor="">Years of Experience</label>
                             <input type="text" name='experience' value="10 years" readOnly />
                         </div>
+                        <div className={styles.formGroup}>
+                            <label htmlFor="">Professional Biography</label>
+                            <textarea name='bio' rows="3" value="Dr. Smith is a board-certified endocrinologist with over 10 years of experience in diabetes management and research." readOnly></textarea>
+                        </div>
                     </div>
                     <h3 className={styles.sectionTitle}>Education & Background</h3>
                     <div className={styles.grid}>
@@ -42,9 +46,16 @@ const DoctorProfile = () => {
                             <label htmlFor="">Medical School</label>
                             <input type="text" name='medical_school' value="Johns Hopkins University" readOnly />
                         </div>
+                        <div className={styles.formGroup}>
+                            <label htmlFor="">Graduation Year</label>
+                            <input type="text" name='graduation_year' value="2010" readOnly />
+                        </div>
+                        <div className={styles.formGroup}>
+                            <label htmlFor="">Awards & Achievements</label>
+                            <textarea name='awards' rows="3" value="Best Endocrinologist 2020" readOnly></textarea>
+                        </div>
                     </div>
                 </form>
-
             </div>
         </div>
     )
