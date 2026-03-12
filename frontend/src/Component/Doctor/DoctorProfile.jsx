@@ -23,6 +23,14 @@ const DoctorProfile = () => {
                             <label htmlFor="">Specialization</label>
                             <input type="text" name='specialization' value="Endocrinology" readOnly />
                         </div>
+                        <div className={styles.formGroup}>
+                            <label htmlFor="">Highest Degree</label>
+                            <input type="text" name='highest_degree' value="MBBS" readOnly />
+                        </div>
+                        <div className={styles.formGroup}>
+                            <label htmlFor="">Years of Experience</label>
+                            <input type="text" name='experience' value="10 years" readOnly />
+                        </div>
                     </div>
                 </form>
 
