@@ -104,14 +104,23 @@ const DoctorProfile = () => {
                         </div>
                         <div className={styles.formGroup}>
                             <label htmlFor="">Professional Biography</label>
+                            {edit ? (
+                                <textarea name='profBio' rows="3" value={profile.profBio} onChange={handleChange}></textarea>
+                            ) : (
                             <textarea name='profBio' rows="3" value={profile.profBio} readOnly></textarea>
+                            )}
+
                         </div>
                     </div>
                     <h3 className={styles.sectionTitle}>Education & Background</h3>
                     <div className={styles.grid}>
                         <div className={styles.formGroup}>
                             <label htmlFor="">Highest Degree</label>
+                            {edit ? (
+                                <input type="text" name='highestDegree' value={profile.highestDegree} onChange={handleChange} />
+                            ) : (
                             <input type="text" name='highestDegree' value={profile.highestDegree} readOnly />
+                            )}
                         </div>
                         <div className={styles.formGroup}>
                             <label htmlFor="">Medical School</label>
