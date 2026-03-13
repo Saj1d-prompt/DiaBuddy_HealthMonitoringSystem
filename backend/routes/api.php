@@ -37,4 +37,6 @@ Route::middleware(['auth:sanctum', 'admin'])->prefix('admin')->group(function ()
 
 Route::middleware(['auth:sanctum', 'doctor'])->prefix('doctor')->group(function () {
     Route::post('/updateDoctorProfile', [DoctorController::class, 'updateDoctorProfile']);
+    Route::get('/getDocProfileInfo', [DoctorController::class, 'getDocProfileInfo']);
+    Route::post('/updateDocProfileInfo', [DoctorController::class, 'updateDocProfileInfo']);
 });
