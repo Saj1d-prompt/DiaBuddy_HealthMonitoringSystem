@@ -22,6 +22,9 @@ const DoctorProfile = () => {
     useEffect(() => {
         fetchProfile();
     }, [])
+    const handleToggle = () => {
+        setEdit(!edit);
+    }
     const fetchProfile = async () => {
         const userInfo = JSON.parse(localStorage.getItem('userInfo'))
         try{
