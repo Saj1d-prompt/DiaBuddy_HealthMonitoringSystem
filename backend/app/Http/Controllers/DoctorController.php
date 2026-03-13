@@ -96,6 +96,18 @@ class DoctorController extends Controller
                 'errors' => $validatedData->errors()
             ], 400);
         }
-        
+        $doctor = Doctor::where('user_id', $request->user()->id)->first();
+        if (!$doctor) {
+            return response()->json([
+                'message' => 'Doctor profile not found',
+                'status' => 404
+            ], 404);
+        }else{
+            $doctor->update($request->all());
+            return response()->json([
+                'message' => 'Doctor profile updated successfully',
+                'status' => 200
+            ], 200);
+        }
     }
 }
