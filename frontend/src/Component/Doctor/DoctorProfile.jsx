@@ -2,6 +2,23 @@ import React from 'react'
 import styles from '../../Style/Profile.module.css'
 
 const DoctorProfile = () => {
+    const [edit, setEdit] = useState(false);
+    const [profile, setProfile] = useState({
+        department: '',
+        specialization: '',
+        license_number: '',
+        experience: '',
+        bio: '',
+        highest_degree: '',
+        medicalSchool: '',
+        graduation_year: '',
+        awards: '',
+        clinic_name: '',
+        consultation_hours: '',
+        phone_number: '',
+        address: '',
+        fee: ''
+    })
     return (
         <div>
             <div className={styles.container}>
@@ -63,7 +80,7 @@ const DoctorProfile = () => {
                         </div>
                         <div className={styles.formGroup}>
                             <label htmlFor="">Phone Number</label>
-                            <input type="text" name='phone' value="+1 234 567 8900" readOnly />
+                            <input type="text" name='phone_number' value="+1 234 567 8900" readOnly />
                         </div>
                         <div className={styles.formGroup}>
                             <label htmlFor="">Clinic Address</label>
