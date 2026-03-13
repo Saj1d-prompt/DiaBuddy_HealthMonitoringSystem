@@ -84,7 +84,11 @@ const DoctorProfile = () => {
                         </div>
                         <div className={styles.formGroup}>
                             <label htmlFor="">Specialization</label>
-                            <input type="text" name='specialization' value={profile.specialization} readOnly />
+                            {edit ? (
+                                <input type="text" name='specialization' value={profile.specialization} onChange={handleChange} />
+                            ) : (
+                                <input type="text" name='specialization' value={profile.specialization} readOnly />
+                            )}
                         </div>
                         <div className={styles.formGroup}>
                             <label htmlFor="">Medical License Number</label>
@@ -92,7 +96,11 @@ const DoctorProfile = () => {
                         </div>
                         <div className={styles.formGroup}>
                             <label htmlFor="">Years of Experience</label>
-                            <input type="text" name='yearOfExperience' value={profile.yearOfExperience} readOnly />
+                            {edit ? (
+                                <input type="number" name='yearOfExperience' value={profile.yearOfExperience} onChange={handleChange} />
+                            ) : (
+                                <input type="text" name='yearOfExperience' value={profile.yearOfExperience} readOnly />
+                            )}
                         </div>
                         <div className={styles.formGroup}>
                             <label htmlFor="">Professional Biography</label>
