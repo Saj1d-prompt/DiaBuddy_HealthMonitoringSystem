@@ -19,6 +19,25 @@ const DoctorProfile = () => {
         address: '',
         fee: ''
     })
+
+    const fetchProfile = async () => {
+        const userInfo = JSON.parse(localStorage.getItem('userInfo'))
+        try{
+            const res = await fetch(`${import.meta.env.VITE_API_KEY}/doctor/getDocProfileInfo`, {
+                method: 'GET',
+                headers: {
+                    'Authorization': `Bearer ${userInfo.token}`,
+                    'Content-Type': 'application/json'
+                }
+            })
+            const result = await res.json();
+            if (result.status === 200) {
+                setProfile(result.data);
+            }
+        } catch (error) {
+            console.error("Error fetching profile data:", error);
+        }
+    }
     return (
         <div>
             <div className={styles.container}>
