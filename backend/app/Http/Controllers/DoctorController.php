@@ -65,11 +65,37 @@ class DoctorController extends Controller
     public function getDocProfile(Request $request)
     {
         $doctor = Doctor::where('user_id', $request->user()->id)->first();
-        
+
         return response()->json([
             'message' => 'Doctor profile retrieved successfully',
             'status' => 200,
             'data' => $doctor
         ], 200);
+    }
+
+    public function updateDocProfile(Request $request)
+    {
+        $validatedData =Validator::make($request->all(), [
+            'department' => 'required|string',
+            'specialization' => 'nullable|string',
+            'yearOfExperience' => 'nullable|integer',
+            'profBio' => 'nullable|string',
+            'highestDegree' => 'required|string',
+            'medicalSchool' => 'required|string',
+            'gradYear' => 'required|integer',
+            'awards' => 'nullable|string',
+            'phoneNumber' => 'required|string',
+            'clinicName' => 'nullable|string',
+            'clinicAddress' => 'nullable|string',
+            'consultationHours' => 'required|string',
+            'fee' => 'required|numeric',
+        ]);
+        if ($validatedData->fails()) {
+            return response()->json([
+                'status' => 400,
+                'errors' => $validatedData->errors()
+            ], 400);
+        }
+        
     }
 }
