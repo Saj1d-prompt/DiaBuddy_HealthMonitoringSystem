@@ -7,17 +7,17 @@ const DoctorProfile = () => {
     const [profile, setProfile] = useState({
         department: '',
         specialization: '',
-        license_number: '',
-        experience: '',
-        bio: '',
-        highest_degree: '',
+        licenseNumber: '',
+        yearOfExperience: '',
+        profBio: '',
+        highestDegree: '',
         medicalSchool: '',
-        graduation_year: '',
+        gradYear: '',
         awards: '',
-        clinic_name: '',
-        consultation_hours: '',
-        phone_number: '',
-        address: '',
+        clinicName: '',
+        consultationHours: '',
+        phoneNumber: '',
+        clinicAddress: '',
         fee: ''
     })
     useEffect(() => {
@@ -28,7 +28,7 @@ const DoctorProfile = () => {
     }
     const fetchProfile = async () => {
         const userInfo = JSON.parse(localStorage.getItem('userInfo'))
-        try{
+        try {
             const res = await fetch(`${import.meta.env.VITE_API_KEY}/doctor/getDocProfileInfo`, {
                 method: 'GET',
                 headers: {
@@ -53,8 +53,8 @@ const DoctorProfile = () => {
                         <p>Update your medical credentials and clinic information</p>
                     </div>
                     <button onClick={handleToggle} className={styles.editButton}
-                                style={{ backgroundColor: edit ? '#64748b' : '#2563eb' }}>{edit ? 'Cancel' : 'Edit Profile'}
-                              </button>
+                        style={{ backgroundColor: edit ? '#64748b' : '#2563eb' }}>{edit ? 'Cancel' : 'Edit Profile'}
+                    </button>
                 </div>
                 <form>
                     <h3 className={styles.sectionTitle}>Academic & Professional</h3>
