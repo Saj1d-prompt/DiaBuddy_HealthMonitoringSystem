@@ -107,7 +107,7 @@ const DoctorProfile = () => {
                             {edit ? (
                                 <textarea name='profBio' rows="3" value={profile.profBio} onChange={handleChange}></textarea>
                             ) : (
-                            <textarea name='profBio' rows="3" value={profile.profBio} readOnly></textarea>
+                                <textarea name='profBio' rows="3" value={profile.profBio} readOnly></textarea>
                             )}
 
                         </div>
@@ -119,20 +119,32 @@ const DoctorProfile = () => {
                             {edit ? (
                                 <input type="text" name='highestDegree' value={profile.highestDegree} onChange={handleChange} />
                             ) : (
-                            <input type="text" name='highestDegree' value={profile.highestDegree} readOnly />
+                                <input type="text" name='highestDegree' value={profile.highestDegree} readOnly />
                             )}
                         </div>
                         <div className={styles.formGroup}>
                             <label htmlFor="">Medical School</label>
-                            <input type="text" name='medicalSchool' value={profile.medicalSchool} readOnly />
+                            {edit ? (
+                                <input type="text" name='medicalSchool' value={profile.medicalSchool} onChange={handleChange} />
+                            ) : (
+                                <input type="text" name='medicalSchool' value={profile.medicalSchool} readOnly />
+                            )}
                         </div>
                         <div className={styles.formGroup}>
                             <label htmlFor="">Graduation Year</label>
-                            <input type="text" name='gradYear' value={profile.gradYear} readOnly />
+                            {edit ? (
+                                <input type="number" name='gradYear' value={profile.gradYear} onChange={handleChange} />
+                            ) : (
+                                <input type="text" name='gradYear' value={profile.gradYear} readOnly />
+                            )}
                         </div>
                         <div className={styles.formGroup}>
                             <label htmlFor="">Awards & Achievements</label>
-                            <textarea name='awards' rows="3" value={profile.awards} readOnly></textarea>
+                            {edit ? (
+                                <textarea name='awards' rows="3" value={profile.awards} onChange={handleChange}></textarea>
+                            ) : (
+                                <textarea name='awards' rows="3" value={profile.awards} readOnly></textarea>
+                            )}
                         </div>
                     </div>
                     <h3 className={styles.sectionTitle}>Clinic & Contact Details</h3>
