@@ -62,4 +62,8 @@ class DoctorController extends Controller
         ], 200);
 
     }
+    public function getDocProfile(Request $request)
+    {
+        //code
+    }
 }
