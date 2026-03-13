@@ -62,7 +62,7 @@ class DoctorController extends Controller
         ], 200);
 
     }
-    public function getDocProfile(Request $request)
+    public function getDocProfileInfo(Request $request)
     {
         $doctor = Doctor::where('user_id', $request->user()->id)->first();
 
@@ -73,7 +73,7 @@ class DoctorController extends Controller
         ], 200);
     }
 
-    public function updateDocProfile(Request $request)
+    public function updateDocProfileInfo(Request $request)
     {
         $validatedData =Validator::make($request->all(), [
             'department' => 'required|string',
