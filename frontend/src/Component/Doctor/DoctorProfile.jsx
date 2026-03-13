@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from '../../Style/Profile.module.css'
+import { useEffect, useState } from 'react';
 
 const DoctorProfile = () => {
     const [edit, setEdit] = useState(false);
