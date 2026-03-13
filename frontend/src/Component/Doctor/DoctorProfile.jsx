@@ -51,7 +51,9 @@ const DoctorProfile = () => {
                         <h1>Doctor Profile</h1>
                         <p>Update your medical credentials and clinic information</p>
                     </div>
-                    <button className={styles.editButton}>Edit Profile</button>
+                    <button onClick={handleToggle} className={styles.editButton}
+                                style={{ backgroundColor: edit ? '#64748b' : '#2563eb' }}>{edit ? 'Cancel' : 'Edit Profile'}
+                              </button>
                 </div>
                 <form>
                     <h3 className={styles.sectionTitle}>Academic & Professional</h3>
