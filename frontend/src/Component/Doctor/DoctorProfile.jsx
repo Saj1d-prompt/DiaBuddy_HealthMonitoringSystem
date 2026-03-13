@@ -48,6 +48,9 @@ const DoctorProfile = () => {
             console.error("Error fetching profile data:", error);
         }
     }
+    const handleSubmit = async (e) => {
+        //code
+    }
     return (
         <div>
             <div className={styles.container}>
@@ -60,12 +63,24 @@ const DoctorProfile = () => {
                         style={{ backgroundColor: edit ? '#64748b' : '#2563eb' }}>{edit ? 'Cancel' : 'Edit Profile'}
                     </button>
                 </div>
-                <form>
+                <form onSubmit={handleSubmit}>
                     <h3 className={styles.sectionTitle}>Academic & Professional</h3>
                     <div className={styles.grid}>
                         <div className={styles.formGroup}>
                             <label htmlFor="">Department</label>
-                            <input type="text" name='department' value={profile.department} readOnly />
+                            {edit ? (
+                                <select id="department" onChange={handleChange} name="department" required >
+                                    <option value="">Select a department</option>
+                                    <option value="cardiology">Endocrinology</option>
+                                    <option value="neurology">Diabetology</option>
+                                    <option value="pediatrics">Nutrition</option>
+                                    <option value="orthopedics">Podiatry</option>
+                                    <option value="dermatology">Nephrology</option>
+                                    <option value="cardiology">Cardiology</option>
+                                </select>
+                            ) : (
+                                <input type="text" name='department' value={profile.department} readOnly />
+                            )}
                         </div>
                         <div className={styles.formGroup}>
                             <label htmlFor="">Specialization</label>
