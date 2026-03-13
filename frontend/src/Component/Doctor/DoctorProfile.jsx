@@ -69,30 +69,30 @@ const DoctorProfile = () => {
                         </div>
                         <div className={styles.formGroup}>
                             <label htmlFor="">Medical License Number</label>
-                            <input type="text" name='license_number' value={profile.license_number} readOnly />
+                            <input type="text" name='licenseNumber' value={profile.licenseNumber} readOnly />
                         </div>
                         <div className={styles.formGroup}>
                             <label htmlFor="">Years of Experience</label>
-                            <input type="text" name='experience' value={profile.experience} readOnly />
+                            <input type="text" name='yearOfExperience' value={profile.yearOfExperience} readOnly />
                         </div>
                         <div className={styles.formGroup}>
                             <label htmlFor="">Professional Biography</label>
-                            <textarea name='bio' rows="3" value={profile.bio} readOnly></textarea>
+                            <textarea name='profBio' rows="3" value={profile.profBio} readOnly></textarea>
                         </div>
                     </div>
                     <h3 className={styles.sectionTitle}>Education & Background</h3>
                     <div className={styles.grid}>
                         <div className={styles.formGroup}>
                             <label htmlFor="">Highest Degree</label>
-                            <input type="text" name='highest_degree' value={profile.highest_degree} readOnly />
+                            <input type="text" name='highestDegree' value={profile.highestDegree} readOnly />
                         </div>
                         <div className={styles.formGroup}>
                             <label htmlFor="">Medical School</label>
-                            <input type="text" name='medical_school' value={profile.medical_school} readOnly />
+                            <input type="text" name='medicalSchool' value={profile.medicalSchool} readOnly />
                         </div>
                         <div className={styles.formGroup}>
                             <label htmlFor="">Graduation Year</label>
-                            <input type="text" name='graduation_year' value={profile.graduation_year} readOnly />
+                            <input type="text" name='gradYear' value={profile.gradYear} readOnly />
                         </div>
                         <div className={styles.formGroup}>
                             <label htmlFor="">Awards & Achievements</label>
@@ -103,19 +103,19 @@ const DoctorProfile = () => {
                     <div className={styles.grid}>
                         <div className={styles.formGroup}>
                             <label htmlFor="">Clinic Name</label>
-                            <input type="text" name='clinic_name' value={profile.clinic_name} readOnly />
+                            <input type="text" name='clinicName' value={profile.clinicName} readOnly />
                         </div>
                         <div className={styles.formGroup}>
                             <label htmlFor="">Phone Number</label>
-                            <input type="text" name='phone_number' value={profile.phone_number} readOnly />
+                            <input type="text" name='phoneNumber' value={profile.phoneNumber} readOnly />
                         </div>
                         <div className={styles.formGroup}>
                             <label htmlFor="">Clinic Address</label>
-                            <textarea name='clinic_address' rows="3" value={profile.clinic_address} readOnly></textarea>
+                            <textarea name='clinicAddress' rows="3" value={profile.clinicAddress} readOnly></textarea>
                         </div>
                         <div className={styles.formGroup}>
                             <label htmlFor="">Consultation Hours</label>
-                            <textarea name='consultation_hours' rows="3" value={profile.consultation_hours} readOnly></textarea>
+                            <textarea name='consultationHours' rows="3" value={profile.consultationHours} readOnly></textarea>
                         </div>
                         <div className={styles.formGroup}>
                             <label htmlFor="">Consultation Fee</label>
