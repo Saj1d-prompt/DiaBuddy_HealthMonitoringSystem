@@ -64,6 +64,12 @@ class DoctorController extends Controller
     }
     public function getDocProfile(Request $request)
     {
-        //code
+        $doctor = Doctor::where('user_id', $request->user()->id)->first();
+        
+        return response()->json([
+            'message' => 'Doctor profile retrieved successfully',
+            'status' => 200,
+            'data' => $doctor
+        ], 200);
     }
 }
