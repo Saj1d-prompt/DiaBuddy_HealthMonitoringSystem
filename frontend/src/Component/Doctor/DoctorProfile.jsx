@@ -19,7 +19,9 @@ const DoctorProfile = () => {
         address: '',
         fee: ''
     })
-
+    useEffect(() => {
+        fetchProfile();
+    }, [])
     const fetchProfile = async () => {
         const userInfo = JSON.parse(localStorage.getItem('userInfo'))
         try{
