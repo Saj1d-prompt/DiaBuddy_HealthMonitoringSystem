@@ -20,6 +20,10 @@ const DoctorProfile = () => {
         clinicAddress: '',
         fee: ''
     })
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setProfile(prev => ({ ...prev, [name]: value }));
+    }
     useEffect(() => {
         fetchProfile();
     }, [])
