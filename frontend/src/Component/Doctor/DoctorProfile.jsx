@@ -151,11 +151,19 @@ const DoctorProfile = () => {
                     <div className={styles.grid}>
                         <div className={styles.formGroup}>
                             <label htmlFor="">Clinic Name</label>
+                        {edit ? (
+                            <input type="text" name='clinicName' value={profile.clinicName} onChange={handleChange} />
+                        ) : (
                             <input type="text" name='clinicName' value={profile.clinicName} readOnly />
+                        )}
                         </div>
                         <div className={styles.formGroup}>
                             <label htmlFor="">Phone Number</label>
+                        {edit ? (
+                            <input type="text" name='phoneNumber' value={profile.phoneNumber} onChange={handleChange} />
+                        ) : (
                             <input type="text" name='phoneNumber' value={profile.phoneNumber} readOnly />
+                        )}
                         </div>
                         <div className={styles.formGroup}>
                             <label htmlFor="">Clinic Address</label>
