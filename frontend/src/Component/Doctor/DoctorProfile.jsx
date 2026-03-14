@@ -60,6 +60,11 @@ const DoctorProfile = () => {
                 },
                 body: JSON.stringify(profile)
             })
+            const result = await res.json();
+            if (result.status === 200) {
+                setEdit(false);
+                fetchProfile();
+            }
             
         } catch (error) {
             console.error("Error updating and fetching profile data:", error);
