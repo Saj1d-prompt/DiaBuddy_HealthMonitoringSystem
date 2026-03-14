@@ -51,9 +51,9 @@ const DoctorProfile = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         const userInfo = JSON.parse(localStorage.getItem('userInfo'));
-        try{
-
-        }catch(error){
+        try {
+            
+        } catch (error) {
             console.error("Error updating and fetching profile data:", error);
         }
     }
@@ -157,43 +157,43 @@ const DoctorProfile = () => {
                     <div className={styles.grid}>
                         <div className={styles.formGroup}>
                             <label htmlFor="">Clinic Name</label>
-                        {edit ? (
-                            <input type="text" name='clinicName' value={profile.clinicName} onChange={handleChange} />
-                        ) : (
-                            <input type="text" name='clinicName' value={profile.clinicName} readOnly />
-                        )}
+                            {edit ? (
+                                <input type="text" name='clinicName' value={profile.clinicName} onChange={handleChange} />
+                            ) : (
+                                <input type="text" name='clinicName' value={profile.clinicName} readOnly />
+                            )}
                         </div>
                         <div className={styles.formGroup}>
                             <label htmlFor="">Phone Number</label>
-                        {edit ? (
-                            <input type="text" name='phoneNumber' value={profile.phoneNumber} onChange={handleChange} />
-                        ) : (
-                            <input type="text" name='phoneNumber' value={profile.phoneNumber} readOnly />
-                        )}
+                            {edit ? (
+                                <input type="text" name='phoneNumber' value={profile.phoneNumber} onChange={handleChange} />
+                            ) : (
+                                <input type="text" name='phoneNumber' value={profile.phoneNumber} readOnly />
+                            )}
                         </div>
                         <div className={styles.formGroup}>
                             <label htmlFor="">Clinic Address</label>
-                        {edit ? (
-                            <textarea name='clinicAddress' rows="3" value={profile.clinicAddress} onChange={handleChange}></textarea>
-                        ) : (
-                            <textarea name='clinicAddress' rows="3" value={profile.clinicAddress} readOnly></textarea>
-                        )}
+                            {edit ? (
+                                <textarea name='clinicAddress' rows="3" value={profile.clinicAddress} onChange={handleChange}></textarea>
+                            ) : (
+                                <textarea name='clinicAddress' rows="3" value={profile.clinicAddress} readOnly></textarea>
+                            )}
                         </div>
                         <div className={styles.formGroup}>
                             <label htmlFor="">Consultation Hours</label>
-                        {edit ? (
-                            <textarea name='consultationHours' rows="3" value={profile.consultationHours} onChange={handleChange}></textarea>
-                        ) : (
-                            <textarea name='consultationHours' rows="3" value={profile.consultationHours} readOnly></textarea>
-                        )}
+                            {edit ? (
+                                <textarea name='consultationHours' rows="3" value={profile.consultationHours} onChange={handleChange}></textarea>
+                            ) : (
+                                <textarea name='consultationHours' rows="3" value={profile.consultationHours} readOnly></textarea>
+                            )}
                         </div>
                         <div className={styles.formGroup}>
                             <label htmlFor="">Consultation Fee</label>
-                        {edit ? (
-                            <input type="text" name='fee' value={profile.fee} onChange={handleChange} />
-                        ) : (
-                            <input type="text" name='fee' value={profile.fee} readOnly />
-                        )}
+                            {edit ? (
+                                <input type="text" name='fee' value={profile.fee} onChange={handleChange} />
+                            ) : (
+                                <input type="text" name='fee' value={profile.fee} readOnly />
+                            )}
                         </div>
                     </div>
                     <button type='submit' className={styles.saveButton}>Save Changes</button>
