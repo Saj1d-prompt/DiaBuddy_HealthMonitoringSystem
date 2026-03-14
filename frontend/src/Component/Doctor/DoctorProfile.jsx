@@ -51,6 +51,11 @@ const DoctorProfile = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         const userInfo = JSON.parse(localStorage.getItem('userInfo'));
+        try{
+
+        }catch(error){
+            console.error("Error updating and fetching profile data:", error);
+        }
     }
     return (
         <div>
