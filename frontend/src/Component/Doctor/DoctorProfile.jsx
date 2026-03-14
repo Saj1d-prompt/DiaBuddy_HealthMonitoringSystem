@@ -69,14 +69,14 @@ const DoctorProfile = () => {
                         <div className={styles.formGroup}>
                             <label htmlFor="">Department</label>
                             {edit ? (
-                                <select id="department" onChange={handleChange} name="department" required >
+                                <select id="department" onChange={handleChange} name="department" value={profile.department} required >
                                     <option value="">Select a department</option>
-                                    <option value="cardiology">Endocrinology</option>
-                                    <option value="neurology">Diabetology</option>
-                                    <option value="pediatrics">Nutrition</option>
-                                    <option value="orthopedics">Podiatry</option>
-                                    <option value="dermatology">Nephrology</option>
-                                    <option value="cardiology">Cardiology</option>
+                                    <option value="Endocrinology">Endocrinology</option>
+                                    <option value="Neurology">Neurology</option>
+                                    <option value="Pediatrics">Pediatrics</option>
+                                    <option value="Orthopedics">Orthopedics</option>
+                                    <option value="Dermatology">Dermatology</option>
+                                    <option value="Cardiology">Cardiology</option>
                                 </select>
                             ) : (
                                 <input type="text" name='department' value={profile.department} readOnly />
