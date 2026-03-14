@@ -52,6 +52,14 @@ const DoctorProfile = () => {
         e.preventDefault();
         const userInfo = JSON.parse(localStorage.getItem('userInfo'));
         try {
+            const res = await fetch(`${import.meta.env.VITE_API_KEY}/doctor/updateDocProfileInfo`, {
+                method: 'POST',
+                headers: {
+                    'Authorization': `Bearer ${userInfo.token}`,
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(profile)
+            })
             
         } catch (error) {
             console.error("Error updating and fetching profile data:", error);
