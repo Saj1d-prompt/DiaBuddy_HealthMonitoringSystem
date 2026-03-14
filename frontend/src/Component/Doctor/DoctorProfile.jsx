@@ -49,7 +49,7 @@ const DoctorProfile = () => {
         }
     }
     const handleSubmit = async (e) => {
-        //code
+        e.preventDefault();
     }
     return (
         <div>
