@@ -17,6 +17,7 @@ const SearchDoctor = () => {
               <option value="Dermatology">Dermatology</option>
               <option value="Cardiology">Cardiology</option>
             </select>
+            <input type="text" placeholder="Search by location or city" />
           </div>
         </div>
       </div>
