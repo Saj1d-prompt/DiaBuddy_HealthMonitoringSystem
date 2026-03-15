@@ -1,5 +1,6 @@
 import React from 'react'
 import Profile from './Profile'
+import SearchDoctor from './SearchDoctor'
 
 const PatientDashboard = () => {
   return (
@@ -11,6 +12,7 @@ const PatientDashboard = () => {
         <button onClick={() => window.location.href = '/viewreports'}>
           View Reports
         </button>
+        <SearchDoctor />
     </div>
   )
 }
