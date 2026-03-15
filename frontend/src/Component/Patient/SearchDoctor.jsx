@@ -20,6 +20,12 @@ const SearchDoctor = () => {
             <input type="text" placeholder="Search by location or city" />
           </div>
         </div>
+        <div className={styles.doctorList}>
+          <div className={styles.doctorCard}>
+            <h3>Dr. John Smith</h3>
+            <span>Endocrinologist</span>
+          </div>
+        </div>
       </div>
     </div>
   )
