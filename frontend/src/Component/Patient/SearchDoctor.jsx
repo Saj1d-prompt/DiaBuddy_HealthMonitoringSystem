@@ -25,6 +25,10 @@ const SearchDoctor = () => {
             <h3>Dr. John Smith</h3>
             <span>Endocrinologist</span>
           </div>
+          <p><strong>Experience:</strong> 10 Years</p>
+          <p><strong>Clinic:</strong> Diabetes Center</p>
+          <p><strong>Fee:</strong> $100</p>
+          <button className={styles.viewBtn}>View Profile</button>
         </div>
       </div>
     </div>
