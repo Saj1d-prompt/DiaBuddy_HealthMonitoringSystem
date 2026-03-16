@@ -1,6 +1,7 @@
 import React from 'react'
 import Profile from './Profile'
 import SearchDoctor from './SearchDoctor'
+import CheckDoctorProfile from './CheckDoctorProfile'
 
 const PatientDashboard = () => {
   return (
@@ -13,6 +14,7 @@ const PatientDashboard = () => {
           View Reports
         </button>
         <SearchDoctor />
+        <CheckDoctorProfile />
     </div>
   )
 }
