@@ -74,3 +74,18 @@
     margin-bottom: 5px;
     color: #4b5563;
 }
+
+.bookBtn{
+    width: 100%;
+    padding: 15px;
+    background: #2563eb;
+    margin-top: 15px;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+}
+.bookBtn:hover{
+    background: #1e40af;
+}
