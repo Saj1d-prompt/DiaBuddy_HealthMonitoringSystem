@@ -34,6 +34,9 @@ const CheckDoctorProfile = () => {
             <p><strong>Hours:</strong> 9:00 AM - 5:00 PM</p>
         </div>
       </div>
+      <div>
+        <button className={styles.bookBtn}>Book Appointment</button>
+      </div>
     </div>
   )
 }
