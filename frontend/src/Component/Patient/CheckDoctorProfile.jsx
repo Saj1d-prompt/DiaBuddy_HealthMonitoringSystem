@@ -13,6 +13,14 @@ const CheckDoctorProfile = () => {
             <h4>Professional Bio</h4>
             <p>Hiiiiiiiiiiiiiii</p>
         </div>
+        <div className={styles.infoGrid}>
+            <div>
+                <h4>Education</h4>
+                <p>MBBS - A Medical School</p>
+                <small>Class of 2010</small>
+            </div>
+        </div>
+        
       </div>
     </div>
   )
