@@ -9,7 +9,7 @@ const CheckDoctorProfile = () => {
                     <button className={styles.closeBtn}>&times;</button>
                     <div className={styles.header}>
                         <h2>Dr. John Smith</h2>
-                        <span>Endocrinologist</span>
+                        <span className={styles.badge}>Endocrinologist</span>
                     </div>
                     <div className={styles.infoSection}>
                         <div>
