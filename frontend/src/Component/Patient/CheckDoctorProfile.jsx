@@ -28,7 +28,7 @@ const CheckDoctorProfile = () => {
                             </div>
                             <div>
                                 <h4>Consultation Fee</h4>
-                                <p>1000 tk</p>
+                                <p className={styles.fee}>1000 tk</p>
                             </div>
                         </div>
                         <div className={styles.clinicSection}>
