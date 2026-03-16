@@ -19,6 +19,14 @@ const CheckDoctorProfile = () => {
                 <p>MBBS - A Medical School</p>
                 <small>Class of 2010</small>
             </div>
+            <div>
+                <h4>Experience</h4>
+                <p>10 Years</p>
+            </div>
+            <div>
+                <h4>Consultation Fee</h4>
+                <p>1000 tk</p>
+            </div>
         </div>
         
       </div>
