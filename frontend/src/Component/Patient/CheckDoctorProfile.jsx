@@ -28,7 +28,11 @@ const CheckDoctorProfile = () => {
                 <p>1000 tk</p>
             </div>
         </div>
-        
+        <div className={styles.clinicSection}>
+            <h4>Clinic: Dr. Smith's Clinic</h4>
+            <p>123 Main Street, City, State 12345</p>
+            <p><strong>Hours:</strong> 9:00 AM - 5:00 PM</p>
+        </div>
       </div>
     </div>
   )
