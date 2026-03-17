@@ -8,13 +8,13 @@ const CheckDoctorProfile = ({ doctor, onClose }) => {
                 <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
                     <button className={styles.closeBtn} onClick={onClose}>&times;</button>
                     <div className={styles.header}>
-                        <h2>Dr. John Smith</h2>
-                        <span className={styles.badge}>Endocrinologist</span>
+                        <h2>{doctor.user.name}</h2>
+                        <span className={styles.badge}>{doctor.department}</span>
                     </div>
                     <div className={styles.infoSection}>
                         <div>
                             <h4>Professional Bio</h4>
-                            <p>Hiiiiiiiiiiiiiii</p>
+                            <p>{doctor.profBio}</p>
                         </div>
                         <div className={styles.infoGrid}>
                             <div>
