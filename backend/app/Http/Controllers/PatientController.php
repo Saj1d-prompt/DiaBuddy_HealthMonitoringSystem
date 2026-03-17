@@ -10,7 +10,7 @@ class PatientController extends Controller
     public function searchDoctor(Request $request)
     {
         $query = Doctor::with(['user'=>function($q){
-            $q->select('id', 'name');
+            $q->select('id', 'name','department','experience','clinicName','fee');
         }]);
 
         if($request->filled('department')) {
