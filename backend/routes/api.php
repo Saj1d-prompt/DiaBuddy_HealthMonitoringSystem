@@ -10,6 +10,7 @@ use App\Http\Controllers\BloodSugarReadingsController;
 use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\MedicalReportController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\PatientController;
 
 Route::post('/login', [AccountController::class, 'login']);
 
@@ -22,6 +23,8 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('/storebsReadings', [BloodSugarReadingsController::class, 'storeReadings']);
     Route::post('/uploadReport', [MedicalReportController::class, 'storeReport']);
     Route::get('/getReport', [MedicalReportController::class, 'getReport']);
+    Route::get('/searchDoctor', [PatientController::class, 'searchDoctor']);
+    Route::get('/getDoctorProfile/{doctorId}', [PatientController::class, 'getDoctorProfile']);
 });
 
 Route::get('/user', function (Request $request) {
