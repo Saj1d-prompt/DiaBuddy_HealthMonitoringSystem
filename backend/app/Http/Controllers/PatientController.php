@@ -12,5 +12,13 @@ class PatientController extends Controller
         $query = Doctor::with(['user'=>function($q){
             $q->select('id', 'name');
         }]);
+
+        if($request->filled('department')) {
+            $query->where('department', $request->department);
+        }
+
+        if($request->filled('city')) {
+            $query->where('clinicAddress', 'like', '%' . $request->city . '%');
+        }
     }
 }
