@@ -26,4 +26,9 @@ class PatientController extends Controller
             'data' => $query->get()
         ]);
     }
+
+    public function getDoctorProfile(Request $request, $doctorId)
+    {
+        
+    }
 }
