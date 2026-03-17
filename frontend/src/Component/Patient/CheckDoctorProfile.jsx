@@ -1,12 +1,12 @@
 import React from 'react'
 import styles from '../../Style/CheckDoctorProfile.module.css'
 
-const CheckDoctorProfile = () => {
+const CheckDoctorProfile = ({ doctor, onClose }) => {
     return (
         <div>
-            <div className={styles.modalOverlay}>
-                <div className={styles.modalContent}>
-                    <button className={styles.closeBtn}>&times;</button>
+            <div className={styles.modalOverlay} onClick={onClose}>
+                <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
+                    <button className={styles.closeBtn} onClick={onClose}>&times;</button>
                     <div className={styles.header}>
                         <h2>Dr. John Smith</h2>
                         <span className={styles.badge}>Endocrinologist</span>

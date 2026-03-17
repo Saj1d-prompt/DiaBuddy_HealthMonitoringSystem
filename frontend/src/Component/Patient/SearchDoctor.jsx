@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import styles from '../../Style/SearchDoctor.module.css'
 import { useState } from 'react';
+import CheckDoctorProfile from './CheckDoctorProfile';
 
 const SearchDoctor = () => {
   const [doctor, setDoctor] = useState([]);
