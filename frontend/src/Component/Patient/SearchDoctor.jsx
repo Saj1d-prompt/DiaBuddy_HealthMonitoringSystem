@@ -15,7 +15,10 @@ const SearchDoctor = () => {
         <div className={styles.header}>
           <h1>Find a Diabetes Specialist</h1>
           <div className={styles.searchBox}>
-            <select>
+            <select
+              value={filter.department}
+              onChange={(e) => setFilter({ ...filter, department: e.target.value })}
+            >
               <option value="">Select Department</option>
               <option value="Endocrinology">Endocrinology</option>
               <option value="Neurology">Neurology</option>
@@ -24,7 +27,12 @@ const SearchDoctor = () => {
               <option value="Dermatology">Dermatology</option>
               <option value="Cardiology">Cardiology</option>
             </select>
-            <input type="text" placeholder="Search by location or city" />
+            <input
+              type="text"
+              placeholder="Search by location or city"
+              value={filter.city}
+              onChange={(e) => setFilter({ ...filter, city: e.target.value })}
+            />
           </div>
         </div>
         <div className={styles.doctorList}>
