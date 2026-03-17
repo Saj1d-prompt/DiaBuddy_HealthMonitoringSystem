@@ -58,14 +58,17 @@ const SearchDoctor = () => {
         </div>
         <div className={styles.doctorList}>
           <div className={styles.doctorCard}>
-            <h3>Dr. John Smith</h3>
-            <span>Endocrinologist</span>
-            <p><strong>Experience:</strong> 10 Years</p>
-            <p><strong>Clinic:</strong> Diabetes Center</p>
-            <p><strong>Fee:</strong> $100</p>
-            <button className={styles.viewBtn}>View Profile</button>
+          {doctor.map((doc) => (
+            <div key={doc.id} className={styles.doctorCard}>
+              <h3>{doc.user.name}</h3>
+              <span>{doc.department}</span>
+              <p><strong>Experience:</strong> {doc.yearOfExperience} Years</p>
+              <p><strong>Clinic:</strong> {doc.clinicAddress}</p>
+              <p><strong>Fee:</strong> {doc.fee} Taka</p>
+              <button className={styles.viewBtn}>View Profile</button>
+            </div>
+          ))}
           </div>
-
         </div>
       </div>
     </div>
