@@ -65,12 +65,15 @@ const SearchDoctor = () => {
               <p><strong>Experience:</strong> {doc.yearOfExperience} Years</p>
               <p><strong>Clinic:</strong> {doc.clinicAddress}</p>
               <p><strong>Fee:</strong> {doc.fee} Taka</p>
-              <button className={styles.viewBtn}>View Profile</button>
+              <button onClick={() => setSelectDoc(doc)} className={styles.viewBtn}>View Profile</button>
             </div>
           ))}
           </div>
         </div>
       </div>
+      {selectDoc && (
+        <CheckDoctorProfile doctor={selectDoc} onClose={() => setSelectDoc(null)} />
+      )}
     </div>
   )
 }
