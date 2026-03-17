@@ -19,16 +19,16 @@ const CheckDoctorProfile = ({ doctor, onClose }) => {
                         <div className={styles.infoGrid}>
                             <div>
                                 <h4>Education</h4>
-                                <p>MBBS - A Medical School</p>
-                                <small>Class of 2010</small>
+                                <p>{doctor.highestDegree} - {doctor.medicalSchool}</p>
+                                <small>Class of {doctor.gradYear}</small>
                             </div>
                             <div>
                                 <h4>Experience</h4>
-                                <p>10 Years</p>
+                                <p>{doctor.yearOfExperience} Years</p>
                             </div>
                             <div>
                                 <h4>Consultation Fee</h4>
-                                <p className={styles.fee}>1000 tk</p>
+                                <p className={styles.fee}>{doctor.fee} tk</p>
                             </div>
                         </div>
                         <div className={styles.clinicSection}>
