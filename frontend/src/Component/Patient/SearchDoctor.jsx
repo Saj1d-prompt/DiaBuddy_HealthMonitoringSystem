@@ -9,6 +9,14 @@ const SearchDoctor = () => {
     department: '',
     city: ''
   });
+  const fetchDoctor = async () => {
+    const userInfo = JSON.parse(localStorage.getItem('userInfo'));
+    try{
+    
+    } catch (error) {
+      console.error("Error fetching doctor data:", error);
+    }
+  }
   return (
     <div>
       <div className={styles.container}>
