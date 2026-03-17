@@ -20,5 +20,10 @@ class PatientController extends Controller
         if($request->filled('city')) {
             $query->where('clinicAddress', 'like', '%' . $request->city . '%');
         }
+
+        return response()->json([
+            'status' => 200,
+            'data' => $query->get()
+        ]);
     }
 }
