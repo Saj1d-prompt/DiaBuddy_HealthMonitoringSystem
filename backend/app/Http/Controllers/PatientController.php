@@ -27,8 +27,20 @@ class PatientController extends Controller
         ]);
     }
 
-    public function getDoctorProfile(Request $request, $doctorId)
+    public function getDoctorProfile($doctorId)
     {
-        
+        $doctor = Doctor::with('user')->find($doctorId);
+
+        if (!$doctor) {
+            return response()->json([
+                'status' => 404,
+                'message' => 'Doctor not found'
+            ], 404);
+        }
+
+        return response()->json([
+            'status' => 200,
+            'data' => $doctor
+        ]);
     }
 }
