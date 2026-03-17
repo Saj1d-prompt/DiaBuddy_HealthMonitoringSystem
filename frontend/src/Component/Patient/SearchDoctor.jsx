@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styles from '../../Style/SearchDoctor.module.css'
 import { useState } from 'react';
 
@@ -27,6 +27,9 @@ const SearchDoctor = () => {
       console.error("Error fetching doctor data:", error);
     }
   }
+  useEffect(() => {
+    fetchDoctor();
+  }, [filter])
   return (
     <div>
       <div className={styles.container}>
