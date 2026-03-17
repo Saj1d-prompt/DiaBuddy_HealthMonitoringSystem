@@ -14,7 +14,6 @@ const PatientDashboard = () => {
           View Reports
         </button>
         <SearchDoctor />
-        <CheckDoctorProfile />
     </div>
   )
 }
