@@ -32,9 +32,9 @@ const CheckDoctorProfile = ({ doctor, onClose }) => {
                             </div>
                         </div>
                         <div className={styles.clinicSection}>
-                            <h4>Clinic: Dr. Smith's Clinic</h4>
-                            <p>123 Main Street, City, State 12345</p>
-                            <p><strong>Hours:</strong> 9:00 AM - 5:00 PM</p>
+                            <h4>Clinic: {doctor.clinicName}</h4>
+                            <p>{doctor.clinicAddress}</p>
+                            <p><strong>Hours:</strong> {doctor.consultationHours}</p>
                         </div>
                     </div>
                     <div>
