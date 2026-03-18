@@ -43,3 +43,16 @@
     border-color: #2563eb;
     box-shadow: 0 0 6px rgba(37, 99, 235, 0.25);
 }
+.hospitalList{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 25px;
+}
+.hospitalCard{
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+    transition: 0.3s;
+    text-align: center;
+}
