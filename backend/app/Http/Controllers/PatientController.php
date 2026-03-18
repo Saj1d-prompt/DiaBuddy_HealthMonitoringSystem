@@ -57,5 +57,10 @@ class PatientController extends Controller
         if ($request->filled('city')) {
             $query->where('city', 'like', '%' . $request->city . '%');
         }
+
+        return response()->json([
+            'status' => 200,
+            'data' => $query->get()
+        ]);
     }
 }
