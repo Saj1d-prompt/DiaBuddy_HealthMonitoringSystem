@@ -12,6 +12,7 @@ const SearchHospital = () => {
                             <option value="hospital">Hospital</option>
                             <option value="diagnosis_center">Diagnosis Center</option>
                         </select>
+                        <input type="text" placeholder="Enter city" />
                     </div>
                 </div>
             </div>
