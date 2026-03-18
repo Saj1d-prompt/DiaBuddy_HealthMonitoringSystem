@@ -43,4 +43,7 @@ class PatientController extends Controller
             'data' => $doctor
         ]);
     }
+    public function searchHospital(){
+        
+    }
 }
