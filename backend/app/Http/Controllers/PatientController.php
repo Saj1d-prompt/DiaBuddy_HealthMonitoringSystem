@@ -49,5 +49,13 @@ class PatientController extends Controller
         $query = Hospital::with(['user' => function ($q) {
             $q->select('id', 'name');
         }]);
+
+        if ($request->filled('type')) {
+            $query->where('type', $request->type);
+        }
+
+        if ($request->filled('city')) {
+            $query->where('city', 'like', '%' . $request->city . '%');
+        }
     }
 }
