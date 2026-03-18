@@ -2,6 +2,7 @@ import React from 'react'
 import Profile from './Profile'
 import SearchDoctor from './SearchDoctor'
 import CheckDoctorProfile from './CheckDoctorProfile'
+import SearchHospital from './SearchHospital'
 
 const PatientDashboard = () => {
   return (
@@ -13,7 +14,7 @@ const PatientDashboard = () => {
         <button onClick={() => window.location.href = '/viewreports'}>
           View Reports
         </button>
-        <SearchDoctor />
+        <SearchHospital />
     </div>
   )
 }
