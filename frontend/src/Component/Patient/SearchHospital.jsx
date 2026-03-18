@@ -15,6 +15,13 @@ const SearchHospital = () => {
                         </select>
                         <input type="text" placeholder="Enter city" />
                     </div>
+                    <div className={styles.hospitalList}>
+                        <h3>A Medical Hospital</h3>
+                        <span>Type: Hospital</span>
+                        <p>Address: Dhaka Bangladesh</p>
+                        <p>Contact: 0123456789</p>
+                        <p>email: example@example.com</p>
+                    </div>
                 </div>
             </div>
         </div>
