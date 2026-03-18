@@ -3,21 +3,22 @@
 namespace App\Http\Controllers;
 
 use App\Models\Doctor;
+use App\Models\Hospital;
 use Illuminate\Http\Request;
 
 class PatientController extends Controller
 {
     public function searchDoctor(Request $request)
     {
-        $query = Doctor::with(['user'=>function($q){
+        $query = Doctor::with(['user' => function ($q) {
             $q->select('id', 'name');
         }]);
 
-        if($request->filled('department')) {
+        if ($request->filled('department')) {
             $query->where('department', $request->department);
         }
 
-        if($request->filled('city')) {
+        if ($request->filled('city')) {
             $query->where('clinicAddress', 'like', '%' . $request->city . '%');
         }
 
@@ -43,7 +44,10 @@ class PatientController extends Controller
             'data' => $doctor
         ]);
     }
-    public function searchHospital(){
-        
+    public function searchHospital(Request $request)
+    {
+        $query = Hospital::with(['user' => function ($q) {
+            $q->select('id', 'name');
+        }]);
     }
 }
