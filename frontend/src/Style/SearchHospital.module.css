@@ -56,3 +56,22 @@
     transition: 0.3s;
     text-align: center;
 }
+.hospitalCard:hover{
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+.hospitalCard h3{
+    margin-bottom: 5px;
+    color: #0f172a;
+}
+.hospitalCard span{
+    display: block;
+    color: #2563eb;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.hospitalCard p{
+    margin: 5px 0;
+    color: #475569;
+    font-size: 14px;
+}
