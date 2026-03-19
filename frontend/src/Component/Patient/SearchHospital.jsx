@@ -8,6 +8,9 @@ const SearchHospital = () => {
         type: '',
         city: ''
     });
+    const fetchHospital = async () => {
+        //code
+    }
     return (
         <div>
             <div className={styles.container}>
