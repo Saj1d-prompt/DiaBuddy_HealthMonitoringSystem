@@ -14,12 +14,12 @@ const SearchHospital = () => {
                 <div className={styles.header}>
                     <h1>Find a Health Center</h1>
                     <div className={styles.searchBox}>
-                        <select>
+                        <select value={filter.type} onChange={(e) => setFilter({ ...filter, type: e.target.value })}>
                             <option value="">Select Health Center Type</option>
                             <option value="hospital">Hospital</option>
                             <option value="diagnosis_center">Diagnosis Center</option>
                         </select>
-                        <input type="text" placeholder="Enter city" />
+                        <input type="text" value={filter.city} onChange={(e) => setFilter({ ...filter, city: e.target.value })} placeholder="Enter city" />
                     </div>
                     <div className={styles.hospitalList}>
                         <div className={styles.hospitalCard}>
