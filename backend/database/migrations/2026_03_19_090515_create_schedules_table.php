@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('schedules', function (Blueprint $table) {
             $table->id();
+            $table->foreignId(column: 'user_id')->constrained()->onDelete('cascade');
+            $table->enum('day', ['saturday', 'sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday']);
+            $table->time('start_time');
+            $table->time('end_time');
             $table->timestamps();
         });
     }
