@@ -26,9 +26,11 @@ const SearchHospital = () => {
             console.error("Error fetching hospital data:", error);
         }
     }
+
     useEffect(() => {
         fetchHospital();
     }, [filter])
+    
     return (
         <div>
             <div className={styles.container}>
