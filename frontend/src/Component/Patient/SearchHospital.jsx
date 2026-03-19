@@ -52,13 +52,6 @@ const SearchHospital = () => {
                                 <p>email: {hosp.email}</p>
                             </div>
                         ))}
-                        <div className={styles.hospitalCard}>
-                            <h3>A Medical Hospital</h3>
-                            <span>Type: Hospital</span>
-                            <p>Address: Dhaka Bangladesh</p>
-                            <p>Contact: 0123456789</p>
-                            <p>email: example@example.com</p>
-                        </div>
                     </div>
                 </div>
             </div>
