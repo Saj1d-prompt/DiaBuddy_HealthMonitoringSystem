@@ -9,7 +9,12 @@ const SearchHospital = () => {
         city: ''
     });
     const fetchHospital = async () => {
-        //code
+        const userInfo = JSON.parse(localStorage.getItem('userInfo'));
+        try {
+            
+        } catch (error) {
+            console.error("Error fetching hospital data:", error);
+        }
     }
     return (
         <div>
