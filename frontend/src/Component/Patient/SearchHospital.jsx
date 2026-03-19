@@ -1,7 +1,13 @@
 import React from 'react'
 import styles from '../../Style/SearchHospital.module.css'
+import { useState } from 'react';
 
 const SearchHospital = () => {
+    const [hospital, setHospital] = useState([]);
+    const [filter, setFilter] = useState({
+        type: '',
+        city: ''
+    });
     return (
         <div>
             <div className={styles.container}>
