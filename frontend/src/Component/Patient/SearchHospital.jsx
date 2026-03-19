@@ -43,6 +43,15 @@ const SearchHospital = () => {
                         <input type="text" value={filter.city} onChange={(e) => setFilter({ ...filter, city: e.target.value })} placeholder="Enter city" />
                     </div>
                     <div className={styles.hospitalList}>
+                        {hospital.map((hosp) => (
+                            <div key={hosp.id} className={styles.hospitalCard}>
+                                <h3>{hosp.name}</h3>
+                                <span>Type: {hosp.type}</span>
+                                <p>Address: {hosp.address}</p>
+                                <p>Contact: {hosp.phone}</p>
+                                <p>email: {hosp.email}</p>
+                            </div>
+                        ))}
                         <div className={styles.hospitalCard}>
                             <h3>A Medical Hospital</h3>
                             <span>Type: Hospital</span>
