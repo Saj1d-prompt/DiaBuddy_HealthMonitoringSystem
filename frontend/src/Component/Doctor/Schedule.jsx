@@ -22,6 +22,67 @@ const Schedule = () => {
         <input type="time" name="end_time" id="" />
         <button type="submit">Add Slot</button>
       </form>
+      <div className={styles.slotList}>
+
+        <div className={styles.dayGroup}>
+          <h3>Monday</h3>
+          <div className={styles.chips}>
+            <div className={styles.slotChip}>
+              09:00 - 11:00
+              <button>&times;</button>
+            </div>
+            <div className={styles.slotChip}>
+              14:00 - 16:00
+              <button>&times;</button>
+            </div>
+          </div>
+        </div>
+
+        <div className={styles.dayGroup}>
+          <h3>Tuesday</h3>
+          <div className={styles.chips}>
+            <div className={styles.slotChip}>
+              10:00 - 12:00
+              <button>&times;</button>
+            </div>
+          </div>
+        </div>
+
+        <div className={styles.dayGroup}>
+          <h3>Wednesday</h3>
+          <div className={styles.chips}>
+            <div className={styles.slotChip}>
+              08:00 - 10:00
+              <button>&times;</button>
+            </div>
+            <div className={styles.slotChip}>
+              15:00 - 17:00
+              <button>&times;</button>
+            </div>
+          </div>
+        </div>
+
+        <div className={styles.dayGroup}>
+          <h3>Thursday</h3>
+          <div className={styles.chips}>
+            <div className={styles.slotChip}>
+              09:00 - 10:30
+              <button>&times;</button>
+            </div>
+          </div>
+        </div>
+
+        <div className={styles.dayGroup}>
+          <h3>Friday</h3>
+          <div className={styles.chips}>
+            <div className={styles.slotChip}>
+              12:00 - 14:00
+              <button>&times;</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
   )
 }
