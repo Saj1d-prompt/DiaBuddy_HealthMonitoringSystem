@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Appointment;
 use App\Models\Doctor;
+use App\Models\Schedule;
 use Illuminate\Support\Facades\Validator;
 
 use Illuminate\Http\Request;
@@ -124,6 +125,15 @@ class DoctorController extends Controller
                 'errors' => $validate->errors()
             ], 400);
         }
-        
+        $schedule = new Schedule();
+        $schedule->doctor_id = $request->user()->id;
+        $schedule->day = $request->day;
+        $schedule->start_time = $request->start_time;
+        $schedule->end_time = $request->end_time;
+        $schedule->save();
+        return response()->json([
+            'message' => 'Slot added successfully',
+            'status' => 200
+        ], 200);
     }
 }
