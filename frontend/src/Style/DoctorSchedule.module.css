@@ -16,7 +16,7 @@
 
 .slotForm {
     display: flex;
-    gap: 10px;
+    gap: 30px;
     margin-bottom: 30px;
     background: #f1f5f9;
     padding: 20px;
@@ -27,6 +27,7 @@
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #ddd;
+    width: 200px;
 }
 
 .slotForm button {
