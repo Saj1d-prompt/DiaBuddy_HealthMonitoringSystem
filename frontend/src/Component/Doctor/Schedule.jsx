@@ -18,6 +18,9 @@ const Schedule = () => {
             </option>
           ))}
         </select>
+        <input type="time" name="start_time" id="" />
+        <input type="time" name="end_time" id="" />
+        <button type="submit">Add Slot</button>
       </form>
     </div>
   )
