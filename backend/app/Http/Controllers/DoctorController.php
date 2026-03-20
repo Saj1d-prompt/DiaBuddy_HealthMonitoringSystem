@@ -110,7 +110,12 @@ class DoctorController extends Controller
             ], 200);
         }
     }
-    public function addDoctorSlot(){
+    public function addDoctorSlot(Request $request){
+        $validate = Validator::make($request->all(), [
+            'day' => 'required|string',
+            'start_time' => 'required|date_format:H:i',
+            'end_time' => 'required|date_format:H:i|after:start_time',
+        ]);
         
     }
 }
