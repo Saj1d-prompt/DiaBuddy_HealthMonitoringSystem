@@ -152,5 +152,10 @@ class DoctorController extends Controller
                 'status' => 404
             ], 404);
         }
+        $slot->delete();
+        return response()->json([
+            'message' => 'Slot deleted successfully',
+            'status' => 200
+        ], 200);
     }
 }
