@@ -144,4 +144,13 @@ class DoctorController extends Controller
             'data' => $slots
         ], 200);
     }
+    public function deleteSlot(Request $request, $id){
+        $slot = Schedule::where('user_id', $request->user()->id)->where('id', $id)->first();
+        if (!$slot) {
+            return response()->json([
+                'message' => 'Slot not found',
+                'status' => 404
+            ], 404);
+        }
+    }
 }
