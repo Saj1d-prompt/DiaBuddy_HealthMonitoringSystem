@@ -10,7 +10,7 @@ const Schedule = () => {
         You can add, edit, or remove time slots to ensure patients can book appointments at convenient times.
       </p>
 
-      <form action="">
+      <form action="" className={styles.slotForm}>
         <select name="day" id="">
           {days.map((day) => (
             <option key={day} value={day}>
