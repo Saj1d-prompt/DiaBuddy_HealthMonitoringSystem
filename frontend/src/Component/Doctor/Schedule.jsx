@@ -82,6 +82,26 @@ const Schedule = () => {
           </div>
         </div>
 
+        <div className={styles.dayGroup}>
+          <h3>Saturday</h3>
+          <div className={styles.chips}>
+            <div className={styles.slotChip}>
+              09:00 - 11:00
+              <button>&times;</button>
+            </div>
+          </div>
+        </div>
+
+        <div className={styles.dayGroup}>
+          <h3>Sunday</h3>
+          <div className={styles.chips}>
+            <div className={styles.slotChip}>
+              07:00 - 09:00
+              <button>&times;</button>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   )
