@@ -110,4 +110,7 @@ class DoctorController extends Controller
             ], 200);
         }
     }
+    public function addDoctorSlot(){
+        
+    }
 }
