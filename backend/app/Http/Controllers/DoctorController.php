@@ -136,4 +136,12 @@ class DoctorController extends Controller
             'status' => 200
         ], 200);
     }
+    public function getSlot(Request $request){
+        $slots = Schedule::where('user_id', $request->user()->id)->get();
+        return response()->json([
+            'message' => 'Slots retrieved successfully',
+            'status' => 200,
+            'data' => $slots
+        ], 200);
+    }
 }
