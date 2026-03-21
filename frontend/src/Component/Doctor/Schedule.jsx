@@ -14,7 +14,14 @@ const Schedule = () => {
   const AddSlot = async () => {
     const userInfo = JSON.parse(localStorage.getItem('userInfo'));
     try{
-
+      const res = await fetch(`${import.meta.env.VITE_API_KEY}/doctor/addSlot`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${userInfo.token}`
+        },
+        body: JSON.stringify(newSlot)
+      })
     }catch(error){
       console.error('Error adding slot:', error);
     }
