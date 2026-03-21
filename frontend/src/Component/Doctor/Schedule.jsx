@@ -11,6 +11,9 @@ const Schedule = () => {
     end_time: ''
   }
   );
+  const fetchSlots = () => {
+    
+  }
   return (
     <div className={styles.container}>
       <h2>Manage Your Visiting Hour Slots</h2>
