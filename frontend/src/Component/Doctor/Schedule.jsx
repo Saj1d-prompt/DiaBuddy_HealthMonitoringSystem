@@ -56,7 +56,11 @@ const Schedule = () => {
             <div key={day}>
               <h3 key={day}>{day}</h3>
               <div>
-                
+                {slots.filter(slot => slot.day === day).map((slot) => (
+                  <div key={slot.id} className={styles.slotChip}>
+                    {slot.start_time} - {slot.end_time}
+                  </div>
+                ))}
               </div>
             </div>
           ))}
