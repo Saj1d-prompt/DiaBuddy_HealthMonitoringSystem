@@ -1,8 +1,16 @@
 import React from 'react'
 import styles from '../../Style/DoctorSchedule.module.css'
+import { useState } from 'react';
 
 const Schedule = () => {
   const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+  const [slots, setSlots] = useState([]);
+  const [newSlot, setNewSlot] = useState({
+    day: '',
+    start_time: '',
+    end_time: ''
+  }
+  );
   return (
     <div className={styles.container}>
       <h2>Manage Your Visiting Hour Slots</h2>
