@@ -126,8 +126,8 @@ class DoctorController extends Controller
             ], 400);
         }
         $schedule = new Schedule();
-        $schedule->doctor_id = $request->user()->id;
-        $schedule->day = $request->day;
+        $schedule->user_id = $request->user()->id;
+        $schedule->day = strtolower($request->day); 
         $schedule->start_time = $request->start_time;
         $schedule->end_time = $request->end_time;
         $schedule->save();

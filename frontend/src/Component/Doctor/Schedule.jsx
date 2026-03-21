@@ -6,12 +6,13 @@ const Schedule = () => {
   const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
   const [slots, setSlots] = useState([]);
   const [newSlot, setNewSlot] = useState({
-    day: '',
+    day: 'Monday',
     start_time: '',
     end_time: ''
   }
   );
-  const AddSlot = async () => {
+  const AddSlot = async (e) => {
+    e.preventDefault();
     const userInfo = JSON.parse(localStorage.getItem('userInfo'));
     try{
       const res = await fetch(`${import.meta.env.VITE_API_KEY}/doctor/addSlot`, {
@@ -26,7 +27,7 @@ const Schedule = () => {
       if(result.status === 200){
         fetchSlots();
         setNewSlot({
-          day: '',
+          day: 'Monday',
           start_time: '',
           end_time: ''
         });
@@ -83,7 +84,7 @@ const Schedule = () => {
             <div key={day}>
               <h3 key={day}>{day}</h3>
               <div>
-                {slots.filter(slot => slot.day === day).map((slot) => (
+                {slots.filter(slot => slot.day === day.toLowerCase()).map((slot) => (
                   <div key={slot.id} className={styles.slotChip}>
                     {slot.start_time} - {slot.end_time}
                     <button>&times;</button>
