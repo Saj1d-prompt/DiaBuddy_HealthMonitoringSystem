@@ -19,7 +19,11 @@ const Schedule = () => {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${userInfo.token}`
       }
-    });
+    })
+    const result = await res.json();
+    if(result.status === 200){
+      setSlots(result.data);
+    }
   }
   return (
     <div className={styles.container}>
