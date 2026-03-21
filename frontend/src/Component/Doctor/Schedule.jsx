@@ -22,6 +22,15 @@ const Schedule = () => {
         },
         body: JSON.stringify(newSlot)
       })
+      const result = await res.json();
+      if(result.status === 200){
+        fetchSlots();
+        setNewSlot({
+          day: '',
+          start_time: '',
+          end_time: ''
+        });
+      }
     }catch(error){
       console.error('Error adding slot:', error);
     }
