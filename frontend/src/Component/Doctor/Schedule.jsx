@@ -14,7 +14,7 @@ const Schedule = () => {
   const AddSlot = async (e) => {
     e.preventDefault();
     const userInfo = JSON.parse(localStorage.getItem('userInfo'));
-    try{
+    try {
       const res = await fetch(`${import.meta.env.VITE_API_KEY}/doctor/addSlot`, {
         method: 'POST',
         headers: {
@@ -24,7 +24,7 @@ const Schedule = () => {
         body: JSON.stringify(newSlot)
       })
       const result = await res.json();
-      if(result.status === 200){
+      if (result.status === 200) {
         fetchSlots();
         setNewSlot({
           day: 'Monday',
@@ -32,7 +32,7 @@ const Schedule = () => {
           end_time: ''
         });
       }
-    }catch(error){
+    } catch (error) {
       console.error('Error adding slot:', error);
     }
   }
@@ -78,12 +78,10 @@ const Schedule = () => {
         <button type="submit">Add Slot</button>
       </form>
       <div className={styles.slotList}>
-
-        <div className={styles.dayGroup}>
-          {days.map((day) => (
-            <div key={day}>
-              <h3 key={day}>{day}</h3>
-              <div>
+        {days.map((day) => (
+          <div key={day} className={styles.dayGroup}>
+              <h3>{day}</h3>
+              <div className={styles.chips}>
                 {slots.filter(slot => slot.day === day.toLowerCase()).map((slot) => (
                   <div key={slot.id} className={styles.slotChip}>
                     {slot.start_time} - {slot.end_time}
@@ -91,20 +89,9 @@ const Schedule = () => {
                   </div>
                 ))}
               </div>
-            </div>
-          ))}
-          <h3>Monday</h3>
-          <div className={styles.chips}>
-            <div className={styles.slotChip}>
-              09:00 - 11:00
-              <button>&times;</button>
-            </div>
-            <div className={styles.slotChip}>
-              14:00 - 16:00
-              <button>&times;</button>
-            </div>
           </div>
-        </div>
+        ))}
+
 
         <div className={styles.dayGroup}>
           <h3>Tuesday</h3>
