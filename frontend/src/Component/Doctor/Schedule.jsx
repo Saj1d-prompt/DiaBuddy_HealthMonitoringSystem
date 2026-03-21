@@ -64,16 +64,16 @@ const Schedule = () => {
         You can add, edit, or remove time slots to ensure patients can book appointments at convenient times.
       </p>
 
-      <form action="" className={styles.slotForm}>
-        <select name="day" id="">
+      <form action="" className={styles.slotForm} onSubmit={AddSlot}>
+        <select name="day" id="" onChange={(e) => setNewSlot({ ...newSlot, day: e.target.value })} value={newSlot.day}>
           {days.map((day) => (
-            <option key={day} value={day}>
+            <option key={day} value={day} >
               {day}
             </option>
           ))}
         </select>
-        <input type="time" name="start_time" id="" />
-        <input type="time" name="end_time" id="" />
+        <input type="time" name="start_time" id="" onChange={(e) => setNewSlot({ ...newSlot, start_time: e.target.value })} value={newSlot.start_time} />
+        <input type="time" name="end_time" id="" onChange={(e) => setNewSlot({ ...newSlot, end_time: e.target.value })} value={newSlot.end_time} />
         <button type="submit">Add Slot</button>
       </form>
       <div className={styles.slotList}>
