@@ -14,7 +14,11 @@ const Schedule = () => {
   const fetchSlots = async () => {
     const userInfo = JSON.parse(localStorage.getItem('userInfo'));
     const res = await fetch(`${import.meta.env.VITE_API_KEY}/doctor/getSlot`, {
-
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${userInfo.token}`
+      }
     });
   }
   return (
