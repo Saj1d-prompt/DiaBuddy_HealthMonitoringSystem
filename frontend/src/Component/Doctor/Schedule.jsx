@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styles from '../../Style/DoctorSchedule.module.css'
 import { useState } from 'react';
 
@@ -30,6 +30,9 @@ const Schedule = () => {
       console.error('Error fetching slots:', error);
     }
   }
+  useEffect(() => {
+    fetchSlots();
+  }, []);
   return (
     <div className={styles.container}>
       <h2>Manage Your Visiting Hour Slots</h2>
