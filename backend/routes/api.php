@@ -44,4 +44,5 @@ Route::middleware(['auth:sanctum', 'doctor'])->prefix('doctor')->group(function 
     Route::get('/getDocProfileInfo', [DoctorController::class, 'getDocProfileInfo']);
     Route::post('/updateDocProfileInfo', [DoctorController::class, 'updateDocProfileInfo']);
     Route::get('/getSlot', [DoctorController::class, 'getSlot']);
+    Route::post('/addSlot', [DoctorController::class, 'addDoctorSlot']);
 });
