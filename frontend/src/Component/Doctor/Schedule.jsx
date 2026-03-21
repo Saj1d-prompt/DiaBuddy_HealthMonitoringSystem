@@ -13,16 +13,21 @@ const Schedule = () => {
   );
   const fetchSlots = async () => {
     const userInfo = JSON.parse(localStorage.getItem('userInfo'));
-    const res = await fetch(`${import.meta.env.VITE_API_KEY}/doctor/getSlot`, {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${userInfo.token}`
+    try {
+      const res = await fetch(`${import.meta.env.VITE_API_KEY}/doctor/getSlot`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${userInfo.token}`
+        }
+      })
+      const result = await res.json();
+      if (result.status === 200) {
+        setSlots(result.data);
       }
-    })
-    const result = await res.json();
-    if(result.status === 200){
-      setSlots(result.data);
+    }
+    catch (error) {
+      console.error('Error fetching slots:', error);
     }
   }
   return (
