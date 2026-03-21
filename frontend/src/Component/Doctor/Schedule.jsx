@@ -11,6 +11,14 @@ const Schedule = () => {
     end_time: ''
   }
   );
+  const AddSlot = async () => {
+    const userInfo = JSON.parse(localStorage.getItem('userInfo'));
+    try{
+
+    }catch(error){
+      console.error('Error adding slot:', error);
+    }
+  }
   const fetchSlots = async () => {
     const userInfo = JSON.parse(localStorage.getItem('userInfo'));
     try {
