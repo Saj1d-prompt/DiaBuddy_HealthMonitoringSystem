@@ -53,7 +53,12 @@ const Schedule = () => {
 
         <div className={styles.dayGroup}>
           {days.map((day) => (
-            <h3 key={day}>{day}</h3>
+            <div key={day}>
+              <h3 key={day}>{day}</h3>
+              <div>
+                
+              </div>
+            </div>
           ))}
           <h3>Monday</h3>
           <div className={styles.chips}>
