@@ -47,6 +47,9 @@ const Schedule = () => {
         }
       })
       const result = await res.json();
+      if (result.status === 200) {
+        fetchSlots();
+      }
     }catch (error) {
       console.error('Error deleting slot:', error);
     }
