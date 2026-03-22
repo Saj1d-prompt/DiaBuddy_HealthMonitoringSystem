@@ -12,7 +12,9 @@ const Schedule = () => {
   }
   );
   const formatTime = (time) => {
-    
+    if (!time) {
+      return '';
+    }
   }
   const AddSlot = async (e) => {
     e.preventDefault();
