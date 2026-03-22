@@ -39,7 +39,14 @@ const Schedule = () => {
   const DeleteSlot = async (slotId) => {
     const userInfo = JSON.parse(localStorage.getItem('userInfo'));
     try {
-
+      const res = await fetch(`${import.meta.env.VITE_API_KEY}/doctor/deleteSlot/${slotId}`, {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${userInfo.token}`
+        }
+      })
+      const result = await res.json();
     }catch (error) {
       console.error('Error deleting slot:', error);
     }
