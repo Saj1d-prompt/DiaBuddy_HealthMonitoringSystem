@@ -103,7 +103,7 @@ const Schedule = () => {
                 {slots.filter(slot => slot.day === day.toLowerCase()).map((slot) => (
                   <div key={slot.id} className={styles.slotChip}>
                     {slot.start_time} - {slot.end_time}
-                    <button>&times;</button>
+                    <button onClick={() => DeleteSlot(slot.id)}>&times;</button>
                   </div>
                 ))}
               </div>
