@@ -15,6 +15,9 @@ const Schedule = () => {
     if (!time) {
       return '';
     }
+    const [hour, minute] = time.split(':');
+    const hours = parseInt(hour)
+    const ampm = hours >= 12 ? 'PM' : 'AM';
   }
   const AddSlot = async (e) => {
     e.preventDefault();
