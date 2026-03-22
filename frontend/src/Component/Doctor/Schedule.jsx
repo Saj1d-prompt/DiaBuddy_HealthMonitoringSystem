@@ -36,6 +36,9 @@ const Schedule = () => {
       console.error('Error adding slot:', error);
     }
   }
+  const DeleteSlot = async () => {
+
+  }
   const fetchSlots = async () => {
     const userInfo = JSON.parse(localStorage.getItem('userInfo'));
     try {
