@@ -11,6 +11,9 @@ const Schedule = () => {
     end_time: ''
   }
   );
+  const formatTime = (time) => {
+    
+  }
   const AddSlot = async (e) => {
     e.preventDefault();
     const userInfo = JSON.parse(localStorage.getItem('userInfo'));
