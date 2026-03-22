@@ -11,7 +11,7 @@ use Laravel\Sanctum\HasApiTokens;
 class User extends Authenticatable
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
-    use HasFactory, Notifiable,HasApiTokens;
+    use HasFactory, Notifiable, HasApiTokens;
 
     /**
      * The attributes that are mass assignable.
@@ -50,5 +50,14 @@ class User extends Authenticatable
             'date_of_birth' => 'date',
             'role' => 'string',
         ];
+    }
+    public function appointmentsAsDoctor()
+    {
+        return $this->hasMany(Appointment::class, 'doctor_id');
+    }
+
+    public function appointmentsAsPatient()
+    {
+        return $this->hasMany(Appointment::class, 'patient_id');
     }
 }
