@@ -116,8 +116,7 @@ const CheckDoctorProfile = ({ doctor, onClose }) => {
                         ) : (
                             <div className={styles.clinicSection}>
                                 <h4>Clinic: {doctor.clinicName}</h4>
-                                <p>{doctor.clinicAddress}</p>
-                                <p><strong>Hours:</strong> {doctor.consultationHours}</p>
+                                <p style={{ marginTop: "10px" }}>Address: <strong>{doctor.clinicAddress}</strong></p>
                                 <div>
                                     <button className={styles.bookBtn} onClick={() => setBookingMode(true)}>Book Appointment</button>
                                 </div>
