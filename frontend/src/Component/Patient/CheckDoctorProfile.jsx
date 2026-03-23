@@ -4,6 +4,9 @@ import { useState } from 'react';
 
 const CheckDoctorProfile = ({ doctor, onClose }) => {
     const [slots, setSlots] = useState([]);
+    const [selectedDay, setSelectedDay] = useState(null);
+    const [filteredSlots, setFilteredSlots] = useState([]);
+    const [availableDays, setAvailableDays] = useState([]);
     const fetchSlot = async () => {
         const userInfo = JSON.parse(localStorage.getItem('userInfo'));
         try {
@@ -59,7 +62,6 @@ const CheckDoctorProfile = ({ doctor, onClose }) => {
                             <div>
                                 <div>
                                     <h3>Book an Appointment</h3>
-                                    {/* <p>Booking functionality coming soon...</p> */}
                                     <div>
                                         <h4>Available Slots:</h4>
                                         {slots.length == 0 ? (
