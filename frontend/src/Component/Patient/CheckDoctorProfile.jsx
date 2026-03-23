@@ -1,7 +1,9 @@
 import React from 'react'
 import styles from '../../Style/CheckDoctorProfile.module.css'
+import { useState } from 'react';
 
 const CheckDoctorProfile = ({ doctor, onClose }) => {
+    const [bookingMode,setBookingMode] = useState(false);
     return (
         <div>
             <div className={styles.modalOverlay} onClick={onClose}>
@@ -38,7 +40,7 @@ const CheckDoctorProfile = ({ doctor, onClose }) => {
                         </div>
                     </div>
                     <div>
-                        <button className={styles.bookBtn}>Book Appointment</button>
+                        <button className={styles.bookBtn} onClick={() => setBookingMode(true)}>Book Appointment</button>
                     </div>
                 </div>
             </div>
