@@ -4,18 +4,18 @@ import { useState } from 'react';
 
 const CheckDoctorProfile = ({ doctor, onClose }) => {
     const formatTime = (time) => {
-    if (!time) {
-      return '';
-    }
-    const [hour, minute] = time.split(':');
-    const hours = parseInt(hour)
-    const ampm = hours >= 12 ? 'PM' : 'AM';
+        if (!time) {
+            return '';
+        }
+        const [hour, minute] = time.split(':');
+        const hours = parseInt(hour)
+        const ampm = hours >= 12 ? 'PM' : 'AM';
 
-    const h = hours % 12
-    const formattedHour = h === 0 ? 12 : h;
-    
-    return `${formattedHour}:${minute} ${ampm}`;
-  }
+        const h = hours % 12
+        const formattedHour = h === 0 ? 12 : h;
+
+        return `${formattedHour}:${minute} ${ampm}`;
+    }
     const [slots, setSlots] = useState([]);
     const [selectedDay, setSelectedDay] = useState(null);
     const [filteredSlots, setFilteredSlots] = useState([]);
@@ -97,11 +97,11 @@ const CheckDoctorProfile = ({ doctor, onClose }) => {
                                             <p>No slots available</p>
                                         ) : (
                                             filteredSlots.map((slot) => (
-                                                <div key={slot.id} 
-                                                className={`${styles.slot} ${selectedSlot === slot.id ? styles.selected : ""}`}
-      onClick={() =>
-  setSelectedSlot(selectedSlot === slot.id ? null : slot.id)
-}>
+                                                <div key={slot.id}
+                                                    className={`${styles.slot} ${selectedSlot === slot.id ? styles.selected : ""}`}
+                                                    onClick={() =>
+                                                        setSelectedSlot(selectedSlot === slot.id ? null : slot.id)
+                                                    }>
                                                     {formatTime(slot.start_time)} - {formatTime(slot.end_time)}
                                                 </div>
                                             ))

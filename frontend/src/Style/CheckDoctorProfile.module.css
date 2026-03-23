@@ -120,3 +120,25 @@
 .backBtn:hover {
     background: #d1d5db;
 }
+.bookingContainer {
+  margin-top: 20px;
+  padding: 15px;
+  background: #f7f9fc;
+  border-radius: 12px;
+  border: 1px solid #e0e6ed;
+}
+.daySelect {
+  width: 100%;
+  padding: 10px 12px;
+  margin-top: 8px;
+  border: 1px solid #cdd5df;
+  border-radius: 8px;
+  font-size: 15px;
+  outline: none;
+  background: white;
+  transition: 0.2s ease-in-out;
+}
+.daySelect:focus {
+  border-color: #4a90e2;
+  box-shadow: 0 0 6px rgba(74, 144, 226, 0.35);
+}
