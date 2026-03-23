@@ -89,3 +89,21 @@
 .bookBtn:hover{
     background: #1e40af;
 }
+.buttonContainer {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+.confirmBtn {
+    flex: 1;
+    padding: 15px;
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+}
+.confirmBtn:hover {
+    background: #1e40af;
+}
