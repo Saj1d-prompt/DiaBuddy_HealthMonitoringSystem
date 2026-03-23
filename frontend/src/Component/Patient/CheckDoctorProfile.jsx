@@ -19,6 +19,7 @@ const CheckDoctorProfile = ({ doctor, onClose }) => {
     const [slots, setSlots] = useState([]);
     const [selectedDay, setSelectedDay] = useState(null);
     const [filteredSlots, setFilteredSlots] = useState([]);
+    const [selectedSlot, setSelectedSlot] = useState(null);
     const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
     const fetchSlot = async () => {
         const userInfo = JSON.parse(localStorage.getItem('userInfo'));
@@ -79,24 +80,28 @@ const CheckDoctorProfile = ({ doctor, onClose }) => {
                         </div>
                         {bookingMode ? (
                             <div>
-                                <div>
+                                <div className={styles.bookingContainer}>
                                     <h3>Book an Appointment</h3>
                                     <div>
                                         <label htmlFor="day">Select Day: </label>
-                                        <select id="day" value={selectedDay} onChange={(e) => setSelectedDay(e.target.value)}>
+                                        <select id="day" className={styles.daySelect} value={selectedDay} onChange={(e) => setSelectedDay(e.target.value)}>
                                             <option value="">Select Day</option>
                                             {days.map((day) => (
                                                 <option key={day} value={day.toLocaleLowerCase()}>{day}</option>
                                             ))}
                                         </select>
                                     </div>
-                                    <div>
+                                    <div className={styles.slotsWrapper}>
                                         <h4>Available Slots:</h4>
                                         {filteredSlots.length == 0 ? (
                                             <p>No slots available</p>
                                         ) : (
                                             filteredSlots.map((slot) => (
-                                                <div key={slot.id} className={styles.slot}>
+                                                <div key={slot.id} 
+                                                className={`${styles.slot} ${selectedSlot === slot.id ? styles.selected : ""}`}
+      onClick={() =>
+  setSelectedSlot(selectedSlot === slot.id ? null : slot.id)
+}>
                                                     {formatTime(slot.start_time)} - {formatTime(slot.end_time)}
                                                 </div>
                                             ))
