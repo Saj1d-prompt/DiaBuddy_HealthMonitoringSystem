@@ -107,3 +107,16 @@
 .confirmBtn:hover {
     background: #1e40af;
 }
+.backBtn {
+    flex: 1;
+    padding: 15px;
+    background: #e5e7eb;
+    color: #374151;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+}
+.backBtn:hover {
+    background: #d1d5db;
+}
