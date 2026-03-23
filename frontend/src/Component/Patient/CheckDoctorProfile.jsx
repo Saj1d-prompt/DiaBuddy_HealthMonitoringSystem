@@ -4,21 +4,21 @@ import { useState } from 'react';
 
 const CheckDoctorProfile = ({ doctor, onClose }) => {
     const [slots, setSlots] = useState([]);
-    const fetchSlot = async () =>{
+    const fetchSlot = async () => {
         const userInfo = JSON.parse(localStorage.getItem('userInfo'));
-        try{
-            const res = await fetch(`${import.meta.env.VITE_API_KEY}/doctor/getDoctorSchedule/${doctor.id}`,({
+        try {
+            const res = await fetch(`${import.meta.env.VITE_API_KEY}/doctor/getDoctorSchedule/${doctor.id}`, ({
                 method: 'GET',
                 headers: {
                     'Authorization': `Bearer ${userInfo.token}`
                 }
             }));
             const result = await res.json();
-            if(result.status === 200){
+            if (result.status === 200) {
                 setSlots(result.data);
             }
         }
-        catch(error){
+        catch (error) {
             console.error('Error fetching doctor schedule:', error);
         }
     }
@@ -56,18 +56,23 @@ const CheckDoctorProfile = ({ doctor, onClose }) => {
                             <div>
                                 <h3>Book an Appointment</h3>
                                 <p>Booking functionality coming soon...</p>
+                            <div>
+                            </div>
+                                <button className={styles.bookBtn}>Confirm</button>
+                                <button className={styles.bookBtn} onClick={() => setBookingMode(false)}>Back</button>
                             </div>
                         ) : (
                             <div className={styles.clinicSection}>
                                 <h4>Clinic: {doctor.clinicName}</h4>
                                 <p>{doctor.clinicAddress}</p>
                                 <p><strong>Hours:</strong> {doctor.consultationHours}</p>
+                                <div>
+                                    <button className={styles.bookBtn} onClick={() => setBookingMode(true)}>Book Appointment</button>
+                                </div>
                             </div>
                         )}
                     </div>
-                    <div>
-                        <button className={styles.bookBtn} onClick={() => setBookingMode(true)}>Book Appointment</button>
-                    </div>
+
                 </div>
             </div>
         </div>
