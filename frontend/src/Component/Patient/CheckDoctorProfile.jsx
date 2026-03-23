@@ -97,7 +97,7 @@ const CheckDoctorProfile = ({ doctor, onClose }) => {
                                         ) : (
                                             filteredSlots.map((slot) => (
                                                 <div key={slot.id} className={styles.slot}>
-                                                    {slot.start_time} - {slot.end_time}
+                                                    {formatTime(slot.start_time)} - {formatTime(slot.end_time)}
                                                 </div>
                                             ))
                                         )}
