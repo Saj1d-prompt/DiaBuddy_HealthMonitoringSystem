@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styles from '../../Style/CheckDoctorProfile.module.css'
 import { useState } from 'react';
 
@@ -7,7 +7,7 @@ const CheckDoctorProfile = ({ doctor, onClose }) => {
     const fetchSlot = async () => {
         const userInfo = JSON.parse(localStorage.getItem('userInfo'));
         try {
-            const res = await fetch(`${import.meta.env.VITE_API_KEY}/doctor/getDoctorSchedule/${doctor.id}`, ({
+            const res = await fetch(`${import.meta.env.VITE_API_KEY}/getDoctorSchedule/${doctor.user.id}`, ({
                 method: 'GET',
                 headers: {
                     'Authorization': `Bearer ${userInfo.token}`
@@ -22,6 +22,9 @@ const CheckDoctorProfile = ({ doctor, onClose }) => {
             console.error('Error fetching doctor schedule:', error);
         }
     }
+    useEffect(() => {
+        fetchSlot();
+    }, []);
     const [bookingMode, setBookingMode] = useState(false);
     return (
         <div>
