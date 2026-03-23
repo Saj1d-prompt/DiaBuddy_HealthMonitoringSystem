@@ -79,10 +79,14 @@ const CheckDoctorProfile = ({ doctor, onClose }) => {
                                     </div>
                                     <div>
                                         <h4>Available Slots:</h4>
-                                        {slots.length == 0 ? (
+                                        {filteredSlots.length == 0 ? (
                                             <p>No slots available</p>
                                         ) : (
-                                            null
+                                            filteredSlots.map((slot) => (
+                                                <div key={slot.id} className={styles.slot}>
+                                                    {slot.start_time} - {slot.end_time}
+                                                </div>
+                                            ))
                                         )}
                                     </div>
                                 </div>
