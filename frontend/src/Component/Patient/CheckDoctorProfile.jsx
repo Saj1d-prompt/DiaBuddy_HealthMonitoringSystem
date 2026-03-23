@@ -28,7 +28,12 @@ const CheckDoctorProfile = ({ doctor, onClose }) => {
     useEffect(() => {
         fetchSlot();
     }, []);
-
+    useEffect(() => {
+        if (selectedDay) {
+            const filtered = slots.filter(slot => slot.day === selectedDay.toLowerCase());
+            setFilteredSlots(filtered);
+        }
+    }, [selectedDay, slots]);
     const [bookingMode, setBookingMode] = useState(false);
     return (
         <div>
