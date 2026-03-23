@@ -33,6 +33,14 @@ const CheckDoctorProfile = ({ doctor, onClose }) => {
                                 <p className={styles.fee}>{doctor.fee} tk</p>
                             </div>
                         </div>
+                        {bookingMode ? (
+                            <div>
+                                <h3>Book an Appointment</h3>
+                                <p>Booking functionality coming soon...</p>
+                            </div>
+                        ) : (
+                            null
+                        )}
                         <div className={styles.clinicSection}>
                             <h4>Clinic: {doctor.clinicName}</h4>
                             <p>{doctor.clinicAddress}</p>
