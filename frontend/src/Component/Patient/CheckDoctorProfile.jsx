@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { use, useEffect } from 'react'
 import styles from '../../Style/CheckDoctorProfile.module.css'
 import { useState } from 'react';
 
@@ -6,7 +6,7 @@ const CheckDoctorProfile = ({ doctor, onClose }) => {
     const [slots, setSlots] = useState([]);
     const [selectedDay, setSelectedDay] = useState(null);
     const [filteredSlots, setFilteredSlots] = useState([]);
-    const [availableDays, setAvailableDays] = useState([]);
+    const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
     const fetchSlot = async () => {
         const userInfo = JSON.parse(localStorage.getItem('userInfo'));
         try {
@@ -28,6 +28,7 @@ const CheckDoctorProfile = ({ doctor, onClose }) => {
     useEffect(() => {
         fetchSlot();
     }, []);
+
     const [bookingMode, setBookingMode] = useState(false);
     return (
         <div>
@@ -63,15 +64,20 @@ const CheckDoctorProfile = ({ doctor, onClose }) => {
                                 <div>
                                     <h3>Book an Appointment</h3>
                                     <div>
+                                        <label htmlFor="day">Select Day: </label>
+                                        <select id="day" value={selectedDay} onChange={(e) => setSelectedDay(e.target.value)}>
+                                            <option value="">Select Day</option>
+                                            {days.map((day) => (
+                                                <option key={day} value={day.toLocaleLowerCase()}>{day}</option>
+                                            ))}
+                                        </select>
+                                    </div>
+                                    <div>
                                         <h4>Available Slots:</h4>
                                         {slots.length == 0 ? (
                                             <p>No slots available</p>
                                         ) : (
-                                            slots.map((slot) => (
-                                                <div key={slot.id} className={styles.slotItem}>
-                                                    <input type="radio" name="slot" /> {slot.start_time} - {slot.end_time}
-                                                </div>
-                                            ))
+                                            null
                                         )}
                                     </div>
                                 </div>
