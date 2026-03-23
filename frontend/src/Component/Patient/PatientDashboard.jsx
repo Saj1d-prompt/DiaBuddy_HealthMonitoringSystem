@@ -14,7 +14,7 @@ const PatientDashboard = () => {
         <button onClick={() => window.location.href = '/viewreports'}>
           View Reports
         </button>
-        <SearchHospital />
+        <SearchDoctor />
     </div>
   )
 }

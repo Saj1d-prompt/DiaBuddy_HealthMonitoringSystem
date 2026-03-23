@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Doctor;
 use App\Models\Hospital;
+use App\Models\Schedule;
 use Illuminate\Http\Request;
 
 class PatientController extends Controller
@@ -64,6 +65,10 @@ class PatientController extends Controller
         ]);
     }
     public function getDoctorSchedule($doctorID){
-        
+        $slot = Schedule::where('user_id', $doctorID)->get();
+        return response()->json([
+            'status' => 200,
+            'data' => $slot
+        ]);
     }
 }
