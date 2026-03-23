@@ -7,7 +7,16 @@ const CheckDoctorProfile = ({ doctor, onClose }) => {
     const fetchSlot = async () =>{
         const userInfo = JSON.parse(localStorage.getItem('userInfo'));
         try{
-            
+            const res = await fetch(`${import.meta.env.VITE_API_KEY}/doctor/getDoctorSchedule/${doctor.id}`,({
+                method: 'GET',
+                headers: {
+                    'Authorization': `Bearer ${userInfo.token}`
+                }
+            }));
+            const result = await res.json();
+            if(result.status === 200){
+                setSlots(result.data);
+            }
         }
         catch(error){
             console.error('Error fetching doctor schedule:', error);
