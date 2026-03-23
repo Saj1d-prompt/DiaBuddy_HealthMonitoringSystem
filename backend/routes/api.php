@@ -26,6 +26,7 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('/searchDoctor', [PatientController::class, 'searchDoctor']);
     Route::get('/getDoctorProfile/{doctorId}', [PatientController::class, 'getDoctorProfile']);
     Route::get('/searchHospital', [PatientController::class, 'searchHospital']);
+    Route::get('/getDoctorSchedule/{doctorID}', [PatientController::class, 'getDoctorSchedule']);
 });
 
 Route::get('/user', function (Request $request) {
