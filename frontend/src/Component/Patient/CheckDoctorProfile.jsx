@@ -59,7 +59,19 @@ const CheckDoctorProfile = ({ doctor, onClose }) => {
                             <div>
                                 <div>
                                     <h3>Book an Appointment</h3>
-                                    <p>Booking functionality coming soon...</p>
+                                    {/* <p>Booking functionality coming soon...</p> */}
+                                    <div>
+                                        <h4>Available Slots:</h4>
+                                        {slots.length == 0 ? (
+                                            <p>No slots available</p>
+                                        ) : (
+                                            slots.map((slot) => (
+                                                <div key={slot.id} className={styles.slotItem}>
+                                                    <input type="radio" name="slot" /> {slot.start_time} - {slot.end_time}
+                                                </div>
+                                            ))
+                                        )}
+                                    </div>
                                 </div>
                                 <div className={styles.buttonContainer}>
                                     <button className={styles.confirmBtn}>Confirm</button>
