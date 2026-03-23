@@ -3,6 +3,19 @@ import styles from '../../Style/CheckDoctorProfile.module.css'
 import { useState } from 'react';
 
 const CheckDoctorProfile = ({ doctor, onClose }) => {
+    const formatTime = (time) => {
+    if (!time) {
+      return '';
+    }
+    const [hour, minute] = time.split(':');
+    const hours = parseInt(hour)
+    const ampm = hours >= 12 ? 'PM' : 'AM';
+
+    const h = hours % 12
+    const formattedHour = h === 0 ? 12 : h;
+    
+    return `${formattedHour}:${minute} ${ampm}`;
+  }
     const [slots, setSlots] = useState([]);
     const [selectedDay, setSelectedDay] = useState(null);
     const [filteredSlots, setFilteredSlots] = useState([]);
