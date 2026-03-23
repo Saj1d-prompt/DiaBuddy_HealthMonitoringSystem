@@ -54,12 +54,14 @@ const CheckDoctorProfile = ({ doctor, onClose }) => {
                         </div>
                         {bookingMode ? (
                             <div>
-                                <h3>Book an Appointment</h3>
-                                <p>Booking functionality coming soon...</p>
-                            <div>
-                            </div>
-                                <button className={styles.bookBtn}>Confirm</button>
-                                <button className={styles.bookBtn} onClick={() => setBookingMode(false)}>Back</button>
+                                <div>
+                                    <h3>Book an Appointment</h3>
+                                    <p>Booking functionality coming soon...</p>
+                                </div>
+                                <div className={styles.buttonContainer}>
+                                    <button className={styles.confirmBtn}>Confirm</button>
+                                    <button className={styles.backBtn} onClick={() => setBookingMode(false)}>Back</button>
+                                </div>
                             </div>
                         ) : (
                             <div className={styles.clinicSection}>
@@ -72,7 +74,6 @@ const CheckDoctorProfile = ({ doctor, onClose }) => {
                             </div>
                         )}
                     </div>
-
                 </div>
             </div>
         </div>
