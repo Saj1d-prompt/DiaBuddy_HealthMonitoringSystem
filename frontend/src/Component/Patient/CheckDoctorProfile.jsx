@@ -4,7 +4,13 @@ import { useState } from 'react';
 
 const CheckDoctorProfile = ({ doctor, onClose }) => {
     const fetchSlot = async () =>{
-        
+        const userInfo = JSON.parse(localStorage.getItem('userInfo'));
+        try{
+
+        }
+        catch(error){
+            console.error('Error fetching doctor schedule:', error);
+        }
     }
     const [bookingMode, setBookingMode] = useState(false);
     return (
