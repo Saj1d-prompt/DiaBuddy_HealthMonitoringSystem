@@ -3,6 +3,9 @@ import styles from '../../Style/CheckDoctorProfile.module.css'
 import { useState } from 'react';
 
 const CheckDoctorProfile = ({ doctor, onClose }) => {
+    const fetchSlot = async () =>{
+        
+    }
     const [bookingMode, setBookingMode] = useState(false);
     return (
         <div>
