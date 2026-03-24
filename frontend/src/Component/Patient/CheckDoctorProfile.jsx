@@ -16,6 +16,9 @@ const CheckDoctorProfile = ({ doctor, onClose }) => {
 
         return `${formattedHour}:${minute} ${ampm}`;
     }
+    const handleConfirm = () => {
+        //code
+    }
     const [slots, setSlots] = useState([]);
     const [selectedDay, setSelectedDay] = useState(null);
     const [filteredSlots, setFilteredSlots] = useState([]);
@@ -90,6 +93,10 @@ const CheckDoctorProfile = ({ doctor, onClose }) => {
                                                 <option key={day} value={day.toLocaleLowerCase()}>{day}</option>
                                             ))}
                                         </select>
+                                    </div>
+                                    <div>
+                                        <label htmlFor="date">Select Date: </label>
+                                        <input type="date" id="date" className={styles.dateInput} />
                                     </div>
                                     <div className={styles.slotsWrapper}>
                                         <h4>Available Slots:</h4>
