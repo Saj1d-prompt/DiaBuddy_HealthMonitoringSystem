@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use Illuminate\Support\Facades\Validator;
 use App\Models\Doctor;
 use App\Models\Hospital;
@@ -65,14 +66,16 @@ class PatientController extends Controller
             'data' => $query->get()
         ]);
     }
-    public function getDoctorSchedule($doctorID){
+    public function getDoctorSchedule($doctorID)
+    {
         $slot = Schedule::where('user_id', $doctorID)->get();
         return response()->json([
             'status' => 200,
             'data' => $slot
         ]);
     }
-    public function bookAppointment(Request $request){
+    public function bookAppointment(Request $request)
+    {
         $validate = Validator::make($request->all(), [
             'appointment_date' => 'required|date',
             'start_time' => 'required',
@@ -83,6 +86,17 @@ class PatientController extends Controller
                 'status' => 400,
                 'errors' => $validate->errors()
             ], 400);
+        }
+        $exists = Appointment::where('doctor_id', $request->doctor_id)
+            ->where('appointment_date', $request->appointment_date)
+            ->where('start_time', $request->start_time)
+            ->exists();
+
+        if ($exists) {
+            return response()->json([
+                'status' => 409,
+                'message' => 'Slot already booked'
+            ], 409);
         }
         $appointment = new Appointment();
         $appointment->doctor_id = $request->doctor_id;
@@ -96,6 +110,4 @@ class PatientController extends Controller
             'status' => 200
         ], 200);
     }
-    
-
 }

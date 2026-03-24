@@ -37,7 +37,11 @@ const CheckDoctorProfile = ({ doctor, onClose }) => {
             if(result.status === 200){
                 onClose();
             } else {
-                alert('Failed to book appointment');
+                if(result.status === 409){
+                    alert(result.message);
+                }else{
+                    alert('Failed to book appointment');
+                }
             }
         }catch(error){
             console.error('Error booking appointment:', error);
