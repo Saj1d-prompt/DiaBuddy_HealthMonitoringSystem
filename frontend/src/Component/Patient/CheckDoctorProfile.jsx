@@ -16,8 +16,13 @@ const CheckDoctorProfile = ({ doctor, onClose }) => {
 
         return `${formattedHour}:${minute} ${ampm}`;
     }
-    const handleConfirm = () => {
-        //code
+    const handleConfirm = async () => {
+        const userInfo = JSON.parse(localStorage.getItem('userInfo'));
+        try{
+
+        }catch(error){
+            console.error('Error booking appointment:', error);
+        }
     }
     const [slots, setSlots] = useState([]);
     const [selectedDay, setSelectedDay] = useState(null);
