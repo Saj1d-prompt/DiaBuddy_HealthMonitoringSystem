@@ -25,7 +25,14 @@ const CheckDoctorProfile = ({ doctor, onClose }) => {
             end_time: filteredSlots.find(slot => slot.id === selectedSlot)?.end_time
         }
         try{
-
+            const res = await fetch(`${import.meta.env.VITE_API_KEY}/bookAppointment`, {
+                method: 'POST',
+                headers: {
+                    'Authorization': `Bearer ${userInfo.token}`,
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(appointment)
+            })
         }catch(error){
             console.error('Error booking appointment:', error);
         }
