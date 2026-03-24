@@ -33,6 +33,12 @@ const CheckDoctorProfile = ({ doctor, onClose }) => {
                 },
                 body: JSON.stringify(appointment)
             })
+            const result = await res.json();
+            if(result.status === 200){
+                onClose();
+            } else {
+                alert('Failed to book appointment');
+            }
         }catch(error){
             console.error('Error booking appointment:', error);
         }
