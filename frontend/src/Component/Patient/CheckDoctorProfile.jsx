@@ -18,6 +18,12 @@ const CheckDoctorProfile = ({ doctor, onClose }) => {
     }
     const handleConfirm = async () => {
         const userInfo = JSON.parse(localStorage.getItem('userInfo'));
+        appointment = {
+            doctor_id: doctor.user.id,
+            appointment_date: selectedDate,
+            start_time: filteredSlots.find(slot => slot.id === selectedSlot)?.start_time,
+            end_time: filteredSlots.find(slot => slot.id === selectedSlot)?.end_time
+        }
         try{
 
         }catch(error){
