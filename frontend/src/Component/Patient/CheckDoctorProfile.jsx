@@ -23,6 +23,8 @@ const CheckDoctorProfile = ({ doctor, onClose }) => {
     const [selectedDay, setSelectedDay] = useState(null);
     const [filteredSlots, setFilteredSlots] = useState([]);
     const [selectedSlot, setSelectedSlot] = useState(null);
+    const [selectedDate, setSelectedDate] = useState(null);
+
     const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
     const fetchSlot = async () => {
         const userInfo = JSON.parse(localStorage.getItem('userInfo'));
@@ -96,7 +98,7 @@ const CheckDoctorProfile = ({ doctor, onClose }) => {
                                     </div>
                                     <div>
                                         <label htmlFor="date">Select Date: </label>
-                                        <input type="date" id="date" className={styles.dateInput} />
+                                        <input type="date" id="date" className={styles.dateInput} value={selectedDate} onChange={(e) => setSelectedDate(e.target.value)} />
                                     </div>
                                     <div className={styles.slotsWrapper}>
                                         <h4>Available Slots:</h4>
