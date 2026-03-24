@@ -71,4 +71,8 @@ class PatientController extends Controller
             'data' => $slot
         ]);
     }
+    public function bookAppointment(Request $request){
+
+    }
+
 }
