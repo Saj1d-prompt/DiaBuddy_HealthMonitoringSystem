@@ -91,7 +91,10 @@ class PatientController extends Controller
         $appointment->start_time = $request->start_time;
         $appointment->end_time = $request->end_time;
         $appointment->save();
-        
+        return response()->json([
+            'message' => 'Slot added successfully',
+            'status' => 200
+        ], 200);
     }
     
 
