@@ -75,8 +75,8 @@ class PatientController extends Controller
     public function bookAppointment(Request $request){
         $validate = Validator::make($request->all(), [
             'appointment_date' => 'required|date',
-            'start_time' => 'required|date_format:H:i',
-            'end_time' => 'required|date_format:H:i|after:start_time',
+            'start_time' => 'required',
+            'end_time' => 'required|after:start_time',
         ]);
         if ($validate->fails()) {
             return response()->json([

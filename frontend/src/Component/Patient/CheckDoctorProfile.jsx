@@ -1,4 +1,4 @@
-import React, { use, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import styles from '../../Style/CheckDoctorProfile.module.css'
 import { useState } from 'react';
 
@@ -18,7 +18,7 @@ const CheckDoctorProfile = ({ doctor, onClose }) => {
     }
     const handleConfirm = async () => {
         const userInfo = JSON.parse(localStorage.getItem('userInfo'));
-        appointment = {
+        const appointment = {
             doctor_id: doctor.user.id,
             appointment_date: selectedDate,
             start_time: filteredSlots.find(slot => slot.id === selectedSlot)?.start_time,
