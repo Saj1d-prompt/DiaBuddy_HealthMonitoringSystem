@@ -109,7 +109,7 @@ const CheckDoctorProfile = ({ doctor, onClose }) => {
                                     </div>
                                 </div>
                                 <div className={styles.buttonContainer}>
-                                    <button className={styles.confirmBtn}>Confirm</button>
+                                    <button className={styles.confirmBtn} onClick={handleConfirm}>Confirm</button>
                                     <button className={styles.backBtn} onClick={() => setBookingMode(false)}>Back</button>
                                 </div>
                             </div>
