@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Validator;
 use App\Models\Doctor;
 use App\Models\Hospital;
 use App\Models\Schedule;
@@ -72,7 +72,9 @@ class PatientController extends Controller
         ]);
     }
     public function bookAppointment(Request $request){
-
+        $validate = Validator::make($request->all(), [
+            
+        ]);
     }
 
 }
