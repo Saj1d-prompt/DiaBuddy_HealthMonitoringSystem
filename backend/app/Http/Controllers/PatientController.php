@@ -6,6 +6,7 @@ use App\Models\Doctor;
 use App\Models\Hospital;
 use App\Models\Schedule;
 use Illuminate\Http\Request;
+use App\Models\Appointment;
 
 class PatientController extends Controller
 {
@@ -83,6 +84,14 @@ class PatientController extends Controller
                 'errors' => $validate->errors()
             ], 400);
         }
+        $appointment = new Appointment();
+        $appointment->doctor_id = $request->doctor_id;
+        $appointment->patient_id = $request->user()->id;
+        $appointment->appointment_date = $request->appointment_date;
+        $appointment->start_time = $request->start_time;
+        $appointment->end_time = $request->end_time;
+        $appointment->save();
+        
     }
     
 
