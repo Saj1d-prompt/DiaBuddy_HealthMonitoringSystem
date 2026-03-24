@@ -77,6 +77,13 @@ class PatientController extends Controller
             'start_time' => 'required|date_format:H:i',
             'end_time' => 'required|date_format:H:i|after:start_time',
         ]);
+        if ($validate->fails()) {
+            return response()->json([
+                'status' => 400,
+                'errors' => $validate->errors()
+            ], 400);
+        }
     }
+    
 
 }
