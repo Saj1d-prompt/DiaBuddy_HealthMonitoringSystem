@@ -11,3 +11,21 @@
   font-weight: 600;
 }
 
+.appointmentList {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  overflow-x: auto;
+  padding: 20px;
+}
+
+.appointmentList table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.appointmentList thead {
+  background: #2b7cff;
+  color: white;
+}
+
