@@ -13,7 +13,7 @@ class DoctorController extends Controller
 {
     public function updateDoctorProfile(Request $request)
     {
-        $validatedData =Validator::make($request->all(), [
+        $validatedData = Validator::make($request->all(), [
             'department' => 'required|string',
             'specialization' => 'nullable|string',
             'licenseNumber' => 'required|string',
@@ -63,7 +63,6 @@ class DoctorController extends Controller
             'message' => 'Doctor profile updated successfully',
             'status' => 200
         ], 200);
-
     }
     public function getDocProfileInfo(Request $request)
     {
@@ -78,7 +77,7 @@ class DoctorController extends Controller
 
     public function updateDocProfileInfo(Request $request)
     {
-        $validatedData =Validator::make($request->all(), [
+        $validatedData = Validator::make($request->all(), [
             'department' => 'required|string',
             'specialization' => 'nullable|string',
             'yearOfExperience' => 'nullable|integer',
@@ -105,7 +104,7 @@ class DoctorController extends Controller
                 'message' => 'Doctor profile not found',
                 'status' => 404
             ], 404);
-        }else{
+        } else {
             $doctor->update($request->all());
             return response()->json([
                 'message' => 'Doctor profile updated successfully',
@@ -113,7 +112,8 @@ class DoctorController extends Controller
             ], 200);
         }
     }
-    public function addDoctorSlot(Request $request){
+    public function addDoctorSlot(Request $request)
+    {
         $validate = Validator::make($request->all(), [
             'day' => 'required|string',
             'start_time' => 'required|date_format:H:i',
@@ -127,7 +127,7 @@ class DoctorController extends Controller
         }
         $schedule = new Schedule();
         $schedule->user_id = $request->user()->id;
-        $schedule->day = strtolower($request->day); 
+        $schedule->day = strtolower($request->day);
         $schedule->start_time = $request->start_time;
         $schedule->end_time = $request->end_time;
         $schedule->save();
@@ -136,7 +136,8 @@ class DoctorController extends Controller
             'status' => 200
         ], 200);
     }
-    public function getSlot(Request $request){
+    public function getSlot(Request $request)
+    {
         $slots = Schedule::where('user_id', $request->user()->id)->get();
         return response()->json([
             'message' => 'Slots retrieved successfully',
@@ -144,7 +145,8 @@ class DoctorController extends Controller
             'data' => $slots
         ], 200);
     }
-    public function deleteSlot(Request $request, $id){
+    public function deleteSlot(Request $request, $id)
+    {
         $slot = Schedule::where('user_id', $request->user()->id)->where('id', $id)->first();
         if (!$slot) {
             return response()->json([
@@ -159,16 +161,17 @@ class DoctorController extends Controller
         ], 200);
     }
 
-    public function getAppointmentList(Request $request){
+    public function getAppointmentList(Request $request)
+    {
         $appointment = Appointment::where(['patient:id,name,date_of_birth'])
-        ->where('doctor_id', '=', $request->user()->id)
-        ->orderBy('appointment_date', 'asc')
-        ->orderBy('start_time', 'asc')
-        ->get();
-    return response()->json([
-        'message' => 'Appointments retrieved successfully',
-        'status' => 200,
-        'data' => $appointment
-    ], 200);
+            ->where('doctor_id', '=', $request->user()->id)
+            ->orderBy('appointment_date', 'asc')
+            ->orderBy('start_time', 'asc')
+            ->get();
+        return response()->json([
+            'message' => 'Appointments retrieved successfully',
+            'status' => 200,
+            'data' => $appointment
+        ], 200);
     }
 }
