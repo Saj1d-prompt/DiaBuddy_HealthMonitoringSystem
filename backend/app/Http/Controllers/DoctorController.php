@@ -158,4 +158,8 @@ class DoctorController extends Controller
             'status' => 200
         ], 200);
     }
+
+    public function getAppointmentList(){
+        
+    }
 }
