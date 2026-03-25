@@ -165,5 +165,10 @@ class DoctorController extends Controller
         ->orderBy('appointment_date', 'asc')
         ->orderBy('start_time', 'asc')
         ->get();
+    return response()->json([
+        'message' => 'Appointments retrieved successfully',
+        'status' => 200,
+        'data' => $appointment
+    ], 200);
     }
 }
