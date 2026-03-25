@@ -1,0 +1,13 @@
+.container {
+  padding: 30px;
+  background: #f4f8fb;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container h2 {
+  margin-bottom: 20px;
+  color: #1e3a5f;
+  font-weight: 600;
+}
+
