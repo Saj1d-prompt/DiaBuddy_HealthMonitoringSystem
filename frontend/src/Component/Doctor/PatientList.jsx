@@ -48,6 +48,7 @@ const PatientList = () => {
                                 <td>Male</td>
                                 <td>25/03/2026</td>
                                 <td>10:00 AM - 10:30 AM</td>
+                                <td><button className={styles.viewButton}>View Details</button></td>
                             </tr>
                             {appointmentList.map((appointment) => (
                                 <tr key={appointment.id}>
@@ -56,6 +57,7 @@ const PatientList = () => {
                                     <td>{appointment.patient.person.gender}</td>
                                     <td>{appointment.appointment_date}</td>
                                     <td>{appointment.start_time} - {appointment.end_time}</td>
+                                    <td><button className={styles.viewButton}>View Details</button></td>
                                 </tr>
                             ))}
                         </tbody>
