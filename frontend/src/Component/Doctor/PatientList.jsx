@@ -1,9 +1,11 @@
 import React, { useEffect } from 'react'
 import styles from '../../Style/PatientList.module.css'
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const PatientList = () => {
     const [appointmentList, setAppointmentList] = useState([]);
+    const navigate = useNavigate();
     const fetchAppointmentList = async () => {
         const userInfo = JSON.parse(localStorage.getItem('userInfo'));
         try{

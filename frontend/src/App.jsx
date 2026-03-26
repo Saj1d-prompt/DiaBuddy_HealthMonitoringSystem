@@ -14,6 +14,8 @@ import ViewReport from './Component/Patient/ViewReport'
 import AdminDashboard from './Component/Admin/AdminDashboard'
 import DoctorDashboard from './Component/Doctor/DoctorDashboard'
 import DoctorInfoForm from './Component/Doctor/DoctorInfoForm'
+import PatientList from './Component/Doctor/PatientList'
+import PatientFacilities from './Component/Doctor/PatientFacilities'
 
 
 function App() {
@@ -34,7 +36,8 @@ function App() {
             <Route path="/viewreports" element={<ViewReport />} />
             <Route path="/doctordashboard" element={<DoctorDashboard />} />
             <Route path="/doctorinfoform" element={<DoctorInfoForm />} />
-            
+            <Route path="/patientlist" element={<PatientList />} />
+            <Route path='/patientfacilities' element={<PatientFacilities />} />
           </Route>
         </Routes>
       </AuthProvider>
