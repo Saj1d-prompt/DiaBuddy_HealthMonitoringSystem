@@ -43,6 +43,20 @@
   color: #444;
 }
 
+.viewButton{
+  background: #2b7cff;
+  color: white;
+  border: none;
+  padding: 10px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+.viewButton:hover {
+  background: #1e3a5f;
+}
+
 @media (max-width: 768px) {
   .appointmentList table {
     min-width: 700px;
