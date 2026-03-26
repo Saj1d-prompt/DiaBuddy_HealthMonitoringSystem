@@ -1,7 +1,9 @@
 import React from 'react'
 import styles from '../../Style/PatientList.module.css'
+import { useState } from 'react';
 
 const PatientList = () => {
+    const [appointmentList, setAppointmentList] = useState([]);
     return (
         <div>
             <div className={styles.container}>
