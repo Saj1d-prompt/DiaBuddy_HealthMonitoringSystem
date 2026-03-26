@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { use,useEffect } from 'react'
 import styles from '../../Style/PatientList.module.css'
 import { useState } from 'react';
 
@@ -22,6 +22,9 @@ const PatientList = () => {
             console.error('Error fetching appointment list:', error);
         }
     }
+    useEffect(() => {
+            fetchAppointmentList();
+        }, []);
     return (
         <div>
             <div className={styles.container}>
