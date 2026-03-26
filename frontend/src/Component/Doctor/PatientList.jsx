@@ -51,7 +51,7 @@ const PatientList = () => {
                                     <td>{appointment.patient.person.gender}</td>
                                     <td>{appointment.appointment_date}</td>
                                     <td>{appointment.start_time} - {appointment.end_time}</td>
-                                    <td><button className={styles.viewButton}>View Details</button></td>
+                                    <td><button className={styles.viewButton} onClick={() => navigate(`/patientfacilities/${appointment.patient.id}`)}>View Details</button></td>
                                 </tr>
                             ))}
                         </tbody>
