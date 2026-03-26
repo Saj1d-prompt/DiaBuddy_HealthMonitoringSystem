@@ -48,6 +48,15 @@ const PatientList = () => {
                                 <td>25/03/2026</td>
                                 <td>10:00 AM - 10:30 AM</td>
                             </tr>
+                            {appointmentList.map((appointment) => (
+                                <tr key={appointment.id}>
+                                    <td>{appointment.patient.name}</td>
+                                    <td>{Math.floor((new Date() - new Date(appointment.patient.date_of_birth)) / (365.25 * 24 * 60 * 60 * 1000))}</td>
+                                    <td>{appointment.patient.person.gender}</td>
+                                    <td>{appointment.appointment_date}</td>
+                                    <td>{appointment.start_time} - {appointment.end_time}</td>
+                                </tr>
+                            ))}
                         </tbody>
                     </table>
                 </div>
