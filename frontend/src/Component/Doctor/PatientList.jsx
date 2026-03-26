@@ -42,14 +42,6 @@ const PatientList = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>John Smith</td>
-                                <td>26</td>
-                                <td>Male</td>
-                                <td>25/03/2026</td>
-                                <td>10:00 AM - 10:30 AM</td>
-                                <td><button className={styles.viewButton}>View Details</button></td>
-                            </tr>
                             {appointmentList.map((appointment) => (
                                 <tr key={appointment.id}>
                                     <td>{appointment.patient.name}</td>
