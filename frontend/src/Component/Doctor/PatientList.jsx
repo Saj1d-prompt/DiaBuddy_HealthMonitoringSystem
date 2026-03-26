@@ -7,7 +7,14 @@ const PatientList = () => {
     const fetchAppointmentList = async () => {
         const userInfo = JSON.parse(localStorage.getItem('userInfo'));
         try{
-
+            const response = await fetch(`${import.meta.env.VITE_API_KEY}/doctor/getAppointmentList`, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${userInfo.token}`
+                }
+            });
+            
         }catch(error){
             console.error('Error fetching appointment list:', error);
         }
