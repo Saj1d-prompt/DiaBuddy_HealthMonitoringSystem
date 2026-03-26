@@ -14,7 +14,10 @@ const PatientList = () => {
                     'Authorization': `Bearer ${userInfo.token}`
                 }
             });
-            
+            const result = await response.json();
+            if(result.status === 200){
+                setAppointmentList(result.data);
+            }
         }catch(error){
             console.error('Error fetching appointment list:', error);
         }
