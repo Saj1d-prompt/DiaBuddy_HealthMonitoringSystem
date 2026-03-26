@@ -1,4 +1,4 @@
-import React, { use,useEffect } from 'react'
+import React, { useEffect } from 'react'
 import styles from '../../Style/PatientList.module.css'
 import { useState } from 'react';
 
@@ -34,7 +34,6 @@ const PatientList = () => {
                         <thead>
                             <tr>
                                 <th>Patient Name</th>
-                                <th>Date of Birth</th>
                                 <th>Age</th>
                                 <th>Gender</th>
                                 <th>Appointment Date</th>
@@ -44,7 +43,6 @@ const PatientList = () => {
                         <tbody>
                             <tr>
                                 <td>John Smith</td>
-                                <td>01/01/2000</td>
                                 <td>26</td>
                                 <td>Male</td>
                                 <td>25/03/2026</td>

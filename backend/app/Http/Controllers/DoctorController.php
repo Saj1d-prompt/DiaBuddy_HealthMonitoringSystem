@@ -163,7 +163,7 @@ class DoctorController extends Controller
 
     public function getAppointmentList(Request $request)
     {
-        $appointment = Appointment::with(['patient:id,name,date_of_birth'])
+        $appointment = Appointment::with(['patient:id,name,date_of_birth', 'patient.person:gender,user_id'])
             ->where('doctor_id', '=', $request->user()->id)
             ->orderBy('appointment_date', 'asc')
             ->orderBy('start_time', 'asc')
