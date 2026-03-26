@@ -4,6 +4,14 @@ import { useState } from 'react';
 
 const PatientList = () => {
     const [appointmentList, setAppointmentList] = useState([]);
+    const fetchAppointmentList = async () => {
+        const userInfo = JSON.parse(localStorage.getItem('userInfo'));
+        try{
+
+        }catch(error){
+            console.error('Error fetching appointment list:', error);
+        }
+    }
     return (
         <div>
             <div className={styles.container}>
