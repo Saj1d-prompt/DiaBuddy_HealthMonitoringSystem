@@ -29,8 +29,10 @@ const PatientFacilities = () => {
                 <span>24.7</span>
               </div>
             </div>
-            <p>Blood Group: A+</p>
-            <p>Diabetes Type: Type 2</p>
+            <div className={styles.medicalInfoDetails}>
+              <p>Blood Group: A+</p>
+              <p>Diabetes Type: Type 2</p>
+            </div>
           </div>
         </aside>
       </div>

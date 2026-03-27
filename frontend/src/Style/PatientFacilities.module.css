@@ -75,3 +75,10 @@
     font-weight: 600;
     color: #781cf1;
 }
+
+.medicalInfo .medicalInfoDetails {
+    margin-top: 15px;
+    font-size: 16px;
+    color: #000000;
+    text-align: center;
+}
