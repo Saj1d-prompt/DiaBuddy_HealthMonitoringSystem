@@ -16,12 +16,19 @@ const PatientFacilities = () => {
           </div>
           <div className={styles.medicalInfo}>
             <div className={styles.medicalInfoGrid}>
-              <p>Height: 180cm</p>
-              <p>Weight: 80kg</p>
-              <p>BMI: 24.7</p>
+              <div className={styles.medicalInfoItem}>
+                <p>Height</p>
+                <span>180cm</span>
+              </div>
+              <div className={styles.medicalInfoItem}>
+                <p>Weight</p>
+                <span>80kg</span>
+              </div>
+              <div className={styles.medicalInfoItem}>
+                <p>BMI</p>
+                <span>24.7</span>
+              </div>
             </div>
-          </div>
-          <div className={styles.medicalDetails}>
             <p>Blood Group: A+</p>
             <p>Diabetes Type: Type 2</p>
           </div>
