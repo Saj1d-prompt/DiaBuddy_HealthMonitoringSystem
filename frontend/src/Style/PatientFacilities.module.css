@@ -29,3 +29,14 @@
 
 }
 
+.patientInfo h1 {
+    font-size: 28px;
+    color: #6c6780;
+    margin-bottom: 10px;
+}
+
+.patientInfo p {
+    font-size: 16px;
+    color: #64748b;
+    margin-bottom: 3px;
+}
