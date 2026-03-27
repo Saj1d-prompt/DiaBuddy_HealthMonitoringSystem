@@ -5,9 +5,9 @@ const PatientFacilities = () => {
   return (
     <div>
       <div>
-        <aside>
-          <button>← Back to Patients List</button>
-          <div className="patientInfo">
+        <aside className={styles.sideBar}>
+          <button className={styles.backButton}>← Back to Patients List</button>
+          <div className={styles.patientInfo}>
             <h1>John Smith</h1>
             <p>Gender Male</p>
             <p>Age 45</p>
@@ -21,8 +21,10 @@ const PatientFacilities = () => {
               <p>BMI: 24.7</p>
             </div>
           </div>
-          Blood Group: A+
-          Diabetes Type: Type 2 
+          <div className={styles.medicalDetails}>
+            <p>Blood Group: A+</p>
+            <p>Diabetes Type: Type 2</p>
+          </div>
         </aside>
       </div>
     </div>
