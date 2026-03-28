@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { use, useEffect } from 'react'
 import styles from '../../Style/PatientFacilities.module.css'
 import { useParams } from 'react-router-dom';
 import { useState } from 'react';
@@ -24,6 +24,9 @@ const PatientFacilities = () => {
       console.error('Error fetching patient info:', e);
     }
   }
+  useEffect(() => {
+    fetchPatientInfo();
+  }, []);
   return (
     <div>
       <div>
