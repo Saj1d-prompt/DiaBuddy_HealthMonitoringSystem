@@ -37,7 +37,7 @@ function App() {
             <Route path="/doctordashboard" element={<DoctorDashboard />} />
             <Route path="/doctorinfoform" element={<DoctorInfoForm />} />
             <Route path="/patientlist" element={<PatientList />} />
-            <Route path='/patientfacilities' element={<PatientFacilities />} />
+            <Route path='/patientfacilities/:id' element={<PatientFacilities />} />
           </Route>
         </Routes>
       </AuthProvider>
