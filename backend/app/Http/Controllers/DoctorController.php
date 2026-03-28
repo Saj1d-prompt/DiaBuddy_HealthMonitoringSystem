@@ -6,6 +6,7 @@ use App\Models\Appointment;
 use App\Models\Doctor;
 use App\Models\Schedule;
 use App\Models\Person;
+use App\Models\User;
 use Illuminate\Support\Facades\Validator;
 
 use Illuminate\Http\Request;
@@ -176,6 +177,13 @@ class DoctorController extends Controller
         ], 200);
     }
     public function getPatientInfo($patientID){
+        $user = User::find($patientID);
+        if (!$user) {
+            return response()->json([
+                'message' => 'User not found',
+                'status' => 404
+            ], 404);
+        }
         $patient = Person::where('user_id', $patientID)->first();
         if (!$patient) {
             return response()->json([
@@ -186,7 +194,10 @@ class DoctorController extends Controller
         return response()->json([
             'message' => 'Patient info retrieved successfully',
             'status' => 200,
-            'data' => $patient
+            'data' => [
+                'user' => $user,
+                'data' => $patient
+            ]
         ], 200);
     }
 }

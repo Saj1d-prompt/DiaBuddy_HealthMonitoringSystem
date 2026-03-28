@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styles from '../../Style/PatientFacilities.module.css'
 import { useParams } from 'react-router-dom';
 import { useState } from 'react';
