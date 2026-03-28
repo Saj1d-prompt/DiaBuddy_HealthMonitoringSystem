@@ -33,11 +33,11 @@ const PatientFacilities = () => {
         <aside className={styles.sideBar}>
           <button className={styles.backButton}>← Back to Patients List</button>
           <div className={styles.patientInfo}>
-            <h1>John Smith</h1>
-            <p>Gender: Male</p>
+            <h1>{patient?.user.name}</h1>
+            <p>Gender: {patient?.data.gender}</p>
             <p>Age: 45</p>
-            <p>Phone Number: 123-456-7890</p>
-            <p>Address: Dhaka Bangladesh</p>
+            <p>Phone Number: {patient?.data.number}</p>
+            <p>Address: {patient?.data.address}</p>
           </div>
           <div className={styles.medicalInfo}>
             <div className={styles.medicalInfoGrid}>
