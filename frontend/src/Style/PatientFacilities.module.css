@@ -104,3 +104,8 @@
     color: #406493;
     position: relative;
 }
+
+.tabNav button:hover {
+    color: #2563eb;
+    border-bottom: 2px solid #2563eb;
+}
