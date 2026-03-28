@@ -1,3 +1,8 @@
+.container {
+    display: flex;
+    gap: 20px;
+}
+
 .sideBar {
     width: 300px;
     height: 100vh;
@@ -19,7 +24,7 @@
     margin-bottom: 40px;
 }
 
-.patientInfo{
+.patientInfo {
     margin-bottom: 30px;
     text-align: center;
     background-color: #fff;
@@ -41,7 +46,7 @@
     margin-bottom: 3px;
 }
 
-.medicalInfo{
+.medicalInfo {
     width: 100%;
     background-color: #fff;
     padding: 20px;
@@ -49,7 +54,7 @@
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-.medicalInfo .medicalInfoGrid{
+.medicalInfo .medicalInfoGrid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 8px;

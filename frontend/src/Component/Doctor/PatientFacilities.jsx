@@ -37,7 +37,7 @@ const PatientFacilities = () => {
     fetchPatientInfo();
   }, []);
   return (
-    <div>
+    <div className={styles.container}>
       <div>
         <aside className={styles.sideBar}>
           <button className={styles.backButton} onClick={() => window.history.back()}>← Back to Patients List</button>
