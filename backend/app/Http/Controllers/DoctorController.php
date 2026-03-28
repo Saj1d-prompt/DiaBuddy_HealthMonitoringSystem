@@ -177,5 +177,16 @@ class DoctorController extends Controller
     }
     public function getPatientInfo($patientID){
         $patient = Person::where('user_id', $patientID)->first();
+        if (!$patient) {
+            return response()->json([
+                'message' => 'Patient not found',
+                'status' => 404
+            ], 404);
+        }
+        return response()->json([
+            'message' => 'Patient info retrieved successfully',
+            'status' => 200,
+            'data' => $patient
+        ], 200);
     }
 }
