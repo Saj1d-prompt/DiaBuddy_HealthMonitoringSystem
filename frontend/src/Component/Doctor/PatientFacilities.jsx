@@ -70,6 +70,13 @@ const PatientFacilities = () => {
           </div>
         </aside>
       </div>
+      <div>
+        <nav className={styles.tabNav}>
+          <button>Blood Suger Readings</button>
+          <button>Medical Reports</button>
+          <button>Prescriptions</button>
+        </nav>
+      </div>
     </div>
   )
 }
