@@ -90,6 +90,14 @@ const PatientFacilities = () => {
                     <th>Notes</th>
                   </tr>
                 </thead>
+                <tbody>
+                  <tr>
+                    <td>2024-06-01 08:00</td>
+                    <td>Fasting</td>
+                    <td>110 mg/dL</td>
+                    <td>Normal</td>
+                  </tr>
+                </tbody>
               </table>
             </div>
           )}
