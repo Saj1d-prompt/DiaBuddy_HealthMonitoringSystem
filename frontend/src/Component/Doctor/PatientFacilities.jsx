@@ -40,7 +40,7 @@ const PatientFacilities = () => {
     <div>
       <div>
         <aside className={styles.sideBar}>
-          <button className={styles.backButton}>← Back to Patients List</button>
+          <button className={styles.backButton} onClick={() => window.history.back()}>← Back to Patients List</button>
           <div className={styles.patientInfo}>
             <h1>{patient?.user.name}</h1>
             <p>Gender: {patient?.data.gender}</p>
