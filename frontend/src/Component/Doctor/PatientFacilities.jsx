@@ -9,7 +9,15 @@ const PatientFacilities = () => {
   const [bsr , setBsr] = useState([]);
 
   const fetchBsr = async () => {
-    
+    const userInfo = JSON.parse(localStorage.getItem('userInfo'));
+    try {
+      const response = await fetch(`${import.meta.env.VITE_API_KEY}/doctor/getBSR/${id}`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${userInfo.token}`
+        }
+      });
   }
   const fetchPatientInfo = async () => {
     const userInfo = JSON.parse(localStorage.getItem('userInfo'));
