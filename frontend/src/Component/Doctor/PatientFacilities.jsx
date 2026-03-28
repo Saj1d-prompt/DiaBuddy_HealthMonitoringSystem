@@ -43,11 +43,11 @@ const PatientFacilities = () => {
             <div className={styles.medicalInfoGrid}>
               <div className={styles.medicalInfoItem}>
                 <p>Height</p>
-                <span>180cm</span>
+                <span>{patient?.data.height}cm</span>
               </div>
               <div className={styles.medicalInfoItem}>
                 <p>Weight</p>
-                <span>80kg</span>
+                <span>{patient?.data.weight} kg</span>
               </div>
               <div className={styles.medicalInfoItem}>
                 <p>BMI</p>
