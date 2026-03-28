@@ -64,8 +64,8 @@ const PatientFacilities = () => {
               </div>
             </div>
             <div className={styles.medicalInfoDetails}>
-              <p>Blood Group: A+</p>
-              <p>Diabetes Type: Type 2</p>
+              <p>Blood Group: {patient?.data.blood_group}</p>
+              <p>Diabetes Type: {patient?.data.diabetes_type}</p>
             </div>
           </div>
         </aside>
