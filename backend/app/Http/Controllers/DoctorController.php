@@ -7,6 +7,7 @@ use App\Models\Doctor;
 use App\Models\Schedule;
 use App\Models\Person;
 use App\Models\User;
+use App\Models\BloodSugarReading;
 use Illuminate\Support\Facades\Validator;
 
 use Illuminate\Http\Request;
@@ -198,6 +199,15 @@ class DoctorController extends Controller
                 'user' => $user,
                 'data' => $patient
             ]
+        ], 200);
+    }
+
+    public function getBSR($patientID){
+        $bsr = BloodSugarReading::where('user_id', $patientID)->get();
+        return response()->json([
+            'message' => 'Blood Sugar Readings retrieved successfully',
+            'status' => 200,
+            'data' => $bsr
         ], 200);
     }
 }
