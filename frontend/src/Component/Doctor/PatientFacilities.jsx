@@ -30,6 +30,9 @@ const PatientFacilities = () => {
     }
     return 0;
   };
+  const calculateAge = (dateOfBirth) => {
+    return Math.floor((new Date() - new Date(dateOfBirth)) / (365.25 * 24 * 60 * 60 * 1000));
+  };
   useEffect(() => {
     fetchPatientInfo();
   }, []);
