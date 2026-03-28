@@ -18,6 +18,13 @@ const PatientFacilities = () => {
           'Authorization': `Bearer ${userInfo.token}`
         }
       });
+      const result = await response.json();
+      if (result.status === 200) {
+        setBsr(result.data);
+      }
+    } catch (e) {
+      console.error('Error fetching BSR:', e);
+    }
   }
   const fetchPatientInfo = async () => {
     const userInfo = JSON.parse(localStorage.getItem('userInfo'));
