@@ -24,6 +24,12 @@ const PatientFacilities = () => {
       console.error('Error fetching patient info:', e);
     }
   }
+  const calculateBMI = (weight, height) => {
+    if (height > 0) {
+      return (weight / ((height / 100) ** 2)).toFixed(2);
+    }
+    return 0;
+  };
   useEffect(() => {
     fetchPatientInfo();
   }, []);
@@ -51,7 +57,7 @@ const PatientFacilities = () => {
               </div>
               <div className={styles.medicalInfoItem}>
                 <p>BMI</p>
-                <span>24.7</span>
+                <span>{calculateBMI(patient?.data.weight, patient?.data.height)}</span>
               </div>
             </div>
             <div className={styles.medicalInfoDetails}>
