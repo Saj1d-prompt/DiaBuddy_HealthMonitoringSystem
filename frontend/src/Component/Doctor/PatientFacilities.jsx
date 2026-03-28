@@ -36,6 +36,7 @@ const PatientFacilities = () => {
   useEffect(() => {
     fetchPatientInfo();
   }, []);
+  const [activeTab, setActiveTab] = useState('');
   return (
     <div className={styles.container}>
       <div>
@@ -72,10 +73,15 @@ const PatientFacilities = () => {
       </div>
       <div>
         <nav className={styles.tabNav}>
-          <button>Blood Suger Readings</button>
-          <button>Medical Reports</button>
-          <button>Prescriptions</button>
+          <button onClick={() => setActiveTab('bsr')}>Blood Suger Readings</button>
+          <button onClick={() => setActiveTab('reports')}>Medical Reports</button>
+          <button onClick={() => setActiveTab('prescriptions')}>Prescriptions</button>
         </nav>
+        <div>
+          {activeTab === 'bsr' && <div>Blood Suger Readings Content</div>}
+          {activeTab === 'reports' && <div>Medical Reports Content</div>}
+          {activeTab === 'prescriptions' && <div>Prescriptions Content</div>}
+        </div>
       </div>
     </div>
   )
