@@ -4,11 +4,11 @@ import { useParams } from 'react-router-dom';
 import { useState } from 'react';
 
 const PatientFacilities = () => {
-  const {id} = useParams();
-  const [patient,setPatient] = useState(null);
+  const { id } = useParams();
+  const [patient, setPatient] = useState(null);
   const fetchPatientInfo = async () => {
     const userInfo = JSON.parse(localStorage.getItem('userInfo'));
-    try{
+    try {
       const response = await fetch(`${import.meta.env.VITE_API_KEY}/doctor/getPatientInfo/${id}`, {
         method: 'GET',
         headers: {
@@ -17,10 +17,10 @@ const PatientFacilities = () => {
         }
       });
       const result = await response.json();
-      if(result.status === 200){
+      if (result.status === 200) {
         setPatient(result.data);
       }
-    }catch(e){
+    } catch (e) {
       console.error('Error fetching patient info:', e);
     }
   }
