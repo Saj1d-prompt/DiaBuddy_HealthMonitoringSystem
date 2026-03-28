@@ -87,3 +87,20 @@
     color: #000000;
     text-align: center;
 }
+
+.tabNav {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.tabNav button {
+    padding: 15px 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-weight: 600;
+    color: #406493;
+    position: relative;
+}
