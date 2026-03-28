@@ -2,6 +2,7 @@ import React from 'react'
 import styles from '../../Style/PatientFacilities.module.css'
 
 const PatientFacilities = () => {
+  const {id} = useParams();
   return (
     <div>
       <div>
