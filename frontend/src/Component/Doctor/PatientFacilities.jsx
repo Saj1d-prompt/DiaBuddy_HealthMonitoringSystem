@@ -112,12 +112,14 @@ const PatientFacilities = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>2024-06-01 08:00</td>
-                    <td>Fasting</td>
-                    <td>110 mg/dL</td>
-                    <td>Normal</td>
-                  </tr>
+                  {bsr.map((readings)=>(
+                    <tr key={readings.id}>
+                      <td>{new Date(readings.created_at).toLocaleString()}</td>
+                      <td>{readings.category}</td>
+                      <td>{readings.glucose_level}</td>
+                      <td>{readings.notes || '-'}</td>
+                    </tr>
+                  ))}
                 </tbody>
               </table>
             </div>
