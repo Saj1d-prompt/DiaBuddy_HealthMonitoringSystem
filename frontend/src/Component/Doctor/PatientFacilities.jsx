@@ -1,8 +1,11 @@
 import React from 'react'
 import styles from '../../Style/PatientFacilities.module.css'
+import { useParams } from 'react-router-dom';
+import { useState } from 'react';
 
 const PatientFacilities = () => {
   const {id} = useParams();
+  const [patient,setPatient] = useState(null);
   return (
     <div>
       <div>
