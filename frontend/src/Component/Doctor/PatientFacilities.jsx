@@ -78,7 +78,21 @@ const PatientFacilities = () => {
           <button onClick={() => setActiveTab('prescriptions')}>Prescriptions</button>
         </nav>
         <div>
-          {activeTab === 'bsr' && <div>Blood Suger Readings Content</div>}
+          {activeTab === 'bsr' && (
+            <div>
+              <h2>Blood Sugar Readings</h2>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Date and Time</th>
+                    <th>Category</th>
+                    <th>Glucose Level</th>
+                    <th>Notes</th>
+                  </tr>
+                </thead>
+              </table>
+            </div>
+          )}
           {activeTab === 'reports' && <div>Medical Reports Content</div>}
           {activeTab === 'prescriptions' && <div>Prescriptions Content</div>}
         </div>
