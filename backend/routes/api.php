@@ -50,4 +50,5 @@ Route::middleware(['auth:sanctum', 'doctor'])->prefix('doctor')->group(function 
     Route::delete('/deleteSlot/{id}', [DoctorController::class, 'deleteSlot']);
     Route::get('/getAppointmentList', [DoctorController::class, 'getAppointmentList']);
     Route::get('/getPatientInfo/{patientID}', [DoctorController::class, 'getPatientInfo']);
+    Route::get('/getBSR/{id}', [DoctorController::class, 'getBSR']);
 });
