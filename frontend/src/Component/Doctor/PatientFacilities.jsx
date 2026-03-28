@@ -44,7 +44,7 @@ const PatientFacilities = () => {
           <div className={styles.patientInfo}>
             <h1>{patient?.user.name}</h1>
             <p>Gender: {patient?.data.gender}</p>
-            <p>Age: 45</p>
+            <p>Age: {calculateAge(patient?.user.date_of_birth)}</p>
             <p>Phone Number: {patient?.data.number}</p>
             <p>Address: {patient?.data.address}</p>
           </div>
