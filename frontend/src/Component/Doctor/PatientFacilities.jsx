@@ -55,6 +55,7 @@ const PatientFacilities = () => {
   };
   useEffect(() => {
     fetchPatientInfo();
+    fetchBsr();
   }, []);
   const [activeTab, setActiveTab] = useState('');
   return (
