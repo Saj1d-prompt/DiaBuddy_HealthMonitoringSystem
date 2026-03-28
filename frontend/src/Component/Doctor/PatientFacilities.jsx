@@ -6,6 +6,11 @@ import { useState } from 'react';
 const PatientFacilities = () => {
   const { id } = useParams();
   const [patient, setPatient] = useState(null);
+  const [bsr , setBsr] = useState([]);
+
+  const fetchBsr = async () => {
+    
+  }
   const fetchPatientInfo = async () => {
     const userInfo = JSON.parse(localStorage.getItem('userInfo'));
     try {
