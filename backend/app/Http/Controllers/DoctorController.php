@@ -174,4 +174,7 @@ class DoctorController extends Controller
             'data' => $appointment
         ], 200);
     }
+    public function getPatientInfo(){
+        
+    }
 }
