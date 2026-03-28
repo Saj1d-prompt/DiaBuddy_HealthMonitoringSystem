@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Appointment;
 use App\Models\Doctor;
 use App\Models\Schedule;
+use App\Models\Person;
 use Illuminate\Support\Facades\Validator;
 
 use Illuminate\Http\Request;
@@ -174,7 +175,7 @@ class DoctorController extends Controller
             'data' => $appointment
         ], 200);
     }
-    public function getPatientInfo(){
-        
+    public function getPatientInfo($patientID){
+        $patient = Person::where('user_id', $patientID)->first();
     }
 }
