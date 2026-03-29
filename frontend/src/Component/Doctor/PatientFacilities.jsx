@@ -10,8 +10,16 @@ const PatientFacilities = () => {
   const [reports, setReports] = useState([]);
 
   const fetchReports = async () => {
+    const userInfo = JSON.parse(localStorage.getItem('userInfo'));
     try{
-
+      const response = await fetch(`${import.meta.env.VITE_API_KEY}/doctor/getPatientReport/${id}`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${userInfo.token}`
+        }
+      });
+      const result = await response.json();
     }catch(e){
       console.error('Error fetching reports:', e);
     }
