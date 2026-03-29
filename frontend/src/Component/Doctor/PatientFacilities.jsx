@@ -100,7 +100,7 @@ const PatientFacilities = () => {
         </nav>
         <div className={styles.contentContainer}>
           {activeTab === 'bsr' && (
-            <div className={styles.bsrTable}>
+            <div className={styles.tableContainer}>
               <h2>Blood Sugar Readings</h2>
               <table>
                 <thead>
@@ -125,7 +125,7 @@ const PatientFacilities = () => {
             </div>
           )}
           {activeTab === 'reports' && (
-            <div className={styles.bsrTable}>
+            <div className={styles.tableContainer}>
               <h2>Medical Reports History</h2>
               <table>
                 <thead>

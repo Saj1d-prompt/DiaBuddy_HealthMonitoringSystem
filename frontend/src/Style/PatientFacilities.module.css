@@ -114,7 +114,7 @@
     width:900px;
 }
 
-.bsrTable{
+.tableContainer{
     background: #ffffff;
   border-radius: 16px;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
@@ -122,24 +122,24 @@
   padding: 20px;
 }
 
-.bsrTable table {
+.tableContainer table {
   width: 100%;
   border-collapse: collapse;
 }
 
-.bsrTable thead {
+.tableContainer thead {
   background: #2b7cff;
   color: white;
 }
 
-.bsrTable th {
+.tableContainer th {
   padding: 14px;
   text-align: left;
   font-size: 14px;
   font-weight: 600;
 }
 
-.bsrTable td {
+.tableContainer td {
   padding: 14px;
   border-bottom: 1px solid #eee;
   font-size: 14px;
