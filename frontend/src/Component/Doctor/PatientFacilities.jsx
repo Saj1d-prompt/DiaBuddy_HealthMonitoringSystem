@@ -188,6 +188,10 @@ const PatientFacilities = () => {
                   <label htmlFor="frequency">Frequency</label>
                   <input type="text" id="frequency" name="frequency" placeholder="Enter frequency (e.g., twice a day or 1+0+1)" />
                 </div>
+                <div className={styles.medFormGroup}>
+                  <label htmlFor="duration">Duration</label>
+                  <input type="text" id="duration" name="duration" placeholder="Enter duration (e.g., 5 days)" />
+                </div>
               </form>
             </div>
           )}
