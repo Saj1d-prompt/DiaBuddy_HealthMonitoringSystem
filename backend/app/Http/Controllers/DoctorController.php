@@ -211,7 +211,13 @@ class DoctorController extends Controller
         ], 200);
     }
 
-    public function prescribeMedicine(){
-        
+    public function prescribeMedicine(Request $request){
+        $validation = Validator::make($request->all(), [
+            'medication_name' => 'required|string',
+            'dosage' => 'required|string',
+            'frequency' => 'required|string',
+            'duration' => 'required|string',
+            'notes' => 'nullable|string',
+        ]);
     }
 }
