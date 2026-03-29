@@ -8,6 +8,7 @@ use App\Models\Schedule;
 use App\Models\Person;
 use App\Models\User;
 use App\Models\BloodSugarReading;
+use App\Models\Prescription;
 use Illuminate\Support\Facades\Validator;
 
 use Illuminate\Http\Request;
@@ -219,5 +220,11 @@ class DoctorController extends Controller
             'duration' => 'required|string',
             'notes' => 'nullable|string',
         ]);
+        if ($validation->fails()) {
+            return response()->json([
+                'status' => 400,
+                'errors' => $validation->errors()
+            ], 400);
+        }
     }
 }
