@@ -210,4 +210,8 @@ class DoctorController extends Controller
             'data' => $bsr
         ], 200);
     }
+
+    public function prescribeMedicine(){
+        
+    }
 }
