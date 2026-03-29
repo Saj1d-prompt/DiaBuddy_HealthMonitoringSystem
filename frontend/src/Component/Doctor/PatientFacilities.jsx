@@ -6,12 +6,12 @@ import { useState } from 'react';
 const PatientFacilities = () => {
   const { id } = useParams();
   const [patient, setPatient] = useState(null);
-  const [bsr , setBsr] = useState([]);
+  const [bsr, setBsr] = useState([]);
   const [reports, setReports] = useState([]);
 
   const fetchReports = async () => {
     const userInfo = JSON.parse(localStorage.getItem('userInfo'));
-    try{
+    try {
       const response = await fetch(`${import.meta.env.VITE_API_KEY}/doctor/getPatientReport/${id}`, {
         method: 'GET',
         headers: {
@@ -20,10 +20,10 @@ const PatientFacilities = () => {
         }
       });
       const result = await response.json();
-      if(result.status === 200){
+      if (result.status === 200) {
         setReports(result.data);
       }
-    }catch(e){
+    } catch (e) {
       console.error('Error fetching reports:', e);
     }
   }
@@ -133,7 +133,7 @@ const PatientFacilities = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {bsr.map((readings)=>(
+                  {bsr.map((readings) => (
                     <tr key={readings.id}>
                       <td>{new Date(readings.created_at).toLocaleString()}</td>
                       <td>{readings.category}</td>
@@ -159,7 +159,15 @@ const PatientFacilities = () => {
                   </tr>
                 </thead>
                 <tbody>
-
+                  {reports.map((report) => (
+                    <tr key={report.id}>
+                      <td>{report.reportDate}</td>
+                      <td><span className={styles.reportType}>{report.reportType}</span></td>
+                      <td>{report.labName}</td>
+                      <td>{report.comments || '-'}</td>
+                      <td><a className={styles.viewReportLink} href={`${import.meta.env.VITE_STORAGE_URL}/${report.filePath}`} target="_blank" rel="noopener noreferrer">View Report</a></td>
+                    </tr>
+                  ))}
                 </tbody>
               </table>
             </div>
