@@ -7,6 +7,15 @@ const PatientFacilities = () => {
   const { id } = useParams();
   const [patient, setPatient] = useState(null);
   const [bsr , setBsr] = useState([]);
+  const [reports, setReports] = useState([]);
+
+  const fetchReports = async () => {
+    try{
+
+    }catch(e){
+      console.error('Error fetching reports:', e);
+    }
+  }
 
   const fetchBsr = async () => {
     const userInfo = JSON.parse(localStorage.getItem('userInfo'));
