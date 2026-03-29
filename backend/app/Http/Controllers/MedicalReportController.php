@@ -61,4 +61,8 @@ class MedicalReportController extends Controller
             'status' => 200
         ], 200);
     }
+
+    public function getPatientReport(){
+        //code
+    }
 }
