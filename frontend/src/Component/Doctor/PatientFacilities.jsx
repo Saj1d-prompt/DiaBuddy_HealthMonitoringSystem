@@ -20,6 +20,9 @@ const PatientFacilities = () => {
         }
       });
       const result = await response.json();
+      if(result.status === 200){
+        setReports(result.data);
+      }
     }catch(e){
       console.error('Error fetching reports:', e);
     }
@@ -73,6 +76,7 @@ const PatientFacilities = () => {
   useEffect(() => {
     fetchPatientInfo();
     fetchBsr();
+    fetchReports();
   }, []);
   const [activeTab, setActiveTab] = useState('');
   return (
