@@ -124,7 +124,25 @@ const PatientFacilities = () => {
               </table>
             </div>
           )}
-          {activeTab === 'reports' && <div>Medical Reports Content</div>}
+          {activeTab === 'reports' && (
+            <div className={styles.bsrTable}>
+              <h2>Medical Reports History</h2>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Test Date</th>
+                    <th>Report Type</th>
+                    <th>Laboratory/Hospital</th>
+                    <th>Comments</th>
+                    <th>Report</th>
+                  </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+              </table>
+            </div>
+          )}
           {activeTab === 'prescriptions' && <div>Prescriptions Content</div>}
         </div>
       </div>
