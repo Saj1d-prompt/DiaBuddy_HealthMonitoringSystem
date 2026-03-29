@@ -172,7 +172,11 @@ const PatientFacilities = () => {
               </table>
             </div>
           )}
-          {activeTab === 'prescriptions' && <div>Prescriptions Content</div>}
+          {activeTab === 'prescriptions' && (
+            <div>
+              <h2>Prescribe Medicines</h2>
+            </div>
+          )}
         </div>
       </div>
     </div>
