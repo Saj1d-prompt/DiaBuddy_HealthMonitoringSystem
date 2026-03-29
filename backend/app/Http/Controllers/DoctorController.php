@@ -226,5 +226,20 @@ class DoctorController extends Controller
                 'errors' => $validation->errors()
             ], 400);
         }
+
+        $prescription = new Prescription();
+        $prescription->medication_name = $request->medication_name;
+        $prescription->dosage = $request->dosage;
+        $prescription->frequency = $request->frequency;
+        $prescription->duration = $request->duration;
+        $prescription->notes = $request->notes;
+        $prescription->doctor_id = $request->user()->id;
+        $prescription->patient_id = $request->patient_id;
+        $prescription->save();
+        
+        return response()->json([
+            'message' => 'Prescription created successfully',
+            'status' => 200
+        ], 200);
     }
 }
