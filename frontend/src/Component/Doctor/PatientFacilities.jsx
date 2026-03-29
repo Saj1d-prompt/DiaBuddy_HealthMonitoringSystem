@@ -184,6 +184,10 @@ const PatientFacilities = () => {
                   <label htmlFor="dosage">Dosage</label>
                   <input type="text" id="dosage" name="dosage" placeholder="Enter dosage information (e.g., 1 tablet)" />
                 </div>
+                <div className={styles.medFormGroup}>
+                  <label htmlFor="frequency">Frequency</label>
+                  <input type="text" id="frequency" name="frequency" placeholder="Enter frequency (e.g., twice a day or 1+0+1)" />
+                </div>
               </form>
             </div>
           )}
