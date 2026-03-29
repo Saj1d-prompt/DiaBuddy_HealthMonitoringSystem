@@ -192,6 +192,7 @@ const PatientFacilities = () => {
                   <label htmlFor="duration">Duration</label>
                   <input type="text" id="duration" name="duration" placeholder="Enter duration (e.g., 5 days)" />
                 </div>
+                <button type="submit" className={styles.prescribeButton}>Prescribe</button>
               </form>
             </div>
           )}
