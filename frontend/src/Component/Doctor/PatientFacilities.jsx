@@ -180,6 +180,10 @@ const PatientFacilities = () => {
                   <label htmlFor="medicineName">Medicine Name</label>
                   <input type="text" id="medicineName" name="medicineName" placeholder="Enter medicine name" />
                 </div>
+                <div className={styles.medFormGroup}>
+                  <label htmlFor="dosage">Dosage</label>
+                  <input type="text" id="dosage" name="dosage" placeholder="Enter dosage information (e.g., 1 tablet)" />
+                </div>
               </form>
             </div>
           )}
