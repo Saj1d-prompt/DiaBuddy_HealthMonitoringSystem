@@ -173,8 +173,14 @@ const PatientFacilities = () => {
             </div>
           )}
           {activeTab === 'prescriptions' && (
-            <div>
+            <div className={styles.prescriptionContainer}>
               <h2>Prescribe Medicines</h2>
+              <form action="">
+                <div className={styles.medFormGroup}>
+                  <label htmlFor="medicineName">Medicine Name</label>
+                  <input type="text" id="medicineName" name="medicineName" placeholder="Enter medicine name" />
+                </div>
+              </form>
             </div>
           )}
         </div>
