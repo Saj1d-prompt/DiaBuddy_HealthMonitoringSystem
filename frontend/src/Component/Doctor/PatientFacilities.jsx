@@ -16,8 +16,10 @@ const PatientFacilities = () => {
     setMedicine([...medicine, { name: '', dosage: '', frequency: '', duration: '' }]);
   }
 
-  const removeMedicine = () => {
-
+  const removeMedicine = (index) => {
+    const newMedicine = [...medicine];
+    newMedicine.splice(index, 1);
+    setMedicine(newMedicine);
   }
 
   const fetchReports = async () => {
