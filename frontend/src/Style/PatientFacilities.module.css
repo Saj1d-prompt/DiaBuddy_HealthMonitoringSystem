@@ -234,3 +234,18 @@
 .removeMedicineButton:hover {
   background: #dc2626;
 }
+
+.prescribeButton {
+  margin-top: 20px;
+  padding: 10px 16px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.prescribeButton:hover {
+  background: #1d4ed8;
+}
