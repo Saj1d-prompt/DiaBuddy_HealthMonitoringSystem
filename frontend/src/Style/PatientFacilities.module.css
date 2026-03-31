@@ -160,3 +160,24 @@
 .tableContainer .viewReportLink:hover {
     background: #1e40af;
 }
+
+
+.prescriptionContainer {
+  padding: 20px;
+  background: #f9fafb;
+  border-radius: 12px;
+}
+
+.medicineBlock {
+  border: 1px solid #e5e7eb;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  background: #ffffff;
+  position: relative;
+}
+
+.medicineBlock h3 {
+  margin-bottom: 10px;
+  color: #48572f;
+}
