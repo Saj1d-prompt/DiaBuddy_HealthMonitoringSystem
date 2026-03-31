@@ -8,6 +8,9 @@ const PatientFacilities = () => {
   const [patient, setPatient] = useState(null);
   const [bsr, setBsr] = useState([]);
   const [reports, setReports] = useState([]);
+  const [medicine,setMedicine] = useState([
+    { name: '', dosage: '', frequency: '', duration: '' }
+  ]);
 
   const fetchReports = async () => {
     const userInfo = JSON.parse(localStorage.getItem('userInfo'));
