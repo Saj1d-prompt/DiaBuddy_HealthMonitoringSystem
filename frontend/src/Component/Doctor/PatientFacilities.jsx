@@ -219,12 +219,12 @@ const PatientFacilities = () => {
                       <input type="text" id="duration" value={med.duration} name="duration" placeholder="Enter duration (e.g., 5 days)" />
                     </div>
                     {medicine.length > 1 && (
-                      <button type="button" className={styles.removeMedicineButton}>Remove Medicine</button>
+                      <button type="button" className={styles.removeMedicineButton} onClick={() => removeMedicine(index)}>Remove Medicine</button>
                     )}
                   </div>
                 ))}
                 <div>
-                  <button type='button' className={styles.addMedicineButton}> + Add Medicine</button>
+                  <button type='button' className={styles.addMedicineButton} onClick={addMedicine}> + Add Medicine</button>
                 </div>
                 <button type="submit" className={styles.prescribeButton}>Prescribe</button>
               </form>
