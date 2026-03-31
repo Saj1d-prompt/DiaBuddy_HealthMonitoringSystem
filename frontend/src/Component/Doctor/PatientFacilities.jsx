@@ -12,6 +12,10 @@ const PatientFacilities = () => {
     { name: '', dosage: '', frequency: '', duration: '' }
   ]);
 
+  const addMedicine = () => {
+    
+  }
+
   const fetchReports = async () => {
     const userInfo = JSON.parse(localStorage.getItem('userInfo'));
     try {
