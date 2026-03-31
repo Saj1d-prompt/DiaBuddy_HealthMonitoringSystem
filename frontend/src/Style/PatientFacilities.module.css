@@ -194,3 +194,15 @@
   margin-bottom: 4px;
   color: #374151;
 }
+
+.medFormGroup input {
+  padding: 8px 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  outline: none;
+  transition: 0.2s;
+}
+
+.medFormGroup input:focus {
+  border-color: #2563eb;
+}
