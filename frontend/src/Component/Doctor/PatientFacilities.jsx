@@ -13,8 +13,10 @@ const PatientFacilities = () => {
   ]);
 
   const addMedicine = () => {
-    setMedicine([...medicine, { name: '', dosage: '', frequency: '', duration: '' }]);
-  }
+    setMedicine(
+      (previous) => [...previous, { name: '', dosage: '', frequency: '', duration: '' }]
+    );
+  };
 
   const removeMedicine = (index) => {
     const newMedicine = [...medicine];
