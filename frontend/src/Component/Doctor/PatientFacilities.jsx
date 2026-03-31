@@ -8,7 +8,7 @@ const PatientFacilities = () => {
   const [patient, setPatient] = useState(null);
   const [bsr, setBsr] = useState([]);
   const [reports, setReports] = useState([]);
-  const [medicine,setMedicine] = useState([
+  const [medicine, setMedicine] = useState([
     { name: '', dosage: '', frequency: '', duration: '' }
   ]);
 
@@ -202,23 +202,23 @@ const PatientFacilities = () => {
               <form action="">
                 {medicine.map((med, index) => (
                   <div key={index} className={styles.medicineBlock}>
-                <div className={styles.medFormGroup}>
-                  <label htmlFor="medicineName">Medicine Name</label>
-                  <input type="text" id="medicineName" name="medicineName" placeholder="Enter medicine name" />
-                </div>
-                <div className={styles.medFormGroup}>
-                  <label htmlFor="dosage">Dosage</label>
-                  <input type="text" id="dosage" name="dosage" placeholder="Enter dosage information (e.g., 1 tablet)" />
-                </div>
-                <div className={styles.medFormGroup}>
-                  <label htmlFor="frequency">Frequency</label>
-                  <input type="text" id="frequency" name="frequency" placeholder="Enter frequency (e.g., twice a day or 1+0+1)" />
-                </div>
-                <div className={styles.medFormGroup}>
-                  <label htmlFor="duration">Duration</label>
-                  <input type="text" id="duration" name="duration" placeholder="Enter duration (e.g., 5 days)" />
-                </div>
-              </div>
+                    <div className={styles.medFormGroup}>
+                      <label htmlFor="medicineName">Medicine Name</label>
+                      <input type="text" id="medicineName" name="medicineName" placeholder="Enter medicine name" />
+                    </div>
+                    <div className={styles.medFormGroup}>
+                      <label htmlFor="dosage">Dosage</label>
+                      <input type="text" id="dosage" name="dosage" placeholder="Enter dosage information (e.g., 1 tablet)" />
+                    </div>
+                    <div className={styles.medFormGroup}>
+                      <label htmlFor="frequency">Frequency</label>
+                      <input type="text" id="frequency" name="frequency" placeholder="Enter frequency (e.g., twice a day or 1+0+1)" />
+                    </div>
+                    <div className={styles.medFormGroup}>
+                      <label htmlFor="duration">Duration</label>
+                      <input type="text" id="duration" name="duration" placeholder="Enter duration (e.g., 5 days)" />
+                    </div>
+                  </div>
                 ))}
                 <div>
                   <button type='button' className={styles.addMedicineButton}> + Add Medicine</button>
