@@ -200,6 +200,8 @@ const PatientFacilities = () => {
             <div className={styles.prescriptionContainer}>
               <h2>Prescribe Medicines</h2>
               <form action="">
+                {medicine.map((med, index) => (
+                  <div key={index} className={styles.medicineBlock}>
                 <div className={styles.medFormGroup}>
                   <label htmlFor="medicineName">Medicine Name</label>
                   <input type="text" id="medicineName" name="medicineName" placeholder="Enter medicine name" />
@@ -216,6 +218,8 @@ const PatientFacilities = () => {
                   <label htmlFor="duration">Duration</label>
                   <input type="text" id="duration" name="duration" placeholder="Enter duration (e.g., 5 days)" />
                 </div>
+              </div>
+                ))}
                 <div>
                   <button type='button' className={styles.addMedicineButton}> + Add Medicine</button>
                 </div>
