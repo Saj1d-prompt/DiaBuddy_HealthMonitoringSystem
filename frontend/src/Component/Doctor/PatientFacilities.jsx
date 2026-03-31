@@ -24,6 +24,10 @@ const PatientFacilities = () => {
     setMedicine(newMedicine);
   }
 
+  const handleMedicineChange = (index, e) => {
+    
+  }
+
   const fetchReports = async () => {
     const userInfo = JSON.parse(localStorage.getItem('userInfo'));
     try {
