@@ -13,7 +13,7 @@ const PatientFacilities = () => {
   ]);
 
   const addMedicine = () => {
-    
+    setMedicine([...medicine, { name: '', dosage: '', frequency: '', duration: '' }]);
   }
 
   const fetchReports = async () => {
