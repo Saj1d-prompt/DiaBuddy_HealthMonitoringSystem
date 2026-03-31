@@ -220,3 +220,17 @@
 .addMedicineButton:hover{
     background: #059669;
 }
+
+.removeMedicineButton {
+  margin-top: 10px;
+  padding: 6px 10px;
+  background: #ef4444;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.removeMedicineButton:hover {
+  background: #dc2626;
+}
