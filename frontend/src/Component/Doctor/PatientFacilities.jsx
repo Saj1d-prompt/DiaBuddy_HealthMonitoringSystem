@@ -218,6 +218,9 @@ const PatientFacilities = () => {
                       <label htmlFor="duration">Duration</label>
                       <input type="text" id="duration" value={med.duration} name="duration" placeholder="Enter duration (e.g., 5 days)" />
                     </div>
+                    {medicine.length > 1 && (
+                      <button type="button" className={styles.removeMedicineButton}>Remove Medicine</button>
+                    )}
                   </div>
                 ))}
                 <div>
