@@ -25,7 +25,12 @@ const PatientFacilities = () => {
   }
 
   const handleMedicineChange = (index, e) => {
-    
+    const { name, value } = e.target;
+    setMedicine((previous) => {
+      const newMedicine = [...previous];
+      newMedicine[index][name] = value;
+      return newMedicine;
+    });
   }
 
   const fetchReports = async () => {
