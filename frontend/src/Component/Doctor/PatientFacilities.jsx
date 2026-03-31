@@ -202,6 +202,7 @@ const PatientFacilities = () => {
               <form action="">
                 {medicine.map((med, index) => (
                   <div key={index} className={styles.medicineBlock}>
+                    <h3>Medicine {index + 1}</h3>
                     <div className={styles.medFormGroup}>
                       <label htmlFor="medicineName">Medicine Name</label>
                       <input type="text" id="medicineName" value={med.name} onChange={(e) => handleMedicineChange(e, index)} name="medicineName" placeholder="Enter medicine name" />
