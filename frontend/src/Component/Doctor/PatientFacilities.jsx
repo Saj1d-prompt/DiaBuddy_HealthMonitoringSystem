@@ -16,6 +16,10 @@ const PatientFacilities = () => {
     setMedicine([...medicine, { name: '', dosage: '', frequency: '', duration: '' }]);
   }
 
+  const removeMedicine = () => {
+
+  }
+
   const fetchReports = async () => {
     const userInfo = JSON.parse(localStorage.getItem('userInfo'));
     try {
