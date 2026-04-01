@@ -253,5 +253,10 @@ class DoctorController extends Controller
             ->where('created_at', '<', $today)
             ->orderByDesc('created_at')
             ->get();
+        return response()->json([
+            'message' => 'Old prescriptions retrieved successfully',
+            'status' => 200,
+            'data' => $prescriptions
+        ], 200);
     }
 }
