@@ -296,7 +296,16 @@ const PatientFacilities = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  
+                  {oldPrescriptions.map((prescription) => (
+                    <tr key={prescription.id}>
+                      <td>{new Date(prescription.created_at).toLocaleDateString()}</td>
+                      <td>{prescription.medicine_name}</td>
+                      <td>{prescription.dosage}</td>
+                      <td>{prescription.frequency}</td>
+                      <td>{prescription.duration}</td>
+                      <td>{prescription.notes || '-'}</td>
+                    </tr>
+                  ))}
                 </tbody>
               </table>
             </div>
