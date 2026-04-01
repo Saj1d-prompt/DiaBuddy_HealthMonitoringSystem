@@ -229,15 +229,17 @@ class DoctorController extends Controller
             ], 400);
         }
 
-        $prescription = new Prescription();
-        $prescription->medication_name = $request->medication_name;
-        $prescription->dosage = $request->dosage;
-        $prescription->frequency = $request->frequency;
-        $prescription->duration = $request->duration;
-        $prescription->notes = $request->notes;
-        $prescription->doctor_id = $request->user()->id;
-        $prescription->patient_id = $request->patient_id;
-        $prescription->save();
+        foreach ($request->medicines as $med) {
+            Prescription::create([
+                'medication_name' => $med['medication_name'],
+                'dosage' => $med['dosage'],
+                'frequency' => $med['frequency'],
+                'duration' => $med['duration'],
+                'notes' => $med['notes'] ?? null,
+                'doctor_id' => $request->user()->id,
+                'patient_id' => $request->patient_id,
+            ]);
+        }
         
         return response()->json([
             'message' => 'Prescription created successfully',
