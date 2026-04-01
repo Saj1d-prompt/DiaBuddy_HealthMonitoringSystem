@@ -101,6 +101,7 @@ const PatientFacilities = () => {
     fetchPatientInfo();
     fetchBsr();
     fetchReports();
+    fetchOldPrescriptions();
   }, []);
   const [activeTab, setActiveTab] = useState('');
   const handleSubmit = async (e) => {
