@@ -168,6 +168,7 @@ const PatientFacilities = () => {
           <button onClick={() => setActiveTab('bsr')}>Blood Suger Readings</button>
           <button onClick={() => setActiveTab('reports')}>Medical Reports</button>
           <button onClick={() => setActiveTab('prescriptions')}>Prescriptions</button>
+          <button onClick={() => setActiveTab('previousPrescriptions')}>Old Prescriptions</button>
         </nav>
         <div className={styles.contentContainer}>
           {activeTab === 'bsr' && (
@@ -261,6 +262,7 @@ const PatientFacilities = () => {
               </form>
             </div>
           )}
+          {activeTab === 'previousPrescriptions' && (<div>Old Medicine Contents</div>)}
         </div>
       </div>
     </div>
