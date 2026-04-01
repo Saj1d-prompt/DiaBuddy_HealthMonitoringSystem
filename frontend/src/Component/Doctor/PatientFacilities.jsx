@@ -9,12 +9,12 @@ const PatientFacilities = () => {
   const [bsr, setBsr] = useState([]);
   const [reports, setReports] = useState([]);
   const [medicine, setMedicine] = useState([
-    { medicine_name: '', dosage: '', frequency: '', duration: '' }
+    { medicine_name: '', dosage: '', frequency: '', duration: '' , notes: '' }
   ]);
 
   const addMedicine = () => {
     setMedicine(
-      (previous) => [...previous, { medicine_name: '', dosage: '', frequency: '', duration: '' }]
+      (previous) => [...previous, { medicine_name: '', dosage: '', frequency: '', duration: '' , notes: '' }]
     );
   };
 
@@ -121,7 +121,7 @@ const PatientFacilities = () => {
       const result = await response.json();
       if(result.status === 200){
         console.log('Prescription created successfully');
-        setMedicine([{ medicine_name: '', dosage: '', frequency: '', duration: '' }]);
+        setMedicine([{ medicine_name: '', dosage: '', frequency: '', duration: '' , notes: '' }]);
       }else{
         console.error('Failed to create prescription');
       }
@@ -244,6 +244,10 @@ const PatientFacilities = () => {
                     <div className={styles.medFormGroup}>
                       <label htmlFor="duration">Duration</label>
                       <input type="text" id="duration" value={med.duration} onChange={(e) => handleMedicineChange(index, e)} name="duration" placeholder="Enter duration (e.g., 5 days)" />
+                    </div>
+                    <div className={styles.medFormGroup}>
+                      <label htmlFor="notes">Additional Notes(if any)</label>
+                      <input type="text" id="notes" value={med.notes} onChange={(e) => handleMedicineChange(index, e)} name="notes" placeholder="Additional notes (optional)" />
                     </div>
                     {medicine.length > 1 && (
                       <button type="button" className={styles.removeMedicineButton} onClick={() => removeMedicine(index)}>Remove Medicine</button>
