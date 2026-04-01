@@ -9,12 +9,12 @@ const PatientFacilities = () => {
   const [bsr, setBsr] = useState([]);
   const [reports, setReports] = useState([]);
   const [medicine, setMedicine] = useState([
-    { name: '', dosage: '', frequency: '', duration: '' }
+    { medicine_name: '', dosage: '', frequency: '', duration: '' }
   ]);
 
   const addMedicine = () => {
     setMedicine(
-      (previous) => [...previous, { name: '', dosage: '', frequency: '', duration: '' }]
+      (previous) => [...previous, { medicine_name: '', dosage: '', frequency: '', duration: '' }]
     );
   };
 
@@ -205,7 +205,7 @@ const PatientFacilities = () => {
                     <h3>Medicine {index + 1}</h3>
                     <div className={styles.medFormGroup}>
                       <label htmlFor="medicineName">Medicine Name</label>
-                      <input type="text" id="medicineName" value={med.name} onChange={(e) => handleMedicineChange(index, e)} name="medicineName" placeholder="Enter medicine name" />
+                      <input type="text" id="medicineName" value={med.medicine_name} onChange={(e) => handleMedicineChange(index, e)} name="medicineName" placeholder="Enter medicine name" />
                     </div>
                     <div className={styles.medFormGroup}>
                       <label htmlFor="dosage">Dosage</label>
