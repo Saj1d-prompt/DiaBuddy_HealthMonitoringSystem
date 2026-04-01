@@ -110,4 +110,7 @@ class PatientController extends Controller
             'status' => 200
         ], 200);
     }
+    public function getPrescription(Request $request) {
+
+    }
 }
