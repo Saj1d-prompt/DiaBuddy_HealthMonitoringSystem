@@ -199,7 +199,7 @@ const PatientFacilities = () => {
           {activeTab === 'prescriptions' && (
             <div className={styles.prescriptionContainer}>
               <h2>Prescribe Medicines</h2>
-              <form action="">
+              <form action="" onSubmit={handleSubmit}>
                 {medicine.map((med, index) => (
                   <div key={index} className={styles.medicineBlock}>
                     <h3>Medicine {index + 1}</h3>
