@@ -113,6 +113,10 @@ const PatientFacilities = () => {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${userInfo.token}`
         },
+        body: JSON.stringify({
+          patient_id: id,
+          medicines: medicine
+        })
       });
     }catch(e){
       console.error('Error submitting prescription:', e);
