@@ -214,11 +214,13 @@ class DoctorController extends Controller
 
     public function prescribeMedicine(Request $request){
         $validation = Validator::make($request->all(), [
-            'medication_name' => 'required|string',
-            'dosage' => 'required|string',
-            'frequency' => 'required|string',
-            'duration' => 'required|string',
-            'notes' => 'nullable|string',
+            'patient_id' => 'required|exists:users,id',
+            'medicines' => 'required|array',
+            'medicines.*.medication_name' => 'required|string',
+            'medicines.*.dosage' => 'required|string',
+            'medicines.*.frequency' => 'required|string',
+            'medicines.*.duration' => 'required|string',
+            'medicines.*.notes' => 'nullable|string',
         ]);
         if ($validation->fails()) {
             return response()->json([
