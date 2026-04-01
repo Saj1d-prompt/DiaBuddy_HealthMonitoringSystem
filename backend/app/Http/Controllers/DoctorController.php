@@ -248,6 +248,10 @@ class DoctorController extends Controller
     }
 
     public function getOldPrescription($id){
-        
+        $today = now()->startOfDay();
+        $prescriptions = Prescription::where('patient_id', $id)
+            ->where('created_at', '<', $today)
+            ->orderByDesc('created_at')
+            ->get();
     }
 }
