@@ -133,7 +133,17 @@ const PatientFacilities = () => {
   const fetchOldPrescriptions = async () => {
     const userInfo = JSON.parse(localStorage.getItem('userInfo'));
     try{
-
+      const response = await fetch(`${import.meta.env.VITE_API_KEY}/doctor/getOldPrescription/${id}`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${userInfo.token}`
+        }
+      });
+      const result = await response.json();
+      if (result.status === 200) {
+        setOldPrescriptions(result.data);
+      }
     }catch(e){
       console.error('Error fetching old prescriptions:', e);
     }
