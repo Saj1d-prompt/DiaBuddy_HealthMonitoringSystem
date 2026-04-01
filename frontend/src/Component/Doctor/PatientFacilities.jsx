@@ -230,8 +230,8 @@ const PatientFacilities = () => {
                   <div key={index} className={styles.medicineBlock}>
                     <h3>Medicine {index + 1}</h3>
                     <div className={styles.medFormGroup}>
-                      <label htmlFor="medicineName">Medicine Name</label>
-                      <input type="text" id="medicineName" value={med.medicine_name} onChange={(e) => handleMedicineChange(index, e)} name="medicineName" placeholder="Enter medicine name" />
+                      <label htmlFor="medicine_name">Medicine Name</label>
+                      <input type="text" id="medicine_name" value={med.medicine_name} onChange={(e) => handleMedicineChange(index, e)} name="medicine_name" placeholder="Enter medicine name" />
                     </div>
                     <div className={styles.medFormGroup}>
                       <label htmlFor="dosage">Dosage</label>
