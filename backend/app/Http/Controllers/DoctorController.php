@@ -216,7 +216,7 @@ class DoctorController extends Controller
         $validation = Validator::make($request->all(), [
             'patient_id' => 'required|exists:users,id',
             'medicines' => 'required|array',
-            'medicines.*.medication_name' => 'required|string',
+            'medicines.*.medicine_name' => 'required|string',
             'medicines.*.dosage' => 'required|string',
             'medicines.*.frequency' => 'required|string',
             'medicines.*.duration' => 'required|string',
@@ -231,7 +231,7 @@ class DoctorController extends Controller
 
         foreach ($request->medicines as $med) {
             Prescription::create([
-                'medication_name' => $med['medication_name'],
+                'medicine_name' => $med['medicine_name'],
                 'dosage' => $med['dosage'],
                 'frequency' => $med['frequency'],
                 'duration' => $med['duration'],
