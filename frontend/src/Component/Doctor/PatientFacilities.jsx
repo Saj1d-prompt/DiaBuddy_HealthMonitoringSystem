@@ -130,6 +130,14 @@ const PatientFacilities = () => {
     }
   }
   const [oldPrescriptions, setOldPrescriptions] = useState([]);
+  const fetchOldPrescriptions = async () => {
+    const userInfo = JSON.parse(localStorage.getItem('userInfo'));
+    try{
+
+    }catch(e){
+      console.error('Error fetching old prescriptions:', e);
+    }
+  }
   return (
     <div className={styles.container}>
       <div>
