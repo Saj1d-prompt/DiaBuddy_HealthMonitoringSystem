@@ -8,7 +8,7 @@ class Prescription extends Model
 {
     protected $table = 'prescriptions';
     protected $fillable = [
-        'medication_name',
+        'medicine_name',
         'dosage',
         'frequency',
         'duration',
