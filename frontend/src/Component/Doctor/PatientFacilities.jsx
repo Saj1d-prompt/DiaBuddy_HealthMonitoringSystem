@@ -105,6 +105,11 @@ const PatientFacilities = () => {
   const [activeTab, setActiveTab] = useState('');
   const handleSubmit = async (e) => {
     e.preventDefault();
+    try{
+
+    }catch(e){
+      console.error('Error submitting prescription:', e);
+    }
   }
   return (
     <div className={styles.container}>
