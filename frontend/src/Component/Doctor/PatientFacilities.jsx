@@ -205,19 +205,19 @@ const PatientFacilities = () => {
                     <h3>Medicine {index + 1}</h3>
                     <div className={styles.medFormGroup}>
                       <label htmlFor="medicineName">Medicine Name</label>
-                      <input type="text" id="medicineName" value={med.name} onChange={(e) => handleMedicineChange(e, index)} name="medicineName" placeholder="Enter medicine name" />
+                      <input type="text" id="medicineName" value={med.name} onChange={(e) => handleMedicineChange(index, e)} name="medicineName" placeholder="Enter medicine name" />
                     </div>
                     <div className={styles.medFormGroup}>
                       <label htmlFor="dosage">Dosage</label>
-                      <input type="text" id="dosage" value={med.dosage} onChange={(e) => handleMedicineChange(e, index)} name="dosage" placeholder="Enter dosage information (e.g., 1 tablet)" />
+                      <input type="text" id="dosage" value={med.dosage} onChange={(e) => handleMedicineChange(index, e)} name="dosage" placeholder="Enter dosage information (e.g., 1 tablet)" />
                     </div>
                     <div className={styles.medFormGroup}>
                       <label htmlFor="frequency">Frequency</label>
-                      <input type="text" id="frequency" value={med.frequency} onChange={(e) => handleMedicineChange(e, index)} name="frequency" placeholder="Enter frequency (e.g., twice a day or 1+0+1)" />
+                      <input type="text" id="frequency" value={med.frequency} onChange={(e) => handleMedicineChange(index, e)} name="frequency" placeholder="Enter frequency (e.g., twice a day or 1+0+1)" />
                     </div>
                     <div className={styles.medFormGroup}>
                       <label htmlFor="duration">Duration</label>
-                      <input type="text" id="duration" value={med.duration} onChange={(e) => handleMedicineChange(e, index)} name="duration" placeholder="Enter duration (e.g., 5 days)" />
+                      <input type="text" id="duration" value={med.duration} onChange={(e) => handleMedicineChange(index, e)} name="duration" placeholder="Enter duration (e.g., 5 days)" />
                     </div>
                     {medicine.length > 1 && (
                       <button type="button" className={styles.removeMedicineButton} onClick={() => removeMedicine(index)}>Remove Medicine</button>
