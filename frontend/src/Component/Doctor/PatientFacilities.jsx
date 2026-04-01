@@ -129,6 +129,7 @@ const PatientFacilities = () => {
       console.error('Error submitting prescription:', e);
     }
   }
+  const [oldPrescriptions, setOldPrescriptions] = useState([]);
   return (
     <div className={styles.container}>
       <div>
