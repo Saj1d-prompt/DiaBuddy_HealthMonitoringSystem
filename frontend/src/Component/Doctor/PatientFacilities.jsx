@@ -263,7 +263,26 @@ const PatientFacilities = () => {
               </form>
             </div>
           )}
-          {activeTab === 'previousPrescriptions' && (<div>Old Medicine Contents</div>)}
+          {activeTab === 'previousPrescriptions' && (<div>
+            <div className={styles.tableContainer}>
+              <h2>Prescription History</h2>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>Medicine</th>
+                    <th>Dosage</th>
+                    <th>Frequency</th>
+                    <th>Duration</th>
+                    <th>Notes</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  
+                </tbody>
+              </table>
+            </div>
+          </div>)}
         </div>
       </div>
     </div>
