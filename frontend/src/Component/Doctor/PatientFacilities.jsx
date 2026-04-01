@@ -103,6 +103,9 @@ const PatientFacilities = () => {
     fetchReports();
   }, []);
   const [activeTab, setActiveTab] = useState('');
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+  }
   return (
     <div className={styles.container}>
       <div>
