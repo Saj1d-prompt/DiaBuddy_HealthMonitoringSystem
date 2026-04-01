@@ -105,8 +105,15 @@ const PatientFacilities = () => {
   const [activeTab, setActiveTab] = useState('');
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const userInfo = JSON.parse(localStorage.getItem('userInfo'));
     try{
-
+      const response = await fetch(`${import.meta.env.VITE_API_KEY}/doctor/prescribeMedicine`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${userInfo.token}`
+        },
+      });
     }catch(e){
       console.error('Error submitting prescription:', e);
     }
