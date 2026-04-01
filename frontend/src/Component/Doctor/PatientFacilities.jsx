@@ -118,6 +118,13 @@ const PatientFacilities = () => {
           medicines: medicine
         })
       });
+      const result = await response.json();
+      if(result.status === 200){
+        alert('Prescription created successfully');
+        setMedicine([{ medicine_name: '', dosage: '', frequency: '', duration: '' }]);
+      }else{
+        alert('Failed to create prescription');
+      }
     }catch(e){
       console.error('Error submitting prescription:', e);
     }
