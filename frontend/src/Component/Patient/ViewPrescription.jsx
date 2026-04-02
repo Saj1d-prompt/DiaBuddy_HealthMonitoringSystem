@@ -16,7 +16,15 @@ const ViewPrescription = () => {
           </tr>
         </thead>
         <tbody>
-          
+          <tr>
+            <td>2024-06-01</td>
+            <td>Metformin</td>
+            <td>1 tablet</td>
+            <td>1+0+0</td>
+            <td>1 month</td>
+            <td>Dr. X</td>
+            <td>After Meal</td>
+          </tr>
         </tbody>
       </table>
     </div>
