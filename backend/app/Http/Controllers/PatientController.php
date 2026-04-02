@@ -123,5 +123,17 @@ class PatientController extends Controller
             ->whereDate('created_at', $date)
             ->orderBy('created_at', 'desc')
             ->get();
+        if ($prescriptions->isEmpty()) {
+            return response()->json([
+                'message' => 'No prescriptions found for today',
+                'status' => 404
+            ], 404);
+        } else {
+            return response()->json([
+                'message' => 'Prescriptions retrieved successfully',
+                'data' => $prescriptions,
+                'status' => 200
+            ], 200);
+        }
     }
 }
