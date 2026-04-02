@@ -1,5 +1,6 @@
 import React from 'react'
 import BloodSugarReadings from './BloodSugarReading'
+import ViewPrescription from './ViewPrescription'
 
 const PatientDashboard = () => {
   return (
@@ -12,6 +13,7 @@ const PatientDashboard = () => {
           View Reports
         </button>
         <BloodSugarReadings />
+        <ViewPrescription />
     </div>
   )
 }
