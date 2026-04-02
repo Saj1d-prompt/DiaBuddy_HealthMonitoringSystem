@@ -1,6 +1,15 @@
-import React from 'react'
+import React , { useState } from 'react'
 import style from '../../Style/ViewPrescription.module.css'
 const ViewPrescription = () => {
+  const [prescription, setPrescription] = useState([]);
+  const fetchPrescription = async () => {
+    const userInfo = JSON.parse(localStorage.getItem("userInfo"));
+    try{
+
+    }catch(error){
+      console.error("Error fetching prescription:", error);
+    }
+  }
   return (
     <div>
       <table>
