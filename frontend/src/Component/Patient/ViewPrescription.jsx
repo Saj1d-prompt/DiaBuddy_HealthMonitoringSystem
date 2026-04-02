@@ -15,6 +15,9 @@ const ViewPrescription = () => {
             <th>Notes</th>
           </tr>
         </thead>
+        <tbody>
+          
+        </tbody>
       </table>
     </div>
   )
