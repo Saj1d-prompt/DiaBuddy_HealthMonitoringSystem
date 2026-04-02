@@ -13,3 +13,16 @@
   font-size: 15px;
   background: white;
 }
+
+.table thead {
+  background-color: #4A90E2;
+  color: white;
+}
+
+.table th,
+.table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+}
+
