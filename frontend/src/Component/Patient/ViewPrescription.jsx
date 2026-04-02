@@ -4,7 +4,11 @@ import style from '../../Styles/ViewPrescription.module.css'
 const ViewPrescription = () => {
   return (
     <div>
-      
+      <table>
+        <thead>
+          
+        </thead>
+      </table>
     </div>
   )
 }
