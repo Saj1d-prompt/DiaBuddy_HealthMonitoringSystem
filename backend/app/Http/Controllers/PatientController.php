@@ -8,6 +8,7 @@ use App\Models\Hospital;
 use App\Models\Schedule;
 use Illuminate\Http\Request;
 use App\Models\Appointment;
+use App\Models\Prescription;
 
 class PatientController extends Controller
 {
@@ -111,6 +112,8 @@ class PatientController extends Controller
         ], 200);
     }
     public function getPrescription(Request $request) {
-
+        $latestPrescription = Prescription::where('patient_id', $request->user()->id)
+            ->orderBy('created_at', 'desc')
+            ->first();
     }
 }
