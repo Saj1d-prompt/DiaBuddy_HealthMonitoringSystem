@@ -5,7 +5,14 @@ const ViewPrescription = () => {
   const fetchPrescription = async () => {
     const userInfo = JSON.parse(localStorage.getItem("userInfo"));
     try{
-
+      const res = await fetch(`${import.meta.env.VITE_API_KEY}/getPrescription`, {
+        method: "GET",
+        headers: {
+          "Authorization": `Bearer ${userInfo.token}`,
+          "Content-Type": "application/json"
+        }
+      })
+      
     }catch(error){
       console.error("Error fetching prescription:", error);
     }
