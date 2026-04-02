@@ -12,7 +12,12 @@ const ViewPrescription = () => {
           "Content-Type": "application/json"
         }
       })
-      
+      const result = await res.json();
+      if(result.status === 200){
+        setPrescription(result.data);
+      } else {
+        console.error("Failed to fetch prescription:", result.message);
+      }
     }catch(error){
       console.error("Error fetching prescription:", error);
     }
