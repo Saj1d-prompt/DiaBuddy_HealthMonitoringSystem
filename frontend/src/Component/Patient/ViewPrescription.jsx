@@ -1,6 +1,5 @@
 import React from 'react'
-import style from '../../Styles/ViewPrescription.module.css'
-
+import style from '../../Style/ViewPrescription.module.css'
 const ViewPrescription = () => {
   return (
     <div>
