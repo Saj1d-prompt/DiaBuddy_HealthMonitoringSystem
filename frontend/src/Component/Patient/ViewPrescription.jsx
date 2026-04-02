@@ -26,8 +26,8 @@ const ViewPrescription = () => {
     fetchPrescription();
   }, []);
   return (
-    <div>
-      <table>
+    <div className={style.container}>
+      <table className={style.table}>
         <thead>
           <tr>
             <th>Prescribed Date</th>
@@ -48,7 +48,7 @@ const ViewPrescription = () => {
               <td>{presc.frequency}</td>
               <td>{presc.duration}</td>
               <td>{` Dr. ${presc.doctor.name}`}</td>
-              <td>{presc.notes}</td>
+              <td>{presc.notes || '-'}</td>
             </tr>
           ))}
         </tbody>
