@@ -40,15 +40,17 @@ const ViewPrescription = () => {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>2024-06-01</td>
-            <td>Metformin</td>
-            <td>1 tablet</td>
-            <td>1+0+0</td>
-            <td>1 month</td>
-            <td>Dr. X</td>
-            <td>After Meal</td>
-          </tr>
+          {prescription.map((presc) => (
+            <tr key={presc.id}>
+              <td>{new Date(presc.created_at).toLocaleDateString()}</td>
+              <td>{presc.medicine_name}</td>
+              <td>{presc.dosage}</td>
+              <td>{presc.frequency}</td>
+              <td>{presc.duration}</td>
+              <td>{` Dr. ${presc.doctor.name}`}</td>
+              <td>{presc.notes}</td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </div>
