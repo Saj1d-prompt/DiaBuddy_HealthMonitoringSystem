@@ -1,4 +1,4 @@
-import React , { useState } from 'react'
+import React , { useState, useEffect } from 'react'
 import style from '../../Style/ViewPrescription.module.css'
 const ViewPrescription = () => {
   const [prescription, setPrescription] = useState([]);
@@ -22,6 +22,9 @@ const ViewPrescription = () => {
       console.error("Error fetching prescription:", error);
     }
   }
+  useEffect(() => {
+    fetchPrescription();
+  }, []);
   return (
     <div>
       <table>
