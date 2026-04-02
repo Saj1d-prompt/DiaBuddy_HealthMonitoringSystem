@@ -115,5 +115,13 @@ class PatientController extends Controller
         $latestPrescription = Prescription::where('patient_id', $request->user()->id)
             ->orderBy('created_at', 'desc')
             ->first();
+        
+        $date = $latestPrescription->created_at->format('Y-m-d');
+
+        $prescriptions = Prescription::with('doctor:id,name')
+            ->where('patient_id', $request->user()->id)
+            ->whereDate('created_at', $date)
+            ->orderBy('created_at', 'desc')
+            ->get();
     }
 }
