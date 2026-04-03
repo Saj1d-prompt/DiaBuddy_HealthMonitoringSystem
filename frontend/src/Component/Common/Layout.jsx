@@ -13,18 +13,23 @@ const Layout = ({ children }) => {
         return <Outlet />;
     }
     const userRole = user?.role;
-    if(userRole === 'admin') {
-        return (<AdminNavbar />)
-    }else if(userRole === 'doctor') {
-        return (<DoctorNavbar />)
-    }else if(userRole === 'patient') {
-        return (<PatientNavbar />)
-    }else {
-        return null;
+    const renderNavbar = () => {
+        if(userRole === 'admin') {
+            return (<AdminNavbar />)
+        }else if(userRole === 'doctor') {
+            return (<DoctorNavbar />)
+        }else if(userRole === 'patient') {
+            return (<PatientNavbar />)
+        }else {
+            return null;
+        }
     }
   return (
     <div>
-      
+      {renderNavbar()}
+      <main>
+        <Outlet />
+      </main>
     </div>
   )
 }
