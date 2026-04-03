@@ -1,6 +1,6 @@
 import React from 'react';
 
-const AuthContext = React.createContext();
+export const AuthContext = React.createContext();
 
 export default AuthContext;
 
@@ -9,6 +9,7 @@ export const AuthProvider = ({ children }) => {
     const userInfo = localStorage.getItem('userInfo');
 
     const login = (userInfo) => {
+        localStorage.setItem('userInfo', JSON.stringify(userInfo));
         setUser(userInfo);
     }
 

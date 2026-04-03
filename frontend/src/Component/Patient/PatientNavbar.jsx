@@ -1,11 +1,16 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styles from '../../Style/Navbar.module.css'
 import { Link } from 'react-router-dom'
+import { AuthContext } from '../../Context/AuthContext'
 import logo from '../Images/DiaBuddy.png'
+import { useNavigate } from 'react-router-dom'
 
 const PatientNavbar = () => {
+    const { user, logout } = useContext(AuthContext);
+    const navigate = useNavigate();
     const handleLogout = () => {
-        //code for logout
+        logout();
+        navigate('/');
     }
     return (
         <div>
