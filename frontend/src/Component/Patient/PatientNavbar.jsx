@@ -13,13 +13,12 @@ const PatientNavbar = () => {
                     <ul className={styles["nav-links"]}>
                         <li><Link to="/patientdashboard">Home</Link></li>
                         <li><Link to="/bloodsugarreading">Blood Sugar Reading</Link></li>
-                        <li><Link to="/searchhospital">Find a Hospital</Link></li>
-                        <li><Link to="/searchdoctor">Find a Doctor</Link></li>
+                        <li><Link to="/searchhospital">Find Hospital</Link></li>
+                        <li><Link to="/searchdoctor">Find Doctor</Link></li>
                         <li><Link to="/uploadreports">Upload Reports</Link></li>
                         <li><Link to="/viewreports">My Reports</Link></li>
                         <li><Link to="/viewprescriptions">My Prescriptions</Link></li>
                         <li><Link to="/profile">Profile</Link></li>
-                        <li><Link to="/logout">Logout</Link></li>
                     </ul>
                 </div>
             </nav>
