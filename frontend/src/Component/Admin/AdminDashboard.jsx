@@ -1,5 +1,4 @@
 import React from 'react'
-import UserList from './UserList';
 import CreateDoctor from './CreateDoctor';
 import AddHospital from './AddHospital';
 import AdminNavbar from './AdminNavbar';

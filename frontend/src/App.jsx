@@ -21,6 +21,9 @@ import SearchHospital from './Component/Patient/SearchHospital'
 import ViewPrescription from './Component/Patient/ViewPrescription'
 import DoctorProfile from './Component/Doctor/DoctorProfile'
 import Schedule from './Component/Doctor/Schedule'
+import AddHospital from './Component/Admin/AddHospital'
+import CreateDoctor from './Component/Admin/CreateDoctor'
+import UserList from './Component/Admin/UserList'
 
 function App() {
   return (
@@ -32,6 +35,9 @@ function App() {
           <Route path="/register" element={<CreateAccount />} />
           <Route element={<ProtectedRoute />}>
             <Route path="/admindashboard" element={<AdminDashboard />} />
+            <Route path='/addhospital' element={<AddHospital />} />
+            <Route path='/adddoctor' element={<CreateDoctor />} />
+            <Route path='/userlist' element={<UserList />} />
             <Route path="/patientdashboard" element={<PatientDashboard />} />
             <Route path="/onetimeinfoform" element={<OneTimeInfoForm />} />
             <Route path="/profile" element={<Profile />} />

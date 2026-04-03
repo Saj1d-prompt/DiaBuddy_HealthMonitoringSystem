@@ -18,7 +18,12 @@ const AdminNavbar = () => {
             <nav className={styles.navbar}>
                 <div className={styles["nav-container"]}>
                     <Link to="/"><img className={styles.logo} src={logo} alt="DiaBuddy Logo" /></Link>
-                    
+                    <ul className={styles["nav-links"]}>
+                        <li><Link to="/admindashboard">Home</Link></li>
+                        <li><Link to="/addhospital">Add Hospital</Link></li>
+                        <li><Link to="/adddoctor">Add Doctor</Link></li>
+                        <li><Link to="/userlist">User List</Link></li>
+                    </ul>
                     <div>
                         <button onClick={handleLogout} className={`${styles.btn} ${styles["btn-primary"]}`}>Logout</button>
                     </div>
