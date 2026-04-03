@@ -16,7 +16,7 @@ import DoctorDashboard from './Component/Doctor/DoctorDashboard'
 import DoctorInfoForm from './Component/Doctor/DoctorInfoForm'
 import PatientList from './Component/Doctor/PatientList'
 import PatientFacilities from './Component/Doctor/PatientFacilities'
-
+import SearchDoctor from './Component/Patient/SearchDoctor'
 
 function App() {
   return (
@@ -38,6 +38,9 @@ function App() {
             <Route path="/doctorinfoform" element={<DoctorInfoForm />} />
             <Route path="/patientlist" element={<PatientList />} />
             <Route path='/patientfacilities/:id' element={<PatientFacilities />} />
+            <Route path='/searchdoctor' element={<SearchDoctor />} />
+            <Route path='/searchhospital' element={<SearchHospital />} />
+            <Route path='/viewprescriptions' element={<ViewPrescription />} />
           </Route>
         </Routes>
       </AuthProvider>
