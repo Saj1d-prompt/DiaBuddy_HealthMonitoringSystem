@@ -24,6 +24,7 @@ import Schedule from './Component/Doctor/Schedule'
 import AddHospital from './Component/Admin/AddHospital'
 import CreateDoctor from './Component/Admin/CreateDoctor'
 import UserList from './Component/Admin/UserList'
+import Layout from './Component/Common/Layout'
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<CreateAccount />} />
           <Route element={<ProtectedRoute />}>
+          <Route element={<Layout />}>
             <Route path="/admindashboard" element={<AdminDashboard />} />
             <Route path='/addhospital' element={<AddHospital />} />
             <Route path='/adddoctor' element={<CreateDoctor />} />
@@ -53,6 +55,7 @@ function App() {
             <Route path='/searchdoctor' element={<SearchDoctor />} />
             <Route path='/searchhospital' element={<SearchHospital />} />
             <Route path='/viewprescriptions' element={<ViewPrescription />} />
+          </Route>
           </Route>
         </Routes>
       </AuthProvider>
