@@ -4,6 +4,9 @@ import { Link } from 'react-router-dom'
 import logo from '../Images/DiaBuddy.png'
 
 const PatientNavbar = () => {
+    const handleLogout = () => {
+        //code for logout
+    }
     return (
         <div>
             <nav className={styles.navbar}>
@@ -20,6 +23,9 @@ const PatientNavbar = () => {
                         <li><Link to="/viewprescriptions">My Prescriptions</Link></li>
                         <li><Link to="/profile">Profile</Link></li>
                     </ul>
+                    <div>
+                        <button onClick={handleLogout} className={`${styles.btn} ${styles["btn-primary"]}`}>Logout</button>
+                    </div>
                 </div>
             </nav>
         </div>
