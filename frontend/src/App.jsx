@@ -17,6 +17,8 @@ import DoctorInfoForm from './Component/Doctor/DoctorInfoForm'
 import PatientList from './Component/Doctor/PatientList'
 import PatientFacilities from './Component/Doctor/PatientFacilities'
 import SearchDoctor from './Component/Patient/SearchDoctor'
+import SearchHospital from './Component/Patient/SearchHospital'
+import ViewPrescription from './Component/Patient/ViewPrescription'
 
 function App() {
   return (
