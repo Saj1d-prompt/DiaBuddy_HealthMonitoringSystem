@@ -21,9 +21,9 @@ const DoctorNavbar = () => {
                     
                     <ul className={styles["nav-links"]}>
                         <li><Link to="/doctordashboard">Home</Link></li>
-                        <li><Link to="/bloodsugarreading">Add Schedule</Link></li>
-                        <li><Link to="/searchdoctor">Patient List</Link></li>
-                        <li><Link to="/profile">Profile</Link></li>
+                        <li><Link to="/schedule">Add Schedule</Link></li>
+                        <li><Link to="/patientlist">Patient List</Link></li>
+                        <li><Link to="/doctorProfile">Profile</Link></li>
                     </ul>
 
                     <div>
