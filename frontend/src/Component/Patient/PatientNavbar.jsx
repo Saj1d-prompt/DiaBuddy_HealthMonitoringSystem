@@ -6,11 +6,14 @@ import logo from '../Images/DiaBuddy.png'
 const PatientNavbar = () => {
     return (
         <div>
-            <div>
-                <Link to="/"><img className={styles.logo} src={logo} alt="DiaBuddy Logo" /></Link>
-            </div>
-            <nav>
+            <nav className={styles.navbar}>
+                <div className={styles["nav-container"]}>
+                    <Link to="/"><img className={styles.logo} src={logo} alt="DiaBuddy Logo" /></Link>
 
+                    <ul className={styles["nav-links"]}>
+                        <li><Link to="/patientdashboard">Home</Link></li>
+                    </ul>
+                </div>
             </nav>
         </div>
     )
