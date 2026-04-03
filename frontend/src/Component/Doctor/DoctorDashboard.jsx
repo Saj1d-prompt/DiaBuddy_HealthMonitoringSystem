@@ -8,9 +8,7 @@ import DoctorNavbar from './DoctorNavbar'
 const DoctorDashboard = () => {
   return (
     <div>
-      <DoctorNavbar/>
-      Test Dashboard
-      <PatientList/>
+      Test Doctor Dashboard
     </div>
   )
 }
