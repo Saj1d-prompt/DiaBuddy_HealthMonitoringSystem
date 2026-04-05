@@ -6,7 +6,14 @@ import PatientNavbar from './PatientNavbar'
 const PatientDashboard = () => {
   return (
     <div>
-      Test Patient Dashboard
+      <div className="personalInfo">
+        <h2>Mr. X</h2>
+        <div className="InfoFlex">
+          <p>Age: 45</p>
+          <p>Gender: Male</p>
+          <p>address: Basundhara R/A, Dhaka, Bangladesh</p>
+        </div>
+      </div>
     </div>
   )
 }
