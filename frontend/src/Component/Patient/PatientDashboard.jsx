@@ -16,6 +16,7 @@ const PatientDashboard = () => {
         <div className="InfoFlex">
           <p>Weight: 70 kg</p>
           <p>Height: 175 cm</p>
+          <p>BMI: 22.9</p>
           <p>Blood Group: A+</p>
         </div>
       </div>
