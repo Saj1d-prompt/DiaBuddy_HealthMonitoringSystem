@@ -13,6 +13,11 @@ const PatientDashboard = () => {
           <p>Gender: Male</p>
           <p>address: Basundhara R/A, Dhaka, Bangladesh</p>
         </div>
+        <div className="InfoFlex">
+          <p>Weight: 70 kg</p>
+          <p>Height: 175 cm</p>
+          <p>Blood Group: A+</p>
+        </div>
       </div>
     </div>
   )
