@@ -4,3 +4,21 @@ body{
     margin: 0;
     padding: 0;
 }
+
+/* Main container */
+.personalInfo {
+  width: 60%;
+  margin: 30px auto;
+  padding: 25px 30px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.personalInfo h2 {
+  margin-bottom: 20px;
+  font-size: 26px;
+  color: #2c3e50;
+  border-bottom: 2px solid #eaeaea;
+  padding-bottom: 10px;
+}
