@@ -5,7 +5,6 @@ body{
     padding: 0;
 }
 
-/* Main container */
 .personalInfo {
   width: 60%;
   margin: 30px auto;
@@ -45,4 +44,13 @@ body{
   background: #d1e2fe;
   transform: translateY(-2px);
   transition: all 0.2s ease-in-out;
+}
+
+.containerFlex{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-left: 120px;
+  max-width: 1200px;
+
 }
