@@ -49,7 +49,7 @@ const PatientDashboard = () => {
               <tr>
                 <th>Hospital Name</th>
                 <th>Address</th>
-                <th>Contact Number</th>
+                <th>Contact</th>
               </tr>
             </thead>
             <tbody>
