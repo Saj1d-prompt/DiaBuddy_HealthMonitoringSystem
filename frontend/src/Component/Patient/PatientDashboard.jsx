@@ -23,7 +23,15 @@ const PatientDashboard = () => {
       </div>
       <div className={styles.containerFlex}>
         <div className={styles.leftContainer}>
-          doctor list
+          <table>
+            <thead>
+              <tr>
+                <th>Doctor Name</th>
+                <th>Specialization</th>
+                <th>Contact</th>
+              </tr>
+            </thead>
+          </table>
         </div>
         <div className={styles.rightContainer}>
           hospital list
