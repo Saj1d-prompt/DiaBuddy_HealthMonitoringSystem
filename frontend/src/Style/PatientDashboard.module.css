@@ -6,7 +6,7 @@ body{
 }
 
 .personalInfo {
-  width: 60%;
+  width: 80%;
   margin: 30px auto;
   padding: 25px 30px;
   background: #ffffff;
@@ -20,37 +20,38 @@ body{
   color: #2c3e50;
   border-bottom: 2px solid #eaeaea;
   padding-bottom: 10px;
+  font-size: 37px;
 }
 
-.InfoFlex {
+.InfoContainer{
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
-  margin-left: 20px;
-  margin-bottom: 15px;
+  gap: 250px;
+  margin-top: 20px;
+  font-size: 19px;
 }
 
-.InfoFlex p {
+.InfoContainer p {
   background: #f8fafc;
   padding: 10px 15px;
   border-radius: 8px;
-  font-size: 15px;
+  font-size: 19px;
   color: #34495e;
   min-width: 180px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
-.InfoFlex p:hover {
+.InfoContainer p:hover {
   background: #d1e2fe;
   transform: translateY(-2px);
   transition: all 0.2s ease-in-out;
-}
+} 
 
 .containerFlex{
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
-  margin-left: 120px;
+  margin-left: 165px;
   max-width: 1200px;
 
 }

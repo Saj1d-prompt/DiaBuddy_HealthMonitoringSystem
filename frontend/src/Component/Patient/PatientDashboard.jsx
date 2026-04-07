@@ -9,17 +9,20 @@ const PatientDashboard = () => {
     <div>
       <div className={styles.personalInfo}>
         <h2>Mr. X</h2>
-        <div className={styles.InfoFlex}>
-          <p>Age: 45</p>
-          <p>Gender: Male</p>
-          <p>address: Basundhara R/A, Dhaka, Bangladesh</p>
+        <div className={styles.InfoContainer}>
+          <div>
+            <p>Age: 45</p>
+            <p>Gender: Male</p>
+            <p>address: Basundhara R/A, Dhaka, Bangladesh</p>
+          </div>
+          <div>
+            <p>Weight: 70 kg</p>
+            <p>Height: 175 cm</p>
+            <p>BMI: 22.9</p>
+            <p>Blood Group: A+</p>
+          </div>
         </div>
-        <div className={styles.InfoFlex}>
-          <p>Weight: 70 kg</p>
-          <p>Height: 175 cm</p>
-          <p>BMI: 22.9</p>
-          <p>Blood Group: A+</p>
-        </div>
+        
       </div>
       <div className={styles.containerFlex}>
         <div className={styles.leftContainer}>
