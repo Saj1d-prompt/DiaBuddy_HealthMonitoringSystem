@@ -31,6 +31,13 @@ const PatientDashboard = () => {
                 <th>Contact</th>
               </tr>
             </thead>
+            <tbody>
+              <tr>
+                <td>Dr. X</td>
+                <td>Endocrinology</td>
+                <td>12345</td>
+              </tr>
+            </tbody>
           </table>
         </div>
         <div className={styles.rightContainer}>
