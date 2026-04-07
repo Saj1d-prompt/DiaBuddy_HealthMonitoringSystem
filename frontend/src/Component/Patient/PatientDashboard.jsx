@@ -41,7 +41,15 @@ const PatientDashboard = () => {
           </table>
         </div>
         <div className={styles.rightContainer}>
-          hospital list
+          <table>
+            <thead>
+              <tr>
+                <th>Hospital Name</th>
+                <th>Address</th>
+                <th>Contact Number</th>
+              </tr>
+            </thead>
+          </table>
         </div>
       </div>
     </div>
