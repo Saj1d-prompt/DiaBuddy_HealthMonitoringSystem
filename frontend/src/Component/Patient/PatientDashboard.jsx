@@ -49,6 +49,13 @@ const PatientDashboard = () => {
                 <th>Contact Number</th>
               </tr>
             </thead>
+            <tbody>
+              <tr>
+                <td>City Hospital</td>
+                <td>Dhaka</td>
+                <td>67890</td>
+              </tr>
+            </tbody>
           </table>
         </div>
       </div>
