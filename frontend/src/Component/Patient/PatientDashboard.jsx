@@ -21,6 +21,14 @@ const PatientDashboard = () => {
           <p>Blood Group: A+</p>
         </div>
       </div>
+      <div className={styles.containerFlex}>
+        <div className={styles.leftContainer}>
+          doctor list
+        </div>
+        <div className={styles.rightContainer}>
+          hospital list
+        </div>
+      </div>
     </div>
   )
 }
