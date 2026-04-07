@@ -1,8 +1,8 @@
-body{
-    font-family: 'Arial', sans-serif;
-    background-color: #f5f5f5;
-    margin: 0;
-    padding: 0;
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 0;
 }
 
 .personalInfo {
@@ -23,7 +23,7 @@ body{
   font-size: 37px;
 }
 
-.InfoContainer{
+.InfoContainer {
   display: flex;
   flex-wrap: wrap;
   gap: 250px;
@@ -45,9 +45,9 @@ body{
   background: #d1e2fe;
   transform: translateY(-2px);
   transition: all 0.2s ease-in-out;
-} 
+}
 
-.containerFlex{
+.containerFlex {
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
