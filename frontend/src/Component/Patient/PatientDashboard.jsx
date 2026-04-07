@@ -3,8 +3,47 @@ import BloodSugarReadings from './BloodSugarReading'
 import ViewPrescription from './ViewPrescription'
 import PatientNavbar from './PatientNavbar'
 import styles from '../../Style/PatientDashboard.module.css'
+import { useEffect, useRef } from 'react';
+import Chart from 'chart.js/auto';
 
 const PatientDashboard = () => {
+  const chartRef = useRef(null);
+  const chartInstance = useRef(null);
+
+  useEffect(() => {
+    const ctx = chartRef.current.getContext('2d');
+    if (chartInstance.current) {
+      chartInstance.current.destroy();
+    }
+    chartInstance.current = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: [
+          '2026-04-01',
+          '2026-04-02',
+          '2026-04-03',
+          '2026-04-04',
+          '2026-04-05'
+        ],
+        datasets: [
+          {
+            label: 'Blood Sugar (mg/dL)',
+            data: [110, 145, 130, 160, 120],
+            borderColor: 'red',
+            backgroundColor: 'rgba(255,0,0,0.2)',
+            tension: 0.4,
+            fill: true
+          }
+        ]
+      },
+      options: {
+        responsive: true
+      }
+    });
+    return () => {
+      chartInstance.current.destroy();
+    };
+  }, []);
   return (
     <div>
       <div className={styles.personalInfo}>
@@ -22,7 +61,6 @@ const PatientDashboard = () => {
             <p>Blood Group: A+</p>
           </div>
         </div>
-        
       </div>
       <div className={styles.containerFlex}>
         <div className={styles.leftContainer}>
@@ -61,6 +99,10 @@ const PatientDashboard = () => {
             </tbody>
           </table>
         </div>
+      </div>
+      <div style={{ width: '800px', margin: '50px auto' }}>
+        <h2 style={{textAlign:'center'}}>Blood Sugar Level</h2>
+        <canvas ref={chartRef}></canvas>
       </div>
     </div>
   )
