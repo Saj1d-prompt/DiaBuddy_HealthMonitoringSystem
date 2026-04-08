@@ -13,6 +13,15 @@ const PatientDashboard = () => {
 
   const [bsrData, setBsrData] = useState({});
 
+  const colorMap = {
+    "Fast": "#3498db",
+    "Before Meal": "#e67e22",
+    "After Meal": "#2ecc71",
+    "Bedtime": "#9b59b6",
+    "Random": "#f1c40f",
+    "Exercise": "#e74c3c"
+  };
+
   useEffect(() => {
     const ctx = chartRef.current.getContext('2d');
     if (chartInstance.current) {
@@ -104,7 +113,7 @@ const PatientDashboard = () => {
         </div>
       </div>
       <div style={{ width: '800px', margin: '50px auto' }}>
-        <h2 style={{textAlign:'center'}}>Blood Sugar Level</h2>
+        <h2 style={{ textAlign: 'center' }}>Blood Sugar Level</h2>
         <canvas ref={chartRef}></canvas>
       </div>
     </div>
