@@ -182,9 +182,13 @@ const PatientDashboard = () => {
           </table>
         </div>
       </div>
-      <div style={{ width: '800px', margin: '50px auto' }}>
-        <h2 style={{ textAlign: 'center' }}>Blood Sugar Level</h2>
-        <canvas ref={chartRef}></canvas>
+      <div className={styles.dashboardContainer}>
+        <div className={styles.chartWrapper}>
+          <h2>Blood Sugar Level (Multi-Category)</h2>
+          <div style={{ height: '450px', width: '100%' }}>
+            <canvas ref={chartRef}></canvas>
+          </div>
+        </div>
       </div>
     </div>
   )
