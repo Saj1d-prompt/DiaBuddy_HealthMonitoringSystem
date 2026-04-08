@@ -92,40 +92,6 @@ const PatientDashboard = () => {
     return () => { if (chartInstance.current) chartInstance.current.destroy(); };
   }, [bsrData]);
 
-  useEffect(() => {
-    const ctx = chartRef.current.getContext('2d');
-    if (chartInstance.current) {
-      chartInstance.current.destroy();
-    }
-    chartInstance.current = new Chart(ctx, {
-      type: 'line',
-      data: {
-        labels: [
-          '2026-04-01',
-          '2026-04-02',
-          '2026-04-03',
-          '2026-04-04',
-          '2026-04-05'
-        ],
-        datasets: [
-          {
-            label: 'Blood Sugar (mg/dL)',
-            data: [110, 145, 130, 160, 120],
-            borderColor: 'red',
-            backgroundColor: 'rgba(255,0,0,0.2)',
-            tension: 0.4,
-            fill: true
-          }
-        ]
-      },
-      options: {
-        responsive: true
-      }
-    });
-    return () => {
-      chartInstance.current.destroy();
-    };
-  }, []);
   return (
     <div>
       <div className={styles.personalInfo}>
