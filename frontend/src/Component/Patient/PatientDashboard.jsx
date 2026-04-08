@@ -116,18 +116,18 @@ const PatientDashboard = () => {
   return (
     <div>
       <div className={styles.personalInfo}>
-        <h2>Mr. X</h2>
+        <h2>{info?.name}</h2>
         <div className={styles.InfoContainer}>
           <div>
             <p>Age: 45</p>
-            <p>Gender: Male</p>
-            <p>address: Basundhara R/A, Dhaka, Bangladesh</p>
+            <p>Gender: {info?.gender}</p>
+            <p>address: {info?.address}</p>
           </div>
           <div>
-            <p>Weight: 70 kg</p>
-            <p>Height: 175 cm</p>
+            <p>Weight: {info?.weight} kg</p>
+            <p>Height: {info?.height} cm</p>
             <p>BMI: 22.9</p>
-            <p>Blood Group: A+</p>
+            <p>Blood Group: {info?.blood_group}</p>
           </div>
         </div>
       </div>
