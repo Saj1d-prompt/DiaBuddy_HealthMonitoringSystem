@@ -22,6 +22,15 @@ const PatientDashboard = () => {
     "Exercise": "#e74c3c"
   };
 
+  const fetchBSRData = async () => {
+    const userInfo = JSON.parse(localStorage.getItem('userInfo'));
+    try{
+
+    }catch(error){
+      console.error("Error fetching BSR data:", error);
+    }
+  }
+
   useEffect(() => {
     const ctx = chartRef.current.getContext('2d');
     if (chartInstance.current) {
