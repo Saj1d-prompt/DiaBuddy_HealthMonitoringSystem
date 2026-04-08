@@ -110,7 +110,9 @@ const PatientDashboard = () => {
       console.error("Error fetching patient info:", error);
     }
   }
-
+  useEffect(() => {
+    fetchPatientInfo();
+  }, []);
   return (
     <div>
       <div className={styles.personalInfo}>
