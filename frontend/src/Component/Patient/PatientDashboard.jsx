@@ -5,10 +5,13 @@ import PatientNavbar from './PatientNavbar'
 import styles from '../../Style/PatientDashboard.module.css'
 import { useEffect, useRef } from 'react';
 import Chart from 'chart.js/auto';
+import { useState } from 'react';
 
 const PatientDashboard = () => {
   const chartRef = useRef(null);
   const chartInstance = useRef(null);
+
+  const [bsrData, setBsrData] = useState({});
 
   useEffect(() => {
     const ctx = chartRef.current.getContext('2d');
