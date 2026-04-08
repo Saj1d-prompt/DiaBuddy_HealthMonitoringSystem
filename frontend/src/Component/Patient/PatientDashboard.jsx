@@ -106,7 +106,7 @@ const PatientDashboard = () => {
       if (data.status == 200) {
         setInfo(data.data);
       }
-    }catch (error) {
+    } catch (error) {
       console.error("Error fetching patient info:", error);
     }
   }
@@ -117,6 +117,11 @@ const PatientDashboard = () => {
   const calculateAge = (dateOfBirth) => {
     return Math.floor((new Date() - new Date(dateOfBirth)) / (365.25 * 24 * 60 * 60 * 1000));
   };
+  const calculateBMI = (weight, height) => {
+    if (height <= 0 || weight <= 0) return "Invalid height or weight";
+    const heightInMeters = height / 100;
+    return (weight / (heightInMeters * heightInMeters)).toFixed(2);
+  }
   return (
     <div>
       <div className={styles.personalInfo}>
@@ -130,7 +135,7 @@ const PatientDashboard = () => {
           <div>
             <p>Weight: {info?.weight} kg</p>
             <p>Height: {info?.height} cm</p>
-            <p>BMI: 22.9</p>
+            <p>BMI: {calculateBMI(info?.weight, info?.height)}</p>
             <p>Blood Group: {info?.blood_group}</p>
           </div>
         </div>
