@@ -11,6 +11,7 @@ use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\MedicalReportController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PatientController;
+use App\Http\Controllers\DashboardControllerr;
 
 Route::post('/login', [AccountController::class, 'login']);
 
@@ -29,6 +30,7 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('/getDoctorSchedule/{doctorID}', [PatientController::class, 'getDoctorSchedule']);
     Route::post('/bookAppointment', [PatientController::class, 'bookAppointment']);
     Route::get('/getPrescription', [PatientController::class, 'getPrescription']);
+    Route::get('/getDashboardData', [DashboardControllerr::class, 'getDashboardData']);
 });
 
 Route::get('/user', function (Request $request) {
