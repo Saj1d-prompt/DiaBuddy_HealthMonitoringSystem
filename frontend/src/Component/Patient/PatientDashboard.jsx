@@ -41,6 +41,10 @@ const PatientDashboard = () => {
   }
 
   useEffect(() => {
+    fetchBSRData();
+  }, []);
+
+  useEffect(() => {
     const ctx = chartRef.current.getContext('2d');
     if (chartInstance.current) {
       chartInstance.current.destroy();
