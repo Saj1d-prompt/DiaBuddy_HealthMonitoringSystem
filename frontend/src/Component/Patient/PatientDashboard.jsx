@@ -24,7 +24,7 @@ const PatientDashboard = () => {
 
   const fetchBSRData = async () => {
     const userInfo = JSON.parse(localStorage.getItem('userInfo'));
-    try{
+    try {
       const response = await fetch(`${import.meta.env.VITE_API_KEY}/getPatientBSR`, {
         method: 'GET',
         headers: {
@@ -32,10 +32,10 @@ const PatientDashboard = () => {
         }
       });
       const data = await response.json();
-      if(data.status == 200){
+      if (data.status == 200) {
         setBsrData(data.data);
       }
-    }catch(error){
+    } catch (error) {
       console.error("Error fetching BSR data:", error);
     }
   }
@@ -43,6 +43,54 @@ const PatientDashboard = () => {
   useEffect(() => {
     fetchBSRData();
   }, []);
+
+  useEffect(() => {
+    if (Object.keys(bsrData).length === 0) return;
+
+    const ctx = chartRef.current.getContext('2d');
+    if (chartInstance.current) chartInstance.current.destroy();
+
+    const allDates = [...new Set(Object.values(bsrData).flat().map(r =>
+      new Date(r.reading_time).toLocaleDateString()
+    ))].sort((a, b) => new Date(a) - new Date(b));
+
+    const datasets = Object.keys(bsrData).map(category => ({
+      label: category,
+      data: allDates.map(date => {
+        // Find the reading for this specific date
+        const reading = bsrData[category].find(r =>
+          new Date(r.reading_time).toLocaleDateString() === date
+        );
+        return reading ? reading.glucose_level : null;
+      }),
+      borderColor: colorMap[category] || "#000",
+      backgroundColor: `${colorMap[category]}22`,
+      tension: 0.4,
+      fill: false,
+      spanGaps: true
+    }));
+
+    chartInstance.current = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: allDates,
+        datasets: datasets
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { position: 'bottom' },
+          title: { display: true, text: 'Combined Blood Sugar Trends' }
+        },
+        scales: {
+          y: { title: { display: true, text: 'mg/dL' } }
+        }
+      }
+    });
+
+    return () => { if (chartInstance.current) chartInstance.current.destroy(); };
+  }, [bsrData]);
 
   useEffect(() => {
     const ctx = chartRef.current.getContext('2d');

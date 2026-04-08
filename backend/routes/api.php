@@ -30,7 +30,7 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('/getDoctorSchedule/{doctorID}', [PatientController::class, 'getDoctorSchedule']);
     Route::post('/bookAppointment', [PatientController::class, 'bookAppointment']);
     Route::get('/getPrescription', [PatientController::class, 'getPrescription']);
-    Route::get('/getDashboardData', [DashboardControllerr::class, 'getDashboardData']);
+    Route::get('/getPatientBSR', [DashboardControllerr::class, 'getPatientBSR']);
 });
 
 Route::get('/user', function (Request $request) {
