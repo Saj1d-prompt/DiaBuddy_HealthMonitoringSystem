@@ -29,6 +29,7 @@ class DashboardControllerr extends Controller
             ->select(
                 'users.name',
                 'person.gender',
+                'users.date_of_birth',
                 'person.address',
                 'person.weight',
                 'person.height',

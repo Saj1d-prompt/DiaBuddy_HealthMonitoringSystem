@@ -113,13 +113,17 @@ const PatientDashboard = () => {
   useEffect(() => {
     fetchPatientInfo();
   }, []);
+
+  const calculateAge = (dateOfBirth) => {
+    return Math.floor((new Date() - new Date(dateOfBirth)) / (365.25 * 24 * 60 * 60 * 1000));
+  };
   return (
     <div>
       <div className={styles.personalInfo}>
         <h2>{info?.name}</h2>
         <div className={styles.InfoContainer}>
           <div>
-            <p>Age: 45</p>
+            <p>Age: {calculateAge(info?.date_of_birth)}</p>
             <p>Gender: {info?.gender}</p>
             <p>address: {info?.address}</p>
           </div>
