@@ -31,6 +31,7 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('/bookAppointment', [PatientController::class, 'bookAppointment']);
     Route::get('/getPrescription', [PatientController::class, 'getPrescription']);
     Route::get('/getPatientBSR', [DashboardControllerr::class, 'getPatientBSR']);
+    Route::get('/getPatientInfo', [DashboardControllerr::class, 'getPatientInfo']);
 });
 
 Route::get('/user', function (Request $request) {
