@@ -25,7 +25,16 @@ const PatientDashboard = () => {
   const fetchBSRData = async () => {
     const userInfo = JSON.parse(localStorage.getItem('userInfo'));
     try{
-
+      const response = await fetch(`${import.meta.env.VITE_API_KEY}/getPatientBSR`, {
+        method: 'GET',
+        headers: {
+          'Authorization': `Bearer ${userInfo.token}`
+        }
+      });
+      const data = await response.json();
+      if(data.status == 200){
+        setBsrData(data.data);
+      }
     }catch(error){
       console.error("Error fetching BSR data:", error);
     }
