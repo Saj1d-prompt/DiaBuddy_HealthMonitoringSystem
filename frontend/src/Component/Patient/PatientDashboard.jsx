@@ -93,6 +93,15 @@ const PatientDashboard = () => {
     return () => { if (chartInstance.current) chartInstance.current.destroy(); };
   }, [bsrData]);
 
+  const fetchPatientInfo = async () => {
+    const userInfo = JSON.parse(localStorage.getItem('userInfo'));
+    try {
+
+    }catch (error) {
+      console.error("Error fetching patient info:", error);
+    }
+  }
+
   return (
     <div>
       <div className={styles.personalInfo}>
