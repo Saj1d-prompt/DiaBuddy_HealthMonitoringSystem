@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\BloodSugarReading;
 use App\Models\Person;
 use App\Models\Doctor;
+use App\Models\Hospital;
 use Illuminate\Support\Facades\DB;
 
 class DashboardControllerr extends Controller
@@ -60,6 +61,10 @@ class DashboardControllerr extends Controller
 
     public function getHospitals(Request $request)
     {
-        
+        $hospital = Hospital::all()->take(5);
+        return response()->json([
+            'status' => 200,
+            'data' => $hospital
+        ], 200);
     }
 }
