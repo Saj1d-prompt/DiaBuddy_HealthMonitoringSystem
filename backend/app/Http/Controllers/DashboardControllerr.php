@@ -51,5 +51,10 @@ class DashboardControllerr extends Controller
         $doctor = Doctor::where('department', $diabetesType)
             ->take(5)
             ->get();
+
+        return response()->json([
+            'status' => 200,
+            'data' => $doctor
+        ], 200);
     }
 }
