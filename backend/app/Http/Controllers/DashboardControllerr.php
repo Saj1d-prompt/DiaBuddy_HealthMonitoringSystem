@@ -46,15 +46,12 @@ class DashboardControllerr extends Controller
 
     public function getTopDoctors(Request $request)
     {
-        $diabetesType = Person::where('user_id', $request->user()->id)->value('diabetes_type');
-
         $doctor = DB::table('doctors')
             ->join('users', 'doctors.user_id', '=', 'users.id')
             ->select('doctors.id','users.name', 'doctors.specialization', 'doctors.phoneNumber')
-            // ->where('doctors.department', $diabetesType)
             ->take(5)
             ->get();
-            
+
         return response()->json([
             'status' => 200,
             'data' => $doctor
