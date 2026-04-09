@@ -47,5 +47,9 @@ class DashboardControllerr extends Controller
     public function getTopDoctors(Request $request)
     {
         $diabetesType = Person::where('user_id', $request->user()->id)->value('diabetes_type');
+
+        $doctor = Doctor::where('department', $diabetesType)
+            ->take(5)
+            ->get();
     }
 }
