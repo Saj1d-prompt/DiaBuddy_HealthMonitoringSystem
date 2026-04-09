@@ -163,6 +163,9 @@ const PatientDashboard = () => {
       console.error("Error fetching hospitals:", error);
     }
   }
+  useEffect(() => {
+    fetchHospitals();
+  }, []);
   return (
     <div>
       <div className={styles.personalInfo}>
