@@ -146,6 +146,14 @@ const PatientDashboard = () => {
     fetchDoctors();
   }, []);
 
+  const fetchHospitals = async () => {
+    const userInfo = JSON.parse(localStorage.getItem('userInfo'));
+    try{
+
+    }catch(error){
+      console.error("Error fetching hospitals:", error);
+    }
+  }
   return (
     <div>
       <div className={styles.personalInfo}>
