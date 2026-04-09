@@ -126,7 +126,14 @@ const PatientDashboard = () => {
 
   const fetchDoctors = async () => {
     try{
-
+      const userInfo = JSON.parse(localStorage.getItem('userInfo'));
+      const response = await fetch(`${import.meta.env.VITE_API_KEY}/getTopDoctors`, {
+        method: 'GET',
+        headers: {
+          'Authorization': `Bearer ${userInfo.token}`
+        }
+      });
+      
     }catch(error){
       console.error("Error fetching doctors:", error);
     }
