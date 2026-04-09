@@ -125,8 +125,8 @@ const PatientDashboard = () => {
   }
 
   const fetchDoctors = async () => {
+    const userInfo = JSON.parse(localStorage.getItem('userInfo'));
     try{
-      const userInfo = JSON.parse(localStorage.getItem('userInfo'));
       const response = await fetch(`${import.meta.env.VITE_API_KEY}/getTopDoctors`, {
         method: 'GET',
         headers: {
@@ -170,13 +170,6 @@ const PatientDashboard = () => {
               </tr>
             </thead>
             <tbody>
-              {doctors?.map((doctor) => (
-                <tr key={doctor.id}>
-                  <td>{doctor.name}</td>
-                  <td>{doctor.specialization}</td>
-                  <td>{doctor.contact}</td>
-                </tr>
-              ))}
               <tr>
                 <td>Dr. X</td>
                 <td>Endocrinology</td>
