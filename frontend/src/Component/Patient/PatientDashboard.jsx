@@ -141,6 +141,9 @@ const PatientDashboard = () => {
       console.error("Error fetching doctors:", error);
     }
   }
+  useEffect(() => {
+    fetchDoctors();
+  }, []);
   return (
     <div>
       <div className={styles.personalInfo}>
