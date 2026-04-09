@@ -42,4 +42,9 @@ class DashboardControllerr extends Controller
             'data' => $user
         ], 200);
     }
+
+    public function getTopDoctors(Request $request)
+    {
+        
+    }
 }
