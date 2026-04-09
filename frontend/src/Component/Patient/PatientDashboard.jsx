@@ -133,7 +133,10 @@ const PatientDashboard = () => {
           'Authorization': `Bearer ${userInfo.token}`
         }
       });
-      
+      const data = await response.json();
+      if (data.status == 200) {
+        setDoctors(data.data);
+      }
     }catch(error){
       console.error("Error fetching doctors:", error);
     }
