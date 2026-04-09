@@ -13,6 +13,7 @@ const PatientDashboard = () => {
 
   const [bsrData, setBsrData] = useState({});
   const [info, setInfo] = useState();
+  const [doctors, setDoctors] = useState();
 
   const colorMap = {
     "Fast": "#3498db",
