@@ -173,6 +173,13 @@ const PatientDashboard = () => {
               </tr>
             </thead>
             <tbody>
+              {doctors?.map((doc) => (
+                <tr key={doc.id}>
+                  <td>{doc.name}</td>
+                  <td>{doc.specialization}</td>
+                  <td>{doc.phoneNumber}</td>
+                </tr>
+              ))}
               <tr>
                 <td>Dr. X</td>
                 <td>Endocrinology</td>
