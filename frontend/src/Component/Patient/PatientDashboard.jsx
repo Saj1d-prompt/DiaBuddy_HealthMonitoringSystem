@@ -180,11 +180,6 @@ const PatientDashboard = () => {
                   <td>{doc.phoneNumber}</td>
                 </tr>
               ))}
-              <tr>
-                <td>Dr. X</td>
-                <td>Endocrinology</td>
-                <td>12345</td>
-              </tr>
             </tbody>
           </table>
         </div>
