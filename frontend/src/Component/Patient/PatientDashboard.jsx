@@ -215,11 +215,13 @@ const PatientDashboard = () => {
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>City Hospital</td>
-                <td>Dhaka</td>
-                <td>67890</td>
-              </tr>
+              {hospitals?.map((hospital) => (
+                <tr key={hospital.id}>
+                  <td>{hospital.name}</td>
+                  <td>{hospital.address}</td>
+                  <td>{hospital.phone}</td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </div>
