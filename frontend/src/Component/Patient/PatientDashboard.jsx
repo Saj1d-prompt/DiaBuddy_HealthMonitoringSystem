@@ -14,6 +14,7 @@ const PatientDashboard = () => {
   const [bsrData, setBsrData] = useState({});
   const [info, setInfo] = useState();
   const [doctors, setDoctors] = useState();
+  const [hospitals, setHospitals] = useState();
 
   const colorMap = {
     "Fast": "#3498db",
@@ -144,6 +145,7 @@ const PatientDashboard = () => {
   useEffect(() => {
     fetchDoctors();
   }, []);
+
   return (
     <div>
       <div className={styles.personalInfo}>
