@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\BloodSugarReading;
 use App\Models\Person;
+use App\Models\Doctor;
 use Illuminate\Support\Facades\DB;
 
 class DashboardControllerr extends Controller
@@ -45,6 +46,6 @@ class DashboardControllerr extends Controller
 
     public function getTopDoctors(Request $request)
     {
-        
+        $diabetesType = Person::where('user_id', $request->user()->id)->value('diabetes_type');
     }
 }
