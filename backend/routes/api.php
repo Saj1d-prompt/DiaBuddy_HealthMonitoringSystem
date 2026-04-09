@@ -33,6 +33,7 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('/getPatientBSR', [DashboardControllerr::class, 'getPatientBSR']);
     Route::get('/getPatientInfo', [DashboardControllerr::class, 'getPatientInfo']);
     Route::get('/getTopDoctors', [DashboardControllerr::class, 'getTopDoctors']);
+    Route::get('/getHospitals', [DashboardControllerr::class, 'getHospitals']);
 });
 
 Route::get('/user', function (Request $request) {
