@@ -123,6 +123,14 @@ const PatientDashboard = () => {
     const heightInMeters = height / 100;
     return (weight / (heightInMeters * heightInMeters)).toFixed(2);
   }
+
+  const fetchDoctors = async () => {
+    try{
+
+    }catch(error){
+      console.error("Error fetching doctors:", error);
+    }
+  }
   return (
     <div>
       <div className={styles.personalInfo}>
