@@ -166,6 +166,11 @@ const PatientDashboard = () => {
   useEffect(() => {
     fetchHospitals();
   }, []);
+
+  const renderHospitalType = (type) => {
+    if(type == 'diagnosis_center') return "Diagnostic Center";
+    else if(type == 'hospital') return "Hospital";
+  }
   return (
     <div>
       <div className={styles.personalInfo}>
@@ -210,6 +215,7 @@ const PatientDashboard = () => {
             <thead>
               <tr>
                 <th>Hospital Name</th>
+                <th>Type</th>
                 <th>Address</th>
                 <th>Contact</th>
               </tr>
@@ -218,6 +224,7 @@ const PatientDashboard = () => {
               {hospitals?.map((hospital) => (
                 <tr key={hospital.id}>
                   <td>{hospital.name}</td>
+                  <td>{renderHospitalType(hospital.type)}</td>
                   <td>{hospital.address}</td>
                   <td>{hospital.phone}</td>
                 </tr>
