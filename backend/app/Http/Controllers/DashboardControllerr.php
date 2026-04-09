@@ -57,4 +57,9 @@ class DashboardControllerr extends Controller
             'data' => $doctor
         ], 200);
     }
+
+    public function getHospitals(Request $request)
+    {
+        
+    }
 }
