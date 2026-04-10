@@ -67,4 +67,8 @@ class DashboardControllerr extends Controller
             'data' => $hospital
         ], 200);
     }
+
+    public function adminStatCount(){
+        
+    }
 }
