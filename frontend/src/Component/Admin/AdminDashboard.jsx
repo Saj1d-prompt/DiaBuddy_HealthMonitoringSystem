@@ -7,7 +7,9 @@ import AdminNavbar from './AdminNavbar';
 const AdminDashboard = () => {
   return (
     <div>
-      Test Admin Dashboard
+      <div className="statGrid">
+        
+      </div>
     </div>
   )
 }
