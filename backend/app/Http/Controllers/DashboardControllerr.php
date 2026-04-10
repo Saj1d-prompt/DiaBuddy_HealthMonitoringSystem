@@ -72,5 +72,14 @@ class DashboardControllerr extends Controller
         $patientNumber = Person::count();
         $doctorNumber = Doctor::count();
         $hospitalNumber = Hospital::count();
+
+        return response()->json([
+            'status' => 200,
+            'data' => [
+                'patientNumber' => $patientNumber,
+                'doctorNumber' => $doctorNumber,
+                'hospitalNumber' => $hospitalNumber
+            ]
+        ], 200);
     }
 }
