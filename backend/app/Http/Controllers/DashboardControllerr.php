@@ -69,6 +69,8 @@ class DashboardControllerr extends Controller
     }
 
     public function adminStatCount(){
-        
+        $patientNumber = Person::count();
+        $doctorNumber = Doctor::count();
+        $hospitalNumber = Hospital::count();
     }
 }
