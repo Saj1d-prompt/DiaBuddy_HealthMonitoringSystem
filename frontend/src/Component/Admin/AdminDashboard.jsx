@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { use, useEffect } from 'react'
 import style from '../../Style/AdminDashboard.module.css'
 import { useState } from 'react';
 
@@ -23,9 +23,9 @@ const AdminDashboard = () => {
       const result = await response.json();
       if (result.status === 200) {
         setStats({
-          doctors: result.data.doctors,
-          hospitals: result.data.hospitals,
-          patients: result.data.patients
+          doctors: result.data.doctorNumber,
+          hospitals: result.data.hospitalNumber,
+          patients: result.data.patientNumber
         });
       }
     }catch(error){
@@ -37,15 +37,15 @@ const AdminDashboard = () => {
       <div className={style.statGrid}>
         <div className={style.statCard}>
           <h3>Total Doctors</h3>
-          <p>50</p>
+          <p>{stats.doctors}</p>
         </div>
         <div className={style.statCard}>
           <h3>Total Hospitals</h3>
-          <p>20</p>
+          <p>{stats.hospitals}</p>
         </div>
         <div className={style.statCard}>
           <h3>Total Patients</h3>
-          <p>200</p>
+          <p>{stats.patients}</p>
         </div>
       </div>
     </div>
