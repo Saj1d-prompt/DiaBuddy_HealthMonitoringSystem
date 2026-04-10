@@ -32,6 +32,9 @@ const AdminDashboard = () => {
       console.error("Error fetching stats:", error);
     }
   }
+  useEffect(() => {
+    fetchStats();
+  }, []);
   return (
     <div className={style.container}>
       <div className={style.statGrid}>
