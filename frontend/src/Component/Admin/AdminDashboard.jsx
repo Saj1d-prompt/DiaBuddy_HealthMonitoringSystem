@@ -3,6 +3,11 @@ import style from '../../Style/AdminDashboard.module.css'
 
 
 const AdminDashboard = () => {
+  const [stats, setStats] = React.useState({
+    doctors: 0,
+    hospitals: 0,
+    patients: 0
+  });
   return (
     <div className={style.container}>
       <div className={style.statGrid}>
