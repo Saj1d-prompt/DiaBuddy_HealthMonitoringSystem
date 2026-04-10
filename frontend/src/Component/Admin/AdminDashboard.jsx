@@ -1,13 +1,22 @@
 import React from 'react'
 import style from '../../Style/AdminDashboard.module.css'
+import { useState } from 'react';
 
 
 const AdminDashboard = () => {
-  const [stats, setStats] = React.useState({
+  const [stats, setStats] = useState({
     doctors: 0,
     hospitals: 0,
     patients: 0
   });
+  const fetchStats = async () => {
+    const userInfo = JSON.parse(localStorage.getItem('userInfo'));
+    try{
+
+    }catch(error){
+      console.error("Error fetching stats:", error);
+    }
+  }
   return (
     <div className={style.container}>
       <div className={style.statGrid}>
