@@ -45,7 +45,7 @@ Route::middleware(['auth:sanctum', 'admin'])->prefix('admin')->group(function ()
     Route::delete('/deleteUser/{id}', [UserController::class, 'deleteUser']);
     Route::post('/addDoctor', [AdminController::class, 'addDoctor']);
     Route::post('/addHospital', [AdminController::class, 'addHospital']);
-    Route::get('/getStatCount', [AdminController::class, 'adminStatCount']);
+    Route::get('/getStatCount', [DashboardControllerr::class, 'adminStatCount']);
 });
 
 Route::middleware(['auth:sanctum', 'doctor'])->prefix('doctor')->group(function () {
