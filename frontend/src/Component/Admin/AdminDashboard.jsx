@@ -20,6 +20,14 @@ const AdminDashboard = () => {
           Authorization: `Bearer ${userInfo.token}`,
         },
       });
+      const result = await response.json();
+      if (result.status === 200) {
+        setStats({
+          doctors: result.data.doctors,
+          hospitals: result.data.hospitals,
+          patients: result.data.patients
+        });
+      }
     }catch(error){
       console.error("Error fetching stats:", error);
     }
