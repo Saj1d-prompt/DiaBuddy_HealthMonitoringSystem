@@ -52,7 +52,12 @@ const AdminDashboard = () => {
         </div>
       </div>
       <div className="newUserTable">
-        
+        <table>
+          <caption>New Users</caption>
+          <thead>
+            
+          </thead>
+        </table>
       </div>
     </div>
   )
