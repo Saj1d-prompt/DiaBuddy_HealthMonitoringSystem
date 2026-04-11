@@ -7,6 +7,7 @@ use App\Models\BloodSugarReading;
 use App\Models\Person;
 use App\Models\Doctor;
 use App\Models\Hospital;
+use App\Models\User;
 use Illuminate\Support\Facades\DB;
 
 class DashboardControllerr extends Controller
@@ -84,6 +85,9 @@ class DashboardControllerr extends Controller
     }
 
     public function getRecentPatients(){
-        
+        $reqDay = now()->subDays(7);
+        $recentPatients = User::where('created_at', '>=', $reqDay)
+            -> where('role','!=','admin')
+            ->get();
     }
 }
