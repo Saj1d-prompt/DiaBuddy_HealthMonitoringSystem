@@ -89,5 +89,10 @@ class DashboardControllerr extends Controller
         $recentPatients = User::where('created_at', '>=', $reqDay)
             -> where('role','!=','admin')
             ->get();
+        
+        return response()->json([
+            'status' => 200,
+            'data' => $recentPatients
+        ], 200);
     }
 }
