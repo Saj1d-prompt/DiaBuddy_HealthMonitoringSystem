@@ -46,6 +46,7 @@ Route::middleware(['auth:sanctum', 'admin'])->prefix('admin')->group(function ()
     Route::post('/addDoctor', [AdminController::class, 'addDoctor']);
     Route::post('/addHospital', [AdminController::class, 'addHospital']);
     Route::get('/getStatCount', [DashboardControllerr::class, 'adminStatCount']);
+    Route::get('/getRecentPatients', [DashboardControllerr::class, 'getRecentPatients']);
 });
 
 Route::middleware(['auth:sanctum', 'doctor'])->prefix('doctor')->group(function () {
