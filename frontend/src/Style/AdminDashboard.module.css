@@ -86,3 +86,15 @@ body{
   padding: 12px 15px;
   text-align: center;
 }
+
+.newUserTable th {
+  font-weight: 600;
+}
+
+.newUserTable tbody tr {
+  border-bottom: 1px solid #eee;
+}
+
+.newUserTable tbody tr:hover {
+  background-color: #f9fafb;
+}
