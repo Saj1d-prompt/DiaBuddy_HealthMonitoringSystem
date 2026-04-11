@@ -85,12 +85,14 @@ const AdminDashboard = () => {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Mr. X</td>
-              <td>mrx@gmail.com</td>
-              <td>1990-03-24</td>
-              <td>Patient</td>
-            </tr>
+            {recentUsers?.map((user) => (
+              <tr key={user.id}>
+                <td>{user.name}</td>
+                <td>{user.email}</td>
+                <td>{user.date_of_birth}</td>
+                <td>{user.role}</td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>
