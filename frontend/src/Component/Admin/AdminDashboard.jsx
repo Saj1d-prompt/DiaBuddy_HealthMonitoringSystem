@@ -51,13 +51,14 @@ const AdminDashboard = () => {
           <p>{stats.patients}</p>
         </div>
       </div>
-      <div className="newUserTable">
+      <div className={style.newUserTable}>
         <table>
           <caption>New Users</caption>
           <thead>
             <tr>
               <th>Name</th>
               <th>Email</th>
+              <th>Date of Birth</th>
               <th>Role</th>
             </tr>
           </thead>
@@ -65,6 +66,7 @@ const AdminDashboard = () => {
             <tr>
               <td>Mr. X</td>
               <td>mrx@gmail.com</td>
+              <td>1990-03-24</td>
               <td>Patient</td>
             </tr>
           </tbody>
