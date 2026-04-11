@@ -9,6 +9,7 @@ const AdminDashboard = () => {
     hospitals: 0,
     patients: 0
   });
+  const [recentUsers, setRecentUsers] = useState();
   const fetchStats = async () => {
     const userInfo = JSON.parse(localStorage.getItem('userInfo'));
     try{
