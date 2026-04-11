@@ -82,4 +82,8 @@ class DashboardControllerr extends Controller
             ]
         ], 200);
     }
+
+    public function getRecentPatients(){
+        
+    }
 }
