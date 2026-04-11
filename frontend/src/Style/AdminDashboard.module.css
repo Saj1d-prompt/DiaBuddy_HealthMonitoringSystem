@@ -60,3 +60,13 @@ body{
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
   overflow-x: auto;
 }
+
+.newUserTable caption {
+  caption-side: top; 
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+  padding: 10px 0;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
