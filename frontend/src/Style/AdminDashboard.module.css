@@ -81,3 +81,8 @@ body{
   color: #ffffff;
 }
 
+.newUserTable th,
+.newUserTable td {
+  padding: 12px 15px;
+  text-align: center;
+}
