@@ -33,6 +33,15 @@ const AdminDashboard = () => {
       console.error("Error fetching stats:", error);
     }
   }
+  const fetchRecentUsers = async () => {
+    const userInfo = JSON.parse(localStorage.getItem('userInfo'));
+    try {
+
+    }catch(error){
+      console.error("Error fetching recent users:", error);
+    }
+  }
+  
   useEffect(() => {
     fetchStats();
   }, []);
