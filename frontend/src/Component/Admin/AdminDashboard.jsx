@@ -51,6 +51,9 @@ const AdminDashboard = () => {
           <p>{stats.patients}</p>
         </div>
       </div>
+      <div className="newUserTable">
+        
+      </div>
     </div>
   )
 }
