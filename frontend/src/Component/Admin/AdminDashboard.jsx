@@ -55,7 +55,11 @@ const AdminDashboard = () => {
         <table>
           <caption>New Users</caption>
           <thead>
-            
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Role</th>
+            </tr>
           </thead>
         </table>
       </div>
