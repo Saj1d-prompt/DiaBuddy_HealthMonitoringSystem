@@ -89,7 +89,7 @@ const AdminDashboard = () => {
               <tr key={user.id}>
                 <td>{user.name}</td>
                 <td>{user.email}</td>
-                <td>{user.date_of_birth}</td>
+                <td>{new Date(user.date_of_birth).toLocaleDateString('en-GB')}</td>
                 <td>{user.role}</td>
               </tr>
             ))}
