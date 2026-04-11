@@ -55,6 +55,7 @@ const AdminDashboard = () => {
   
   useEffect(() => {
     fetchStats();
+    fetchRecentUsers();
   }, []);
   return (
     <div className={style.container}>
