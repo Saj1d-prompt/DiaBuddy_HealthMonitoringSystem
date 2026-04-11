@@ -70,3 +70,14 @@ body{
   text-align: center;
   letter-spacing: 0.5px;
 }
+
+.newUserTable table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.newUserTable thead {
+  background-color: #4f46e5;
+  color: #ffffff;
+}
+
