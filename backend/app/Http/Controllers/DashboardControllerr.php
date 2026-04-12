@@ -109,7 +109,7 @@ class DashboardControllerr extends Controller
         ->groupBy('period')
         ->get();
 
-        $session = ['morning' => 0, 'noon' => 0, 'afternoon' => 0, 'night' => 0];
+        $session = ['Morning' => 0, 'Noon' => 0, 'Afternoon' => 0, 'Night' => 0];
 
         foreach ($appointmentData as $data) {    
             if (isset($session[$data->period])) {    
