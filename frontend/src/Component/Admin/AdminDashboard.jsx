@@ -13,11 +13,11 @@ const AdminDashboard = () => {
   });
   const [recentUsers, setRecentUsers] = useState();
   const [appointment, setAppointment] = useState({ labels: [], data: [] });
-  const appointmentChart = useRef(null); 
+  const appointmentChart = useRef(null);
   const chartInstance = useRef(null);
   const fetchStats = async () => {
     const userInfo = JSON.parse(localStorage.getItem('userInfo'));
-    try{
+    try {
       const response = await fetch(`${import.meta.env.VITE_API_KEY}/admin/getStatCount`, {
         method: 'GET',
         headers: {
@@ -34,7 +34,7 @@ const AdminDashboard = () => {
           patients: result.data.patientNumber
         });
       }
-    }catch(error){
+    } catch (error) {
       console.error("Error fetching stats:", error);
     }
   }
@@ -53,7 +53,7 @@ const AdminDashboard = () => {
       if (result.status === 200) {
         setRecentUsers(result.data);
       }
-    }catch(error){
+    } catch (error) {
       console.error("Error fetching recent users:", error);
     }
   }
@@ -73,7 +73,7 @@ const AdminDashboard = () => {
         setAppointment(result);
       }
     }
-    catch(error){
+    catch (error) {
       console.error("Error fetching appointment data:", error);
     }
   }
@@ -83,42 +83,42 @@ const AdminDashboard = () => {
     fetchAppointmentData();
   }, []);
   useEffect(() => {
-        if (appointment.data.length === 0) return;
+    if (appointment.data.length === 0) return;
 
-        const ctx = appointmentChart.current.getContext('2d');
-        if (chartInstance.current) chartInstance.current.destroy();
+    const ctx = appointmentChart.current.getContext('2d');
+    if (chartInstance.current) chartInstance.current.destroy();
 
-        chartInstance.current = new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: appointment.labels,
-                datasets: [{
-                    label: 'Bookings',
-                    data: appointment.data,
-                    backgroundColor: [
-                        '#FFD700', 
-                        '#FF8C00', 
-                        '#4682B4', 
-                        '#2C3E50' 
-                    ],
-                    borderRadius: 10,
-                    barThickness: 60
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    legend: { display: false },
-                    title: { display: true, text: 'Most Appointment Booking Time Range', font: { size: 18 } },
-                },
-                scales: {
-                    y: { beginAtZero: true, grid: { display: false } },
-                    x: { grid: { display: false } }
-                }
-            }
-        });
-    }, [appointment]);
+    chartInstance.current = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: appointment.labels,
+        datasets: [{
+          label: 'Bookings',
+          data: appointment.data,
+          backgroundColor: [
+            '#FFD700',
+            '#FF8C00',
+            '#4682B4',
+            '#2C3E50'
+          ],
+          borderRadius: 10,
+          barThickness: 60
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          title: { display: true, text: 'Most Appointment Booking Time Range', font: { size: 18 } },
+        },
+        scales: {
+          y: { beginAtZero: true, grid: { display: false } },
+          x: { grid: { display: false } }
+        }
+      }
+    });
+  }, [appointment]);
   return (
     <div className={style.container}>
       <div className={style.statGrid}>
