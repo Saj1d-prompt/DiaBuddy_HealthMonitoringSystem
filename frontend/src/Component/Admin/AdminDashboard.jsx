@@ -64,6 +64,10 @@ const AdminDashboard = () => {
           Authorization: `Bearer ${userInfo.token}`,
         },
       });
+      const result = await response.json();
+      if (result.status === 200) {
+        setAppointment(result);
+      }
     }
     catch(error){
       console.error("Error fetching appointment data:", error);
