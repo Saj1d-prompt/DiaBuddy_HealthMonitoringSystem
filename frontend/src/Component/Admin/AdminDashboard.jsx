@@ -56,7 +56,14 @@ const AdminDashboard = () => {
   const fetchAppointmentData = async () => {
     const userInfo = JSON.parse(localStorage.getItem('userInfo'));
     try {
-      
+      const response = await fetch(`${import.meta.env.VITE_API_KEY}/admin/getAppointmentData`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          accept: 'application/json',
+          Authorization: `Bearer ${userInfo.token}`,
+        },
+      });
     }
     catch(error){
       console.error("Error fetching appointment data:", error);
