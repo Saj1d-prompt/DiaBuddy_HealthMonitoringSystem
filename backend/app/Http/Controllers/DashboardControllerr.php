@@ -116,5 +116,10 @@ class DashboardControllerr extends Controller
                 $session[$data->period] = $data->count;
             }
         }
+        return response()->json([
+            'status' => 200,
+            'labels' => array_keys($session),
+            'data' => array_values($session)
+        ], 200);
     }
 }
