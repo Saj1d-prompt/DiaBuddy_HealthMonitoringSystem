@@ -58,7 +58,6 @@ const SearchDoctor = () => {
           </div>
         </div>
         <div className={styles.doctorList}>
-          <div className={styles.doctorCard}>
           {doctor.map((doc) => (
             <div key={doc.id} className={styles.doctorCard}>
               <h3>{doc.user.name}</h3>
@@ -69,7 +68,6 @@ const SearchDoctor = () => {
               <button onClick={() => setSelectDoc(doc)} className={styles.viewBtn}>View Profile</button>
             </div>
           ))}
-          </div>
         </div>
       </div>
       {selectDoc && (
