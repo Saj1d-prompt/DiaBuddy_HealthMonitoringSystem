@@ -10,6 +10,7 @@ const AdminDashboard = () => {
     patients: 0
   });
   const [recentUsers, setRecentUsers] = useState();
+  const [appointment, setAppointment] = useState({ labels: [], data: [] });
   const fetchStats = async () => {
     const userInfo = JSON.parse(localStorage.getItem('userInfo'));
     try{
