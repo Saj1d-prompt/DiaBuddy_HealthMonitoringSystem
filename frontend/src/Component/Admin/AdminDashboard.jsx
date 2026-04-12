@@ -75,7 +75,7 @@ const AdminDashboard = () => {
       </div>
       <div className={style.newUserTable}>
         <table>
-          <caption>New Users</caption>
+          <caption>New Users (Less than 10 Days)</caption>
           <thead>
             <tr>
               <th>Name</th>
