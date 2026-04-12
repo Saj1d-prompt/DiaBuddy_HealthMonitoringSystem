@@ -1,6 +1,8 @@
 import React, { use, useEffect } from 'react'
 import style from '../../Style/AdminDashboard.module.css'
 import { useState } from 'react';
+import { useRef } from 'react';
+import Chart from 'chart.js/auto';
 
 
 const AdminDashboard = () => {
@@ -11,6 +13,8 @@ const AdminDashboard = () => {
   });
   const [recentUsers, setRecentUsers] = useState();
   const [appointment, setAppointment] = useState({ labels: [], data: [] });
+  const appointmentChart = useRef(null); 
+  const chartInstance = useRef(null);
   const fetchStats = async () => {
     const userInfo = JSON.parse(localStorage.getItem('userInfo'));
     try{
@@ -78,6 +82,43 @@ const AdminDashboard = () => {
     fetchRecentUsers();
     fetchAppointmentData();
   }, []);
+  useEffect(() => {
+        if (appointment.data.length === 0) return;
+
+        const ctx = appointmentChart.current.getContext('2d');
+        if (chartInstance.current) chartInstance.current.destroy();
+
+        chartInstance.current = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: appointment.labels,
+                datasets: [{
+                    label: 'Bookings',
+                    data: appointment.data,
+                    backgroundColor: [
+                        '#FFD700', 
+                        '#FF8C00', 
+                        '#4682B4', 
+                        '#2C3E50' 
+                    ],
+                    borderRadius: 10,
+                    barThickness: 60
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    title: { display: true, text: 'Most Appointment Booking Time Range' }
+                },
+                scales: {
+                    y: { beginAtZero: true, grid: { display: false } },
+                    x: { grid: { display: false } }
+                }
+            }
+        });
+    }, [appointment]);
   return (
     <div className={style.container}>
       <div className={style.statGrid}>
@@ -116,6 +157,9 @@ const AdminDashboard = () => {
             ))}
           </tbody>
         </table>
+      </div>
+      <div className={style.graphContainer}>
+        <canvas ref={appointmentChart} style={{ width: '100%', height: '300px' }}></canvas>
       </div>
     </div>
   )
