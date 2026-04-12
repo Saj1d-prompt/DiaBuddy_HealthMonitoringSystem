@@ -108,7 +108,13 @@ class DashboardControllerr extends Controller
         "), DB::raw('count(*) as count'))
         ->groupBy('period')
         ->get();
-        
+
         $session = ['morning' => 0, 'noon' => 0, 'afternoon' => 0, 'night' => 0];
+
+        foreach ($appointmentData as $data) {    
+            if (isset($session[$data->period])) {    
+                $session[$data->period] = $data->count;
+            }
+        }
     }
 }
