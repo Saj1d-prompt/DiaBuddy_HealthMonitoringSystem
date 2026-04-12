@@ -95,4 +95,8 @@ class DashboardControllerr extends Controller
             'data' => $recentPatients
         ], 200);
     }
+
+    public function getAppointmentData(){
+        
+    }
 }
