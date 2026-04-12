@@ -110,7 +110,7 @@ const AdminDashboard = () => {
                 maintainAspectRatio: false,
                 plugins: {
                     legend: { display: false },
-                    title: { display: true, text: 'Most Appointment Booking Time Range' }
+                    title: { display: true, text: 'Most Appointment Booking Time Range', font: { size: 18 } },
                 },
                 scales: {
                     y: { beginAtZero: true, grid: { display: false } },
