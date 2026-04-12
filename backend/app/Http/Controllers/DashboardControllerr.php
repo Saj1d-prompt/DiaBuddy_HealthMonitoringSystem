@@ -97,6 +97,16 @@ class DashboardControllerr extends Controller
     }
 
     public function getAppointmentData(){
-        
+        $appointmentData = DB::table('appointments')
+        ->select(DB::raw("
+            CASE 
+                WHEN HOUR(start_time) >= 6 AND HOUR(start_time) < 12 THEN 'Morning'
+                WHEN HOUR(start_time) >= 12 AND HOUR(start_time) < 15 THEN 'Noon'
+                WHEN HOUR(start_time) >= 15 AND HOUR(start_time) < 18 THEN 'Afternoon'
+                WHEN HOUR(start_time) >= 18 OR HOUR(start_time) < 6 THEN 'Night'
+            END as period
+        "), DB::raw('count(*) as count'))
+        ->groupBy('period')
+        ->get();
     }
 }
