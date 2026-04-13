@@ -74,6 +74,24 @@ body{
   font-size: 14px;
 }
 
+.appointmentTable {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  overflow-x: auto;
+}
+
+ .appointmentTable h2{
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+    padding: 10px 0;
+    text-align: center;
+    letter-spacing: 0.5px;
+ }
+
+
 /* Responsive */
 @media (max-width: 900px) {
   .gridContainer {
