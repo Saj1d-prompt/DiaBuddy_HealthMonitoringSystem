@@ -112,6 +112,13 @@ body {
   font-weight: 600;
 }
 
+.appointmentTable tbody tr {
+  border-bottom: 1px solid #eee;
+}
+
+.appointmentTable tbody tr:hover {
+  background-color: #f9fafb;
+}
 
 /* Responsive */
 @media (max-width: 900px) {
