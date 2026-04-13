@@ -81,6 +81,7 @@ body {
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
     overflow-x: auto;
+    margin-top: 15px;
 }
 
 .appointmentTable h2 {
@@ -120,7 +121,6 @@ body {
   background-color: #f9fafb;
 }
 
-/* Responsive */
 @media (max-width: 900px) {
     .gridContainer {
         grid-template-columns: 1fr;
