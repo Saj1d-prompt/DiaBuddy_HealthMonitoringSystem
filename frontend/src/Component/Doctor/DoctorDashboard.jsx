@@ -23,6 +23,9 @@ const DoctorDashboard = () => {
           <Calendar />
         </div>
       </div>
+      <div className="appointmentTable">
+        
+      </div>
     </div>
   )
 }
