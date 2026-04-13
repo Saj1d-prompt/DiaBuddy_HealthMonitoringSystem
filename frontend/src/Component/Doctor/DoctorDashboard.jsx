@@ -5,7 +5,17 @@ const DoctorDashboard = () => {
   return (
     <div className={style.container}>
         <h2>Welcome, Dr. Md. X!</h2>
-    </div>
+        <div className={style.statsContainer}>
+          <div className={style.statCard}>
+            <h3>Patients</h3>
+            <p>120</p>
+          </div>
+          <div className={style.statCard}>
+            <h3>Appointments Today</h3>
+            <p>8</p>
+          </div>
+        </div>
+      </div>
   )
 }
 
