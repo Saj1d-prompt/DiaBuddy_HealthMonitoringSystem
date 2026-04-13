@@ -33,6 +33,13 @@ const DoctorDashboard = () => {
               <th>Diabetes Type</th>
             </tr>
           </thead>
+          <tbody>
+            <tr>
+              <td>Mr. Y</td>
+              <td>10:00 AM</td>
+              <td>Type 2</td>
+            </tr>
+          </tbody>
         </table>
       </div>
     </div>
