@@ -92,6 +92,16 @@ body {
     letter-spacing: 0.5px;
 }
 
+.appointmentTable table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.appointmentTable thead {
+  background-color: #4f46e5;
+  color: #ffffff;
+}
+
 
 /* Responsive */
 @media (max-width: 900px) {
