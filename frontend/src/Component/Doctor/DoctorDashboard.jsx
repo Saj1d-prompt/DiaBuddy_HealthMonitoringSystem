@@ -25,6 +25,15 @@ const DoctorDashboard = () => {
       </div>
       <div className="appointmentTable">
         <caption>Todays Appointments</caption>
+        <table>
+          <thead>
+            <tr>
+              <th>Patient Name</th>
+              <th>Time</th>
+              <th>Diabetes Type</th>
+            </tr>
+          </thead>
+        </table>
       </div>
     </div>
   )
