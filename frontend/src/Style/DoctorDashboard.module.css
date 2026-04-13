@@ -1,110 +1,111 @@
-body{
+body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f4f7f6;
     margin: 0;
     padding: 0;
     color: #333;
 }
+
 .container {
-  width: 100%;
-  padding: 20px;
-  box-sizing: border-box;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 .container h2 {
-  margin-bottom: 20px;
-  font-size: 35px;
-  font-weight: 600;
+    margin-bottom: 20px;
+    font-size: 35px;
+    font-weight: 600;
 }
 
 .gridContainer {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 25px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
 }
 
 .statGrid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 15px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
 }
 
 .statCard {
-  background: #ffffff;
-  padding: 20px;
-  height: 150px;
-  border-radius: 12px;
-  text-align: center;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    background: #ffffff;
+    padding: 20px;
+    height: 150px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
 }
 
 .statCard h3 {
-  font-size: 27px;
-  margin-bottom: 10px;
+    font-size: 27px;
+    margin-bottom: 10px;
     color: #474c4d;
 }
 
 .statCard p {
-  font-size: 24px;
-  font-weight: bold;
-  color: #2c7be5;
+    font-size: 24px;
+    font-weight: bold;
+    color: #2c7be5;
 }
 
 .calendarContainer {
-  background: #ffffff;
-  padding: 14px;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+    background: #ffffff;
+    padding: 14px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
 }
 
 .calendarContainer h3 {
-  font-size: 15px;
-  margin-bottom: 10px;
-  color: #2d3436;
+    font-size: 15px;
+    margin-bottom: 10px;
+    color: #2d3436;
 }
 
 .calendarContainer :global(.react-calendar) {
-  width: 100% !important;
-  border: none;
-  font-family: inherit;
+    width: 100% !important;
+    border: none;
+    font-family: inherit;
 }
 
 .calendarContainer :global(.react-calendar__tile) {
-  padding: 8px 4px;
-  font-size: 14px;
+    padding: 8px 4px;
+    font-size: 14px;
 }
 
 .appointmentTable {
-  background-color: #ffffff;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-  overflow-x: auto;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    overflow-x: auto;
 }
 
- .appointmentTable h2{
+.appointmentTable h2 {
     font-size: 20px;
     font-weight: 600;
     color: #333;
     padding: 10px 0;
     text-align: center;
     letter-spacing: 0.5px;
- }
+}
 
 
 /* Responsive */
 @media (max-width: 900px) {
-  .gridContainer {
-    grid-template-columns: 1fr;
-  }
+    .gridContainer {
+        grid-template-columns: 1fr;
+    }
 
-  .statGrid {
-    grid-template-columns: 1fr 1fr;
-  }
+    .statGrid {
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
 @media (max-width: 600px) {
-  .statGrid {
-    grid-template-columns: 1fr;
-  }
+    .statGrid {
+        grid-template-columns: 1fr;
+    }
 }
