@@ -3,8 +3,8 @@ import style from '../../Style/DoctorDashboard.module.css'
 
 const DoctorDashboard = () => {
   return (
-    <div>
-      Test Doctor Dashboard
+    <div className={style.container}>
+        
     </div>
   )
 }
