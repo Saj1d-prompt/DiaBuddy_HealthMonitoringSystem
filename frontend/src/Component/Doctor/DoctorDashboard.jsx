@@ -5,7 +5,15 @@ import 'react-calendar/dist/Calendar.css';
 import { useState } from 'react';
 
 const DoctorDashboard = () => {
-  const [userName,setUserName] = useState('');
+  const [userName,setUserName] = useState();
+  const fetchDoctorInfo = async () => {
+    const userInfo = JSON.parse(localStorage.getItem('userInfo'));
+    try{
+
+    }catch(error){
+      console.error("Error fetching doctor info:", error);
+    }
+  }
   return (
     <div className={style.container}>
       <h2>Welcome, Dr. Md. X!</h2>
