@@ -41,11 +41,11 @@ const DoctorDashboard = () => {
         <div className={style.dashboardGrid}>
           <div className={style.statCard}>
             <h3>Patients</h3>
-            <p>120</p>
+            <p>{stats.patients}</p>
           </div>
           <div className={style.statCard}>
             <h3>Appointments Today</h3>
-            <p>8</p>
+            <p>{stats.appointments}</p>
           </div>
         <div className={style.calendarContainer}>
           <h3>Calendar</h3>
