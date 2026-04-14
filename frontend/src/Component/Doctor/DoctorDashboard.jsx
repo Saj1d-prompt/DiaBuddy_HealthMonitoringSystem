@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import style from '../../Style/DoctorDashboard.module.css'
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
@@ -24,6 +24,9 @@ const DoctorDashboard = () => {
       console.error("Error fetching doctor info:", error);
     }
   }
+  useEffect(() => {
+    fetchDoctorInfo();
+  }, []);
   return (
     <div className={style.container}>
       <h2>Welcome, Dr. Md. X!</h2>
