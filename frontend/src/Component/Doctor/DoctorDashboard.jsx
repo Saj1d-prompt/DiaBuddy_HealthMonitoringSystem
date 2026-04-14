@@ -6,6 +6,10 @@ import { useState } from 'react';
 
 const DoctorDashboard = () => {
   const [userName,setUserName] = useState();
+  const [stats, setStats] = useState({
+    patients: 0,
+    appointments: 0
+  });
   const fetchDoctorInfo = async () => {
     const userInfo = JSON.parse(localStorage.getItem('userInfo'));
     try{
@@ -18,7 +22,11 @@ const DoctorDashboard = () => {
       });
       const result = await res.json();
       if(result.status === 200){
-        setUserName(result.data.name);
+        setUserName(result.data.doctor.name);
+        setStats({
+          patients: result.data.patientNum,
+          appointments: result.data.appointmentToday
+        });
       }
     }catch(error){
       console.error("Error fetching doctor info:", error);
