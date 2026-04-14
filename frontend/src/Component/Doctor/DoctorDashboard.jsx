@@ -37,6 +37,19 @@ const DoctorDashboard = () => {
   useEffect(() => {
     fetchDoctorInfo();
   }, []);
+  const formatTime = (time) => {
+    if (!time) {
+      return '';
+    }
+    const [hour, minute] = time.split(':');
+    const hours = parseInt(hour)
+    const ampm = hours >= 12 ? 'PM' : 'AM';
+
+    const h = hours % 12
+    const formattedHour = h === 0 ? 12 : h;
+    
+    return `${formattedHour}:${minute} ${ampm}`;
+  }
   return (
     <div className={style.container}>
       <h2>Welcome, Dr. {userName}!</h2>
