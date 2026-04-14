@@ -29,7 +29,7 @@ const DoctorDashboard = () => {
   }, []);
   return (
     <div className={style.container}>
-      <h2>Welcome, Dr. Md. X!</h2>
+      <h2>Welcome, Dr. {userName}!</h2>
         <div className={style.dashboardGrid}>
           <div className={style.statCard}>
             <h3>Patients</h3>
