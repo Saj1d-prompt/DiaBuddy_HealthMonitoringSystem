@@ -2,8 +2,10 @@ import React from 'react'
 import style from '../../Style/DoctorDashboard.module.css'
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
+import { useState } from 'react';
 
 const DoctorDashboard = () => {
+  const [userName,setUserName] = useState('');
   return (
     <div className={style.container}>
       <h2>Welcome, Dr. Md. X!</h2>
