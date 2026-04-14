@@ -10,6 +10,7 @@ const DoctorDashboard = () => {
     patients: 0,
     appointments: 0
   });
+  const [appointments, setAppointments] = useState();
   const fetchDoctorInfo = async () => {
     const userInfo = JSON.parse(localStorage.getItem('userInfo'));
     try{
@@ -27,6 +28,7 @@ const DoctorDashboard = () => {
           patients: result.data.patientNum,
           appointments: result.data.appointmentToday
         });
+        setAppointments(result.data.appointments);
       }
     }catch(error){
       console.error("Error fetching doctor info:", error);
