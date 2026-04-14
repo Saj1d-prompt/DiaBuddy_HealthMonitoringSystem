@@ -139,6 +139,13 @@ class DashboardControllerr extends Controller
             ->whereDate('appointment_date', $today)
             ->count();
 
+        $appointmentInfo = DB::table('appointments')
+            ->join('users', 'appointments.patient_id', '=', 'users.id')
+            ->join('person', 'users.id', '=', 'person.user_id')
+            ->select('users.name as patient_name', 'appointments.start_time', 'person.diabetes_type')
+            ->where('appointments.doctor_id', $doctor->id)
+            ->whereDate('appointments.appointment_date', $today)
+            ->get();
         return response()->json([
             'status' => 200,
             'data' => [
