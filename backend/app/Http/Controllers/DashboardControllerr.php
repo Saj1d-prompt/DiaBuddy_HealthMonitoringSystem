@@ -123,7 +123,8 @@ class DashboardControllerr extends Controller
         ], 200);
     }
 
-    public function getDoctorInfo(){
+    public function getDoctorInfo(Request $request){
+        $doctor = USER::where('user_id', $request->user()->id)->first();
         
     }
 }
