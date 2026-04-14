@@ -151,7 +151,8 @@ class DashboardControllerr extends Controller
             'data' => [
                 'doctor' => $doctor,
                 'patientNum' => $patientNum,
-                'appointmentToday' => $appointmentToday
+                'appointmentToday' => $appointmentToday,
+                'appointment' => $appointmentInfo
             ]
         ], 200);
     }
