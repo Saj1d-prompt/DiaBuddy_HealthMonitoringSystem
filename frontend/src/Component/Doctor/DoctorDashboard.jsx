@@ -7,8 +7,7 @@ const DoctorDashboard = () => {
   return (
     <div className={style.container}>
       <h2>Welcome, Dr. Md. X!</h2>
-      <div className={style.gridContainer}>
-        <div className={style.statGrid}>
+        <div className={style.dashboardGrid}>
           <div className={style.statCard}>
             <h3>Patients</h3>
             <p>120</p>
@@ -17,12 +16,11 @@ const DoctorDashboard = () => {
             <h3>Appointments Today</h3>
             <p>8</p>
           </div>
-        </div>
         <div className={style.calendarContainer}>
           <h3>Calendar</h3>
           <Calendar />
         </div>
-      </div>
+      
       <div className={style.appointmentTable}>
         <h2>Todays Appointments</h2>
         <table>
@@ -41,6 +39,7 @@ const DoctorDashboard = () => {
             </tr>
           </tbody>
         </table>
+      </div>
       </div>
     </div>
   )
