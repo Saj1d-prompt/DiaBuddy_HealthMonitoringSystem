@@ -124,7 +124,7 @@ class DashboardControllerr extends Controller
     }
 
     public function getDoctorInfo(Request $request){
-        $doctor = USER::where('user_id', $request->user()->id)->first();
+        $doctor = $request->user();
         return response()->json([
             'status' => 200,
             'data' => $doctor
