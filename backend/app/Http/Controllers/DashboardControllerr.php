@@ -37,7 +37,8 @@ class DashboardControllerr extends Controller
                 'person.address',
                 'person.weight',
                 'person.height',
-                'person.blood_group')
+                'person.blood_group'
+            )
             ->where('users.id', $request->user()->id)
             ->first();
 
@@ -51,7 +52,7 @@ class DashboardControllerr extends Controller
     {
         $doctor = DB::table('doctors')
             ->join('users', 'doctors.user_id', '=', 'users.id')
-            ->select('doctors.id','users.name', 'doctors.specialization', 'doctors.phoneNumber')
+            ->select('doctors.id', 'users.name', 'doctors.specialization', 'doctors.phoneNumber')
             ->take(5)
             ->get();
 
@@ -70,7 +71,8 @@ class DashboardControllerr extends Controller
         ], 200);
     }
 
-    public function adminStatCount(){
+    public function adminStatCount()
+    {
         $patientNumber = Person::count();
         $doctorNumber = Doctor::count();
         $hospitalNumber = Hospital::count();
@@ -85,21 +87,23 @@ class DashboardControllerr extends Controller
         ], 200);
     }
 
-    public function getRecentPatients(){
+    public function getRecentPatients()
+    {
         $reqDay = now()->subDays(7);
         $recentPatients = User::where('created_at', '>=', $reqDay)
-            -> where('role','!=','admin')
+            ->where('role', '!=', 'admin')
             ->get();
-        
+
         return response()->json([
             'status' => 200,
             'data' => $recentPatients
         ], 200);
     }
 
-    public function getAppointmentData(){
+    public function getAppointmentData()
+    {
         $appointmentData = DB::table('appointments')
-        ->select(DB::raw("
+            ->select(DB::raw("
             CASE 
                 WHEN HOUR(start_time) >= 6 AND HOUR(start_time) < 12 THEN 'Morning'
                 WHEN HOUR(start_time) >= 12 AND HOUR(start_time) < 15 THEN 'Noon'
@@ -107,13 +111,13 @@ class DashboardControllerr extends Controller
                 WHEN HOUR(start_time) >= 18 OR HOUR(start_time) < 6 THEN 'Night'
             END as period
         "), DB::raw('count(*) as count'))
-        ->groupBy('period')
-        ->get();
+            ->groupBy('period')
+            ->get();
 
         $session = ['Morning' => 0, 'Noon' => 0, 'Afternoon' => 0, 'Night' => 0];
 
-        foreach ($appointmentData as $data) {    
-            if (isset($session[$data->period])) {    
+        foreach ($appointmentData as $data) {
+            if (isset($session[$data->period])) {
                 $session[$data->period] = $data->count;
             }
         }
@@ -124,14 +128,24 @@ class DashboardControllerr extends Controller
         ], 200);
     }
 
-    public function getDoctorInfo(Request $request){
+    public function getDoctorInfo(Request $request)
+    {
         $doctor = $request->user();
         $patientNum = Appointment::where('doctor_id', $doctor->id)
-        ->distinct('patient_id')
-        ->count();
+            ->distinct('patient_id')
+            ->count();
         $today = now()->toDateString();
         $appointmentToday = Appointment::where('doctor_id', $doctor->id)
-        ->whereDate('appointment_date', $today)
-        ->count();
+            ->whereDate('appointment_date', $today)
+            ->count();
+
+        return response()->json([
+            'status' => 200,
+            'data' => [
+                'doctor' => $doctor,
+                'patientNum' => $patientNum,
+                'appointmentToday' => $appointmentToday
+            ]
+        ], 200);
     }
 }
