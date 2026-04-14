@@ -81,15 +81,10 @@ const DoctorDashboard = () => {
             {appointments && appointments.map((app) => (
               <tr key={app.id}>
                 <td>{app.patient_name}</td>
-                <td>{app.start_time}</td>
+                <td>{formatTime(app.start_time)}</td>
                 <td>{app.diabetes_type}</td>
               </tr>
             ))}
-            <tr>
-              <td>Mr. Y</td>
-              <td>10:00 AM</td>
-              <td>Type 2</td>
-            </tr>
           </tbody>
         </table>
       </div>
