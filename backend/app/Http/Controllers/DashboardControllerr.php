@@ -122,4 +122,8 @@ class DashboardControllerr extends Controller
             'data' => array_values($session)
         ], 200);
     }
+
+    public function getDoctorInfo(){
+        
+    }
 }
