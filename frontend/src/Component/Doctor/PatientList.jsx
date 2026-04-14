@@ -30,7 +30,7 @@ const PatientList = () => {
     return (
         <div>
             <div className={styles.container}>
-                <h2>Upcoming Appointments</h2>
+                <h2>Upcoming Appointments for Today</h2>
                 <div className={styles.appointmentList}>
                     <table>
                         <thead>

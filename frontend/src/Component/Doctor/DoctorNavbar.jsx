@@ -22,7 +22,7 @@ const DoctorNavbar = () => {
                     <ul className={styles["nav-links"]}>
                         <li><Link to="/doctordashboard">Home</Link></li>
                         <li><Link to="/schedule">Add Schedule</Link></li>
-                        <li><Link to="/patientlist">Patient List</Link></li>
+                        <li><Link to="/patientlist">Appointment List</Link></li>
                         <li><Link to="/doctorProfile">Profile</Link></li>
                     </ul>
 

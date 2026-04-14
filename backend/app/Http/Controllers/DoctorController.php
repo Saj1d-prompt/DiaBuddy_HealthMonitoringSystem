@@ -167,8 +167,10 @@ class DoctorController extends Controller
 
     public function getAppointmentList(Request $request)
     {
+        $today = now()->startOfDay();
         $appointment = Appointment::with(['patient:id,name,date_of_birth', 'patient.person:gender,user_id'])
             ->where('doctor_id', '=', $request->user()->id)
+            ->where('appointment_date', '=', $today)
             ->orderBy('appointment_date', 'asc')
             ->orderBy('start_time', 'asc')
             ->get();
