@@ -28,7 +28,7 @@ const DoctorDashboard = () => {
           patients: result.data.patientNum,
           appointments: result.data.appointmentToday
         });
-        setAppointments(result.data.appointments);
+        setAppointments(result.data.appointment);
       }
     }catch(error){
       console.error("Error fetching doctor info:", error);
@@ -65,6 +65,13 @@ const DoctorDashboard = () => {
             </tr>
           </thead>
           <tbody>
+            {appointments && appointments.map((app) => (
+              <tr key={app.id}>
+                <td>{app.patient_name}</td>
+                <td>{app.start_time}</td>
+                <td>{app.diabetes_type}</td>
+              </tr>
+            ))}
             <tr>
               <td>Mr. Y</td>
               <td>10:00 AM</td>
