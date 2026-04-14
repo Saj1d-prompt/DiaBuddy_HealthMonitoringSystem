@@ -129,5 +129,9 @@ class DashboardControllerr extends Controller
         $patientNum = Appointment::where('doctor_id', $doctor->id)
         ->distinct('patient_id')
         ->count();
+        $today = now()->toDateString();
+        $appointmentToday = Appointment::where('doctor_id', $doctor->id)
+        ->whereDate('appointment_date', $today)
+        ->count();
     }
 }
