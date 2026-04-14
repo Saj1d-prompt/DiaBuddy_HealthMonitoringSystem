@@ -63,4 +63,5 @@ Route::middleware(['auth:sanctum', 'doctor'])->prefix('doctor')->group(function 
     Route::get('/getPatientReport/{id}', [MedicalReportController::class, 'getPatientReport']);
     Route::post('/prescribeMedicine', [DoctorController::class, 'prescribeMedicine']);
     Route::get('/getOldPrescription/{id}', [DoctorController::class, 'getOldPrescription']);
+    Route::get('/getDoctorInfo', [DashboardControllerr::class, 'getDoctorInfo']);
 });
