@@ -16,6 +16,10 @@ const DoctorDashboard = () => {
           'Content-Type': 'application/json'
         }
       });
+      const result = await res.json();
+      if(result.status === 200){
+        setUserName(result.data.name);
+      }
     }catch(error){
       console.error("Error fetching doctor info:", error);
     }
