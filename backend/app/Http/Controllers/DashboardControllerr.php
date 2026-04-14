@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Appointment;
 use Illuminate\Http\Request;
 use App\Models\BloodSugarReading;
 use App\Models\Person;
@@ -125,9 +126,8 @@ class DashboardControllerr extends Controller
 
     public function getDoctorInfo(Request $request){
         $doctor = $request->user();
-        return response()->json([
-            'status' => 200,
-            'data' => $doctor
-        ], 200);
+        $patientNum = Appointment::where('doctor_id', $doctor->id)
+        ->distinct('patient_id')
+        ->count();
     }
 }
