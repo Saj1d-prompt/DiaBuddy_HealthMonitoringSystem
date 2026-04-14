@@ -18,6 +18,30 @@ body {
     font-weight: 600;
 }
 
+.dashboardGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1.2fr;
+    grid-template-areas:
+        "patients appointments calendar"
+        "table table calendar";
+    gap: 25px;
+    align-items: start;
+}
+
+.statCard:nth-child(1) {
+    grid-area: patients;
+}
+
+.statCard:nth-child(2) {
+    grid-area: appointments;
+}
+.calendarContainer {
+    grid-area: calendar;
+}
+.appointmentTable {
+    grid-area: table;
+}
+
 .statCard {
     background: #ffffff;
     padding: 20px;
