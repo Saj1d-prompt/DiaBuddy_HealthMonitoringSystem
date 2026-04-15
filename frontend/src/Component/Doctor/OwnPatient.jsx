@@ -14,6 +14,10 @@ const OwnPatient = () => {
                     'Authorization': `Bearer ${userInfo.token}`
                 }
             });
+            const result = await response.json();
+            if (result.status === 200) {
+                setPatients(result.data);
+            }
         } catch (error) {
             console.error('Error fetching own patients:', error);
         }
