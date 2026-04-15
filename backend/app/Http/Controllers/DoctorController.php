@@ -180,7 +180,8 @@ class DoctorController extends Controller
             'data' => $appointment
         ], 200);
     }
-    public function getPatientInfo($patientID){
+    public function getPatientInfo($patientID)
+    {
         $user = User::find($patientID);
         if (!$user) {
             return response()->json([
@@ -205,7 +206,8 @@ class DoctorController extends Controller
         ], 200);
     }
 
-    public function getBSR($patientID){
+    public function getBSR($patientID)
+    {
         $bsr = BloodSugarReading::where('user_id', $patientID)->get();
         return response()->json([
             'message' => 'Blood Sugar Readings retrieved successfully',
@@ -214,7 +216,8 @@ class DoctorController extends Controller
         ], 200);
     }
 
-    public function prescribeMedicine(Request $request){
+    public function prescribeMedicine(Request $request)
+    {
         $validation = Validator::make($request->all(), [
             'patient_id' => 'required|exists:users,id',
             'medicines' => 'required|array',
@@ -242,14 +245,15 @@ class DoctorController extends Controller
                 'patient_id' => $request->patient_id,
             ]);
         }
-        
+
         return response()->json([
             'message' => 'Prescription created successfully',
             'status' => 200
         ], 200);
     }
 
-    public function getOldPrescription($id){
+    public function getOldPrescription($id)
+    {
         $today = now()->startOfDay();
         $prescriptions = Prescription::where('patient_id', $id)
             ->where('created_at', '<', $today)
@@ -262,7 +266,14 @@ class DoctorController extends Controller
         ], 200);
     }
 
-    public function getOwnPatient(Request $request){
-    
+
+    public function getOwnPatient(Request $request)
+    {
+        $patients = Appointment::where('doctor_id', $request->user()->id)
+            ->join('users', 'appointments.patient_id', '=', 'users.id')
+            ->leftJoin('person', 'users.id', '=', 'person.user_id')
+            ->select('users.*', 'person.*')
+            ->distinct('appointments.patient_id')
+            ->get();
     }
 }
