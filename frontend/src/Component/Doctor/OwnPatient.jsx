@@ -42,14 +42,16 @@ const OwnPatient = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>Mr. Y</td>
-                                <td>45</td>
-                                <td>Male</td>
-                                <td>123456</td>
-                                <td>A+</td>
-                                <td>Type 2</td>
-                            </tr>
+                            {patients.map((patient) => (
+                                <tr key={patient.id}>
+                                    <td>{patient.name}</td>
+                                    <td>{Math.floor((new Date() - new Date(patient.date_of_birth)) / (365.25 * 24 * 60 * 60 * 1000))}</td>
+                                    <td>{patient.gender}</td>
+                                    <td>{patient.number}</td>
+                                    <td>{patient.blood_group}</td>
+                                    <td>{patient.diabetes_type}</td>
+                                </tr>
+                            ))}
                         </tbody>
                     </table>
                 </div>
