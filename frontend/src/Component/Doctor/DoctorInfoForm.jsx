@@ -75,7 +75,7 @@ const DoctorInfoForm = () => {
                     <input type="text" id="clinicName" name="clinicName" {...register("clinicName")} />
                     <label htmlFor="clinicAddress">Full Clinic Address</label>
                     <textarea id="clinicAddress" name="clinicAddress" {...register("clinicAddress")} />
-                    <label htmlFor="consultationHours">Consultation Hours</label>
+                    <label htmlFor="consultationHours">Consultation Days(in a Week)</label>
                     <textarea id="consultationHours" name="consultationHours" {...register("consultationHours")} />
                     <label htmlFor="fee">Consultation Fee</label>
                     <input type="text" name="fee" id="fee" {...register("fee")} />
