@@ -4,6 +4,13 @@ import { useState } from 'react';
 
 const OwnPatient = () => {
     const [patients, setPatients] = useState([]);
+    const fetchOwnPatient = async () => {
+        try {
+            
+        } catch (error) {
+            console.error('Error fetching own patients:', error);
+        }
+    }
     return (
         <div>
             <div className={styles.container}>
