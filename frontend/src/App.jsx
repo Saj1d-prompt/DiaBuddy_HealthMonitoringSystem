@@ -25,6 +25,7 @@ import AddHospital from './Component/Admin/AddHospital'
 import CreateDoctor from './Component/Admin/CreateDoctor'
 import UserList from './Component/Admin/UserList'
 import Layout from './Component/Common/Layout'
+import OwnPatient from './Component/Doctor/OwnPatient'
 
 function App() {
   return (
@@ -55,6 +56,7 @@ function App() {
             <Route path='/searchdoctor' element={<SearchDoctor />} />
             <Route path='/searchhospital' element={<SearchHospital />} />
             <Route path='/viewprescriptions' element={<ViewPrescription />} />
+            <Route path='/ownpatient' element={<OwnPatient />} />
           </Route>
           </Route>
         </Routes>
