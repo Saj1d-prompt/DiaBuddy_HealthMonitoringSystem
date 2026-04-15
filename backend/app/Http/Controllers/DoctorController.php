@@ -261,4 +261,8 @@ class DoctorController extends Controller
             'data' => $prescriptions
         ], 200);
     }
+
+    public function getOwnPatient(Request $request){
+    
+    }
 }
