@@ -174,7 +174,7 @@ const PatientDashboard = () => {
   return (
     <div>
       <div className={styles.personalInfo}>
-        <h2>{info?.name}</h2>
+        <h2>Welcome, {info?.name}</h2>
         <div className={styles.InfoContainer}>
           <div>
             <p>Age: {calculateAge(info?.date_of_birth)}</p>
