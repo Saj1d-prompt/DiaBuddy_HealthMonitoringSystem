@@ -275,5 +275,11 @@ class DoctorController extends Controller
             ->select('users.*', 'person.*')
             ->distinct('appointments.patient_id')
             ->get();
+
+        return response()->json([
+            'message' => 'Own patients retrieved successfully',
+            'status' => 200,
+            'data' => $patients
+        ], 200);
     }
 }
