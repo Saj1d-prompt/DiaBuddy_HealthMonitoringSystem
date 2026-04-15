@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from '../../Style/PatientList.module.css'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const OwnPatient = () => {
     const [patients, setPatients] = useState([]);
@@ -22,6 +22,9 @@ const OwnPatient = () => {
             console.error('Error fetching own patients:', error);
         }
     }
+    useEffect(() => {
+        fetchOwnPatient();
+    }, []);
     return (
         <div>
             <div className={styles.container}>
