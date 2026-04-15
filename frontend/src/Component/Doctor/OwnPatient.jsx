@@ -19,7 +19,14 @@ const OwnPatient = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            
+                            <tr>
+                                <td>Mr. Y</td>
+                                <td>45</td>
+                                <td>Male</td>
+                                <td>123456</td>
+                                <td>A+</td>
+                                <td>Type 2</td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
