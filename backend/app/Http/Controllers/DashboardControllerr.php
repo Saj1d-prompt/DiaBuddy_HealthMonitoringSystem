@@ -92,6 +92,8 @@ class DashboardControllerr extends Controller
         $reqDay = now()->subDays(7);
         $recentPatients = User::where('created_at', '>=', $reqDay)
             ->where('role', '!=', 'admin')
+            ->orderBy('created_at', 'desc')
+            ->limit(5)
             ->get();
 
         return response()->json([
