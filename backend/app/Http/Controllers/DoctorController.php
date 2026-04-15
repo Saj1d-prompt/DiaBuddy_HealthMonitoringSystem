@@ -208,7 +208,7 @@ class DoctorController extends Controller
 
     public function getBSR($patientID)
     {
-        $bsr = BloodSugarReading::where('user_id', $patientID)->get();
+        $bsr = BloodSugarReading::where('user_id', $patientID)->orderBy('reading_time')->get();
         return response()->json([
             'message' => 'Blood Sugar Readings retrieved successfully',
             'status' => 200,

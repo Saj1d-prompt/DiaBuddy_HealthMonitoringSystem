@@ -206,7 +206,7 @@ const PatientFacilities = () => {
                 <tbody>
                   {bsr.map((readings) => (
                     <tr key={readings.id}>
-                      <td>{new Date(readings.created_at).toLocaleString()}</td>
+                      <td>{new Date(readings.reading_time).toLocaleString()}</td>
                       <td>{readings.category}</td>
                       <td>{readings.glucose_level}</td>
                       <td>{readings.notes || '-'}</td>
