@@ -88,7 +88,7 @@ const DoctorProfile = () => {
                         <div className={styles.formGroup}>
                             <label htmlFor="">Department</label>
                             {edit ? (
-                                <select id="department" onChange={handleChange} name="department" value={profile.department} required >
+                                <select id="department" onChange={handleChange} name="department" value={profile.department} >
                                     <option value="">Select a department</option>
                                     <option value="Endocrinology">Endocrinology</option>
                                     <option value="Neurology">Neurology</option>
@@ -193,9 +193,9 @@ const DoctorProfile = () => {
                             )}
                         </div>
                         <div className={styles.formGroup}>
-                            <label htmlFor="">Consultation Hours</label>
+                            <label htmlFor="">Consultation Days</label>
                             {edit ? (
-                                <textarea name='consultationHours' rows="3" value={profile.consultationHours} onChange={handleChange}></textarea>
+                                <textarea name='consultationHours' rows="3" value={profile.consultationHours} placeholder='e.g. Saturday, Sunday' onChange={handleChange}></textarea>
                             ) : (
                                 <textarea name='consultationHours' rows="3" value={profile.consultationHours} readOnly></textarea>
                             )}
